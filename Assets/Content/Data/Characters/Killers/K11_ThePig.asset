@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: K11_ThePig
+  m_EditorClassIdentifier: 
+  Type: 0
+  Icon: {fileID: 21300000, guid: bc9d9c40219facb458ce6800bebae31e, type: 3}
+  Name: The Pig
+  UniquePerks:
+  - {fileID: 11400000, guid: a17411818fd422e4e82050cc08210184, type: 2}
+  - {fileID: 11400000, guid: d54a7edc69308744eac08327e431259a, type: 2}
+  - {fileID: 11400000, guid: d3f4f48f3d3600a42822b37fae8285b6, type: 2}
+  KillerAddons:
+  - {fileID: 11400000, guid: fd7f1a5982fb8ec43907ba107e1f5ead, type: 2}
+  - {fileID: 11400000, guid: f63056cc23b7c024db90c26f6e8ddc64, type: 2}
+  - {fileID: 11400000, guid: bbf4c1adf70e4f849b06591788037674, type: 2}
+  - {fileID: 11400000, guid: 5e95001d7c3f1a2459db2694c24e378a, type: 2}
+  - {fileID: 11400000, guid: 18a116a0c3a89b0449ed0cfd11592372, type: 2}
+  - {fileID: 11400000, guid: 4e149a0e1513b92419053d2f09f74399, type: 2}
+  - {fileID: 11400000, guid: 54ffcdc4cd4aacb4a9413c0a2be6d61f, type: 2}
+  - {fileID: 11400000, guid: 5f4b1bb42d8069148ba0341a65117aaa, type: 2}
+  - {fileID: 11400000, guid: 2d89ba038b7c5664a948af82ecfe7666, type: 2}
+  - {fileID: 11400000, guid: 4f4dcac3b5c929542b807b7c2abc6e75, type: 2}
+  - {fileID: 11400000, guid: 38b7feefeaa1e7540bea77fa12cedd80, type: 2}
+  - {fileID: 11400000, guid: 672f3110195da0d4e8cf1f3de9f4594e, type: 2}
+  - {fileID: 11400000, guid: bb061c37cd0abf34c85a3177fd77f1c9, type: 2}
+  - {fileID: 11400000, guid: 661215d48b6dde04f89fc7f3e94cd4d3, type: 2}
+  - {fileID: 11400000, guid: 71005b3452232ff4e857db068a72f6ea, type: 2}
+  - {fileID: 11400000, guid: ccfc3e57ee796d04fb0eadae3af40ce4, type: 2}
+  - {fileID: 11400000, guid: 9079d9c7522c68f4088e26e4931acac3, type: 2}
+  - {fileID: 11400000, guid: d5f574d874e27f6429d22c3ae8e19712, type: 2}
+  - {fileID: 11400000, guid: 4ca21b863e5741a4191e2f21c88dfff9, type: 2}
+  - {fileID: 11400000, guid: 407965140a30cd24e94885b1ee709ac4, type: 2}

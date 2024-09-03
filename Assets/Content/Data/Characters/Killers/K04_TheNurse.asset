@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: K04_TheNurse
+  m_EditorClassIdentifier: 
+  Type: 0
+  Icon: {fileID: 21300000, guid: 037ed7affa57267438da228da3848664, type: 3}
+  Name: The Nurse
+  UniquePerks:
+  - {fileID: 11400000, guid: 66d617013ddf402408f2ce4671c41286, type: 2}
+  - {fileID: 11400000, guid: 60a7de5dd004cde4a8de8eae2fc88f85, type: 2}
+  - {fileID: 11400000, guid: 93181f1be9d21f643acb4013d142ff6b, type: 2}
+  KillerAddons:
+  - {fileID: 11400000, guid: 8e55b7e3b12e8a5428bad54bce55c541, type: 2}
+  - {fileID: 11400000, guid: 04f9226720d70fa4a8fbf71731089b54, type: 2}
+  - {fileID: 11400000, guid: a540b3a6165896846a6b9af19dc5ac6d, type: 2}
+  - {fileID: 11400000, guid: 6e011846c281f45439b4e3195327da45, type: 2}
+  - {fileID: 11400000, guid: e1244d8377c38d24ab8883d8e622d56a, type: 2}
+  - {fileID: 11400000, guid: ad9e13cfdb8ce17458de742d0ade77d2, type: 2}
+  - {fileID: 11400000, guid: 8e5e550a27ec63a4590a3e58d6c8c7bb, type: 2}
+  - {fileID: 11400000, guid: e9697fc553037174098dd2ee5c847008, type: 2}
+  - {fileID: 11400000, guid: dc15a1caf70c2174ba6a378d777ad338, type: 2}
+  - {fileID: 11400000, guid: 701997c5323835c42a38b4eb90900348, type: 2}
+  - {fileID: 11400000, guid: bdc7c0b76c0c68a4f98edc8c79c13da2, type: 2}
+  - {fileID: 11400000, guid: b586f1e8662e55b428ddcd7984b0d99a, type: 2}
+  - {fileID: 11400000, guid: fcbcab57a2ba2dd409213b16578e574a, type: 2}
+  - {fileID: 11400000, guid: 111b74bb1e51b6547b2f9ef870931f3d, type: 2}
+  - {fileID: 11400000, guid: 548ec9b30495db34888ebc3e1d4b1ad2, type: 2}
+  - {fileID: 11400000, guid: 6b61c9a744451d448ae13b96b4ef6391, type: 2}
+  - {fileID: 11400000, guid: c14ab5c6e6f5449449432dccff95db5d, type: 2}
+  - {fileID: 11400000, guid: de5c2ef89554e7544b7bc82e28329060, type: 2}
+  - {fileID: 11400000, guid: 0f08b4982b477b149a718dfedc725d72, type: 2}
+  - {fileID: 11400000, guid: fc091f786d5df7b4ba21814e72aaa759, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: S20_YuiKimura
+  m_EditorClassIdentifier: 
+  Type: 1
+  Icon: {fileID: 21300000, guid: 10f9ea289b65bd54eb39e3bf81ecabc9, type: 3}
+  Name: Yui Kimura
+  UniquePerks:
+  - {fileID: 11400000, guid: ebe5df60774568e4bbf484b96d227e2a, type: 2}
+  - {fileID: 11400000, guid: 708f431004f75584994b3f430f08e04e, type: 2}
+  - {fileID: 11400000, guid: 1c33ce6d8c0e5314294376729e6ede3e, type: 2}
+  KillerAddons: []

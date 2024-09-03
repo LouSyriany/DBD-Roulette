@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: K03_TheHillbilly
+  m_EditorClassIdentifier: 
+  Type: 0
+  Icon: {fileID: 21300000, guid: ca55b99099cdcea44acf135dc38ba912, type: 3}
+  Name: The Hillbilly
+  UniquePerks:
+  - {fileID: 11400000, guid: a14fd7d5bb476ea41a9e4653dc8c1620, type: 2}
+  - {fileID: 11400000, guid: 68e61e662f001dc45abd72a36fea395d, type: 2}
+  - {fileID: 11400000, guid: 0ee1674e8471fdc4b9361209ac7ee109, type: 2}
+  KillerAddons:
+  - {fileID: 11400000, guid: ef5efe393bc4e69438cbbadfbda9c695, type: 2}
+  - {fileID: 11400000, guid: 5fe8548be7ab543429cfd9a376a2d600, type: 2}
+  - {fileID: 11400000, guid: 2a7640eb3c5e94a4f95175ab0617eafc, type: 2}
+  - {fileID: 11400000, guid: d2b0987031947fc47b195ede215e20eb, type: 2}
+  - {fileID: 11400000, guid: 36ddb96d70ac2df4198e8bc5246aab66, type: 2}
+  - {fileID: 11400000, guid: 005b848fb9dc4714196d78353291bc41, type: 2}
+  - {fileID: 11400000, guid: 073bda11be89bd44a911c14bc84e556f, type: 2}
+  - {fileID: 11400000, guid: 90aa9f54a1a536b439344772c662bb36, type: 2}
+  - {fileID: 11400000, guid: 0485d808f7e30e444bf2c3e6ba6570ed, type: 2}
+  - {fileID: 11400000, guid: 9db5ef8f910e145479eb1599659c1e21, type: 2}
+  - {fileID: 11400000, guid: 15985aaf5eca31c4db2d61b54922a97e, type: 2}
+  - {fileID: 11400000, guid: 97d0068d1123d0448be3f6506a5a8501, type: 2}
+  - {fileID: 11400000, guid: 420c888c4d6833f49b875e13fe6f3b2a, type: 2}
+  - {fileID: 11400000, guid: 6286f60fa571c344998985e16f425129, type: 2}
+  - {fileID: 11400000, guid: 874f7dc76eaa28746b236e828f410ba6, type: 2}
+  - {fileID: 11400000, guid: 643165210201a0a4d9be758d4f2817d3, type: 2}
+  - {fileID: 11400000, guid: 1204d8be57ad45145a6f097f36aba61f, type: 2}
+  - {fileID: 11400000, guid: caed7db5e2a4d9a478f9124e24a910ab, type: 2}
+  - {fileID: 11400000, guid: 15a9502b99949c3438ec078c9b22d914, type: 2}
+  - {fileID: 11400000, guid: bc28792cfdcd958448a561e60674e0b6, type: 2}

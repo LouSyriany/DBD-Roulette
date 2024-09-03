@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: S08_BillOverbeck
+  m_EditorClassIdentifier: 
+  Type: 1
+  Icon: {fileID: 21300000, guid: ee073db911993574f82ff8da38c82333, type: 3}
+  Name: Bill Overbeck
+  UniquePerks:
+  - {fileID: 11400000, guid: 5afa0b5312533b444824a6a1d7fcc2c7, type: 2}
+  - {fileID: 11400000, guid: 1905bb8e66c15c14bb45c64b3c1830aa, type: 2}
+  - {fileID: 11400000, guid: 647d6f1d6d6f5ba438d43f1667a84c07, type: 2}
+  KillerAddons: []

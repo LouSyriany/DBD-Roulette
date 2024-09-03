@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: K33_TheXenomorph
+  m_EditorClassIdentifier: 
+  Type: 0
+  Icon: {fileID: 21300000, guid: 1ea662e9bbfc62848b8f085a6b35ffd1, type: 3}
+  Name: The Xenomorph
+  UniquePerks:
+  - {fileID: 11400000, guid: 0a763fc71b9a0d54ab0a5098651e43cf, type: 2}
+  - {fileID: 11400000, guid: 3b2e3313bd40be64d8f5544525fe15a0, type: 2}
+  - {fileID: 11400000, guid: 98e1b5ae6cfc73f4d89e4c3239b3ec64, type: 2}
+  KillerAddons:
+  - {fileID: 11400000, guid: 5b26c4cea0b0b264db48c3751d2d402d, type: 2}
+  - {fileID: 11400000, guid: 40cb451d9b6e6754bbc4b521c3b05a5b, type: 2}
+  - {fileID: 11400000, guid: c0b8b9ca57311a948bda3864626ec15a, type: 2}
+  - {fileID: 11400000, guid: 0c7c76d746b800d4e9d1a7150e220e82, type: 2}
+  - {fileID: 11400000, guid: 9a6c8d724e046c74b9fb041b0b7c4e6f, type: 2}
+  - {fileID: 11400000, guid: bc4dd51e1dfde694095f7f9386129570, type: 2}
+  - {fileID: 11400000, guid: c9a456b1eedb25042b51a02db4372fb7, type: 2}
+  - {fileID: 11400000, guid: fc9290369bb40be4ea8fdc45b782222b, type: 2}
+  - {fileID: 11400000, guid: eeba0e4d2d4e53548a89df148c764a3e, type: 2}
+  - {fileID: 11400000, guid: 98c939ea9cf53894da1607258f727cc4, type: 2}
+  - {fileID: 11400000, guid: b8ee794524d5b0f4288ba11feb784c7a, type: 2}
+  - {fileID: 11400000, guid: 204baa40d2632904fbba2142f9cfbf6e, type: 2}
+  - {fileID: 11400000, guid: 7196a617355447149888922941950f90, type: 2}
+  - {fileID: 11400000, guid: dbe3ec588cf552b4282ba4600c7b4a14, type: 2}
+  - {fileID: 11400000, guid: d3b6906c3584ebc4a94986717e09352a, type: 2}
+  - {fileID: 11400000, guid: 9fa1e9d1af4e9d643a6d81bfa2b399df, type: 2}
+  - {fileID: 11400000, guid: f4e28208ff7fdec4993b29bdc016c2cb, type: 2}
+  - {fileID: 11400000, guid: 0ed2d8ea94060b14f88b018596180d56, type: 2}
+  - {fileID: 11400000, guid: faf3748d4c6214d4d9978eb523737ab1, type: 2}
+  - {fileID: 11400000, guid: 48333d9ace53d6b4ab6685cb543c5a6d, type: 2}

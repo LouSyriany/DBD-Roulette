@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefbb9edfdcb18548bcdd465ebbea21f, type: 3}
+  m_Name: UtilityFlashlight
+  m_EditorClassIdentifier: 
+  Type: 0
+  Rarity: 3
+  Icon: {fileID: 21300000, guid: f06e1896d0417b74fbae8aa1354f5432, type: 3}
+  Name: Utility Flashlight
+  EditName: 0
+  EditedName: Utility Flashlight
+  ItemAddons:
+  - {fileID: 11400000, guid: afd640e8ee85e8d49aede95b0eb3f22c, type: 2}
+  - {fileID: 11400000, guid: 17493337f7182d742857c38d56e85b2a, type: 2}
+  - {fileID: 11400000, guid: bba4aa3769545af448836af817d696dc, type: 2}
+  - {fileID: 11400000, guid: a7ba7c708ed529243ac6d04224c28480, type: 2}
+  - {fileID: 11400000, guid: 195ed534c8cb4ed40a5ca28557648208, type: 2}
+  - {fileID: 11400000, guid: af9af7daef5d2d74eb5159e7fd0ef08d, type: 2}
+  - {fileID: 11400000, guid: 0224bd58331574f46bec1df4aea640ff, type: 2}
+  - {fileID: 11400000, guid: 0d9479edc830e9e40879e8cdd485703b, type: 2}
+  - {fileID: 11400000, guid: a5e7d2b9cafda6d4a9d5529f7350c991, type: 2}
+  - {fileID: 11400000, guid: 319faf4d5f4da4740a814b9468344059, type: 2}
+  - {fileID: 11400000, guid: 1e596bf15729cbb408a1a9fec96ef631, type: 2}
+  - {fileID: 11400000, guid: 31d31dc820802f245ac2be7d205d7649, type: 2}
+  - {fileID: 11400000, guid: 42e8b96e909655d47805a2a89344e3aa, type: 2}

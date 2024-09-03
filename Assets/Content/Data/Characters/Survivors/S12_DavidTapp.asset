@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: S12_DavidTapp
+  m_EditorClassIdentifier: 
+  Type: 1
+  Icon: {fileID: 21300000, guid: b4b648a9ba522f3448add83b12a22f28, type: 3}
+  Name: David Tapp
+  UniquePerks:
+  - {fileID: 11400000, guid: c1dc86038de18d4459545995fc2ebb11, type: 2}
+  - {fileID: 11400000, guid: ca4e3116545b48a4aa9988566705056e, type: 2}
+  - {fileID: 11400000, guid: 67ad705cc5e193849abfdca55a7fa32f, type: 2}
+  KillerAddons: []

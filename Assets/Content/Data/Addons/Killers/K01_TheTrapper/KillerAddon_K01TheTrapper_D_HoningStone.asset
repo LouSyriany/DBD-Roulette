@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
+  m_Name: KillerAddon_K01TheTrapper_D_HoningStone
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 9ac87f664265d0c4eb8ecdd11c12927a, type: 3}
+  Name: Honing Stone
+  Descriton: "When used with the Bear Trap, the stone sharpens its blades.\\nThe
+    razor-sharp blades inflict deep wounds aimed at bleeding the victim as fast as
+    possible.\\n\\n<indent=10%>- <#e2ce97>Survivors</color><sprite=5> caught in a
+    <b>Bear Trap</b>, who free themselves, are inflicted with the <#e2ce97>Dying
+    State</color><sprite=11>.\r"
+  RarityType: 3

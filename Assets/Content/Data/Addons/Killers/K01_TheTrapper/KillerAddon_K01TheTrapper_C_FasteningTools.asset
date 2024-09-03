@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
+  m_Name: KillerAddon_K01TheTrapper_C_FasteningTools
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 8474286443878234e9424607043856d1, type: 3}
+  Name: Fastening Tools
+  Descriton: "A specialised set of tools used to fasten <b>Bear Traps</b> to ensure
+    their effectiveness.\\n\\n<indent=10%>- <b>Increases</b> the Rescue and Escape
+    times from the Bear Trap by <#e8c252>+25 %</color>.</indent>\\n<indent=10%>-
+    <b>Increases</b> the Setting speed of the Bear Trap by <#ff8800>+50 %</color>.\r"
+  RarityType: 2

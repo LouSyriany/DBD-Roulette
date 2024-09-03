@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
+  m_Name: KillerAddon_K02TheWraith_A_TheBeast-Soot
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: a5689720ac533704ba1e8b879ec181f9, type: 3}
+  Name: '"The Beast" - Soot'
+  Descriton: "The Kunwulju symbol, representing the Realm of Fear, is finger-drawn
+    out of soot on the body of the Bell.\\n\\n<indent=10%>- Your <#e2ce97>Terror
+    Radius<sprite=7></color> is no longer suppressed when Cloaked.</indent>\\n<indent=10%>-
+    Grants <#e8c252>+100 %</color> bonus <#e2ce97>Bloodpoints<sprite=14></color>
+    for Stalking and Surprise Attack Score Events.\r"
+  RarityType: 0
