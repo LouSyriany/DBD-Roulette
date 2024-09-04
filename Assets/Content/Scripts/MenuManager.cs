@@ -21,25 +21,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] RectTransform TrPerkList;
     [SerializeField] RectTransform TrAddonList;
 
+    [SerializeField] GameObject StreakEndedPopup;
+
     RouletteManager.Result result;
-
-    public void RollSurvivor()
-    {
-        result = Roulette.Roll(RouletteManager.MainRollType.Survivor);
-        Roll();
-    }
-
-    public void RollKiller()
-    {
-        result = Roulette.Roll(RouletteManager.MainRollType.Killer);
-        Roll();
-    }
-
-    public void RollBoth()
-    {
-        result = Roulette.Roll(RouletteManager.MainRollType.Both);
-        Roll();
-    }
 
     void Roll()
     {
@@ -110,5 +94,99 @@ public class MenuManager : MonoBehaviour
                 index++;
             }
         }
+    }
+
+    public void RollSurvivor()
+    {
+        if (Roulette.Parameters.StreakMode)
+        {
+            if (Roulette.StreakOnGoing)
+            {
+                if (Roulette.SCharRemaining > 0)
+                {
+                    result = Roulette.Roll(RouletteManager.MainRollType.Survivor);
+                    Roll();
+                }
+                else
+                {
+                    StreakEndedPopup.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                result = Roulette.Roll(RouletteManager.MainRollType.Survivor);
+                Roll();
+            }
+            
+        }
+        else
+        {
+            result = Roulette.Roll(RouletteManager.MainRollType.Survivor);
+            Roll();
+        }
+    }
+
+    public void RollKiller()
+    {
+        if (Roulette.Parameters.StreakMode)
+        {
+            if (Roulette.StreakOnGoing)
+            {
+                if (Roulette.KCharRemaining > 0)
+                {
+                    result = Roulette.Roll(RouletteManager.MainRollType.Killer);
+                    Roll();
+                }
+                else
+                {
+                    StreakEndedPopup.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                result = Roulette.Roll(RouletteManager.MainRollType.Killer);
+                Roll();
+            }
+        }
+        else
+        {
+            result = Roulette.Roll(RouletteManager.MainRollType.Killer);
+            Roll();
+        }
+    }
+
+    public void RollBoth()
+    {
+        if (Roulette.Parameters.StreakMode)
+        {
+            if (Roulette.StreakOnGoing)
+            {
+                if (Roulette.KCharRemaining > 0 || Roulette.SCharRemaining > 0)
+                {
+                    result = Roulette.Roll(RouletteManager.MainRollType.Both);
+                    Roll();
+                }
+                else
+                {
+                    StreakEndedPopup.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                result = Roulette.Roll(RouletteManager.MainRollType.Both);
+                Roll();
+            }    
+        }
+        else
+        {
+            result = Roulette.Roll(RouletteManager.MainRollType.Both);
+            Roll();
+        }
+    }
+
+    public void ResetStreak()
+    {
+        StreakEndedPopup.gameObject.SetActive(false);
+        Roulette.ResetStreak();
     }
 }
