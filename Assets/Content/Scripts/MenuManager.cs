@@ -98,11 +98,11 @@ public class MenuManager : MonoBehaviour
 
     public void RollSurvivor()
     {
-        if (Roulette.Parameters.StreakMode)
+        if (Roulette.Parameters.CharacterStreakMode || Roulette.Parameters.PerkStreakMode)
         {
             if (Roulette.StreakOnGoing)
             {
-                if (Roulette.SCharRemaining > 0)
+                if (!Roulette.StreakStopped)
                 {
                     result = Roulette.Roll(RouletteManager.MainRollType.Survivor);
                     Roll();
@@ -128,11 +128,11 @@ public class MenuManager : MonoBehaviour
 
     public void RollKiller()
     {
-        if (Roulette.Parameters.StreakMode)
+        if (Roulette.Parameters.CharacterStreakMode || Roulette.Parameters.PerkStreakMode)
         {
             if (Roulette.StreakOnGoing)
             {
-                if (Roulette.KCharRemaining > 0)
+                if (!Roulette.StreakStopped)
                 {
                     result = Roulette.Roll(RouletteManager.MainRollType.Killer);
                     Roll();
@@ -157,11 +157,11 @@ public class MenuManager : MonoBehaviour
 
     public void RollBoth()
     {
-        if (Roulette.Parameters.StreakMode)
+        if (Roulette.Parameters.CharacterStreakMode || Roulette.Parameters.PerkStreakMode)
         {
             if (Roulette.StreakOnGoing)
             {
-                if (Roulette.KCharRemaining > 0 || Roulette.SCharRemaining > 0)
+                if (!Roulette.StreakStopped)
                 {
                     result = Roulette.Roll(RouletteManager.MainRollType.Both);
                     Roll();
