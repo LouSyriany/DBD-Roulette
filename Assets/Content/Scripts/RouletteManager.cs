@@ -78,6 +78,12 @@ public class RouletteManager : MonoBehaviour
     [Serializable]
     public class Parameter
     {
+        public bool RarirtyRoll = false;
+
+        public bool StreakMode = false;
+
+        [Space(5)]
+
         public bool DudPerk = true;
         public bool DudItem = true;
         public bool DudAddon = true;
@@ -115,9 +121,25 @@ public class RouletteManager : MonoBehaviour
 
     public Parameter Parameters;
 
+    EnabledData currentList;
+
     int rdm;
 
     Result result;
+
+    bool streakOnGoing = false;
+
+    [HideInInspector] public int KCharRemaining;
+    [HideInInspector] public int SCharRemaining;
+
+    [HideInInspector] public int KPerkRemaining;
+    [HideInInspector] public int SPerkRemaining;
+
+    [HideInInspector] public int ItemRemaining;
+
+    [HideInInspector] public int AddonRarityRemaining;
+
+
 
     void Awake()
     {
@@ -237,6 +259,18 @@ public class RouletteManager : MonoBehaviour
 
     public Result Roll(MainRollType rollType)
     {
+        if (Parameters.StreakMode)
+        {
+            if (!streakOnGoing)
+            {
+                SetupStreak();
+            }
+        }
+        else
+        {
+            currentList = EnabledDatas;
+        }
+
         result = new Result();
 
         RandomCharacter(rollType);
@@ -246,6 +280,12 @@ public class RouletteManager : MonoBehaviour
         if (Parameters.RollItems) RandomItem();
 
         if (Parameters.RollAddons) RandomAddons();
+
+
+        if (Parameters.StreakMode && streakOnGoing)
+        {
+            UpdateStreakList();
+        }
 
         return result;
     }
@@ -258,7 +298,7 @@ public class RouletteManager : MonoBehaviour
         {
             case MainRollType.Killer:
 
-                foreach (var killer in EnabledDatas.EnabledKillers)
+                foreach (var killer in currentList.EnabledKillers)
                 {
                     if (killer.Enabled)
                     {
@@ -270,7 +310,7 @@ public class RouletteManager : MonoBehaviour
 
             case MainRollType.Survivor:
 
-                foreach (var survivor in EnabledDatas.EnabledSurvivors)
+                foreach (var survivor in currentList.EnabledSurvivors)
                 {
                     if (survivor.Enabled)
                     {
@@ -282,7 +322,7 @@ public class RouletteManager : MonoBehaviour
 
             case MainRollType.Both:
 
-                foreach (var killer in EnabledDatas.EnabledKillers)
+                foreach (var killer in currentList.EnabledKillers)
                 {
                     if (killer.Enabled)
                     {
@@ -290,7 +330,7 @@ public class RouletteManager : MonoBehaviour
                     }
                 }
 
-                foreach (var survivor in EnabledDatas.EnabledSurvivors)
+                foreach (var survivor in currentList.EnabledSurvivors)
                 {
                     if (survivor.Enabled)
                     {
@@ -311,9 +351,9 @@ public class RouletteManager : MonoBehaviour
 
         if (result.Character.Type == Characters.CharacterType.Killers)
         {
-            foreach (var killerPerk in EnabledDatas.EnabledKillerPerks)
+            foreach (var killerPerk in currentList.EnabledKillerPerks)
             {
-                if (killerPerk.Enabled)
+                if (killerPerk.Enabled && killerPerk.Perk != Duds.PerkDud)
                 {
                     perkList.Add(killerPerk.Perk);
                 }
@@ -321,9 +361,9 @@ public class RouletteManager : MonoBehaviour
         }
         else
         {
-            foreach (var survivorPerk in EnabledDatas.EnabledSurvivorPerks)
+            foreach (var survivorPerk in currentList.EnabledSurvivorPerks)
             {
-                if (survivorPerk.Enabled)
+                if (survivorPerk.Enabled && survivorPerk.Perk != Duds.PerkDud)
                 {
                     perkList.Add(survivorPerk.Perk);
                 }
@@ -365,11 +405,21 @@ public class RouletteManager : MonoBehaviour
 
         List<Items> itemList = new List<Items>();
 
-        foreach (var item in EnabledDatas.EnabledItems)
+        foreach (var item in currentList.EnabledItems)
         {
-            if (item.Enabled)
+            if (item.Enabled && item.Item != Duds.ItemDud)
             {
-                itemList.Add(item.Item);
+                if (Parameters.RarirtyRoll)
+                {
+                    for (int i = 0; i < 5 - (int)item.Item.Rarity; i++)
+                    {
+                        itemList.Add(item.Item);
+                    }
+                }
+                else
+                {
+                    itemList.Add(item.Item);
+                }
             }
         }
 
@@ -396,15 +446,25 @@ public class RouletteManager : MonoBehaviour
 
         if (result.Character != null && result.Character.Type == Characters.CharacterType.Killers)
         {
-            foreach (var killer in EnabledDatas.EnabledKillers)
+            foreach (var killer in currentList.EnabledKillers)
             {
                 if (killer.Character == result.Character)
                 {
                     foreach (var addon in killer.EnabledKillerAddons)
                     {
-                        if (addon.Enabled)
+                        if (addon.Enabled && addon.Addon != Duds.AddonDud)
                         {
-                            addonList.Add(addon.Addon);
+                            if (Parameters.RarirtyRoll)
+                            {
+                                for (int i = 0; i < 5 - (int)addon.Addon.RarityType + 1; i++)
+                                {
+                                    addonList.Add(addon.Addon);
+                                }
+                            }
+                            else
+                            {
+                                addonList.Add(addon.Addon);
+                            }
                         }
                     }
                 }
@@ -414,15 +474,25 @@ public class RouletteManager : MonoBehaviour
         {
             if (result.Item != null && result.Item != Duds.ItemDud)
             {
-                foreach (var item in EnabledDatas.EnabledItems)
+                foreach (var item in currentList.EnabledItems)
                 {
                     if (item.Item == result.Item)
                     {
                         foreach (var addon in item.EnabledItemAddons)
                         {
-                            if (addon.Enabled)
+                            if (addon.Enabled && addon.Addon != Duds.AddonDud)
                             {
-                                addonList.Add(addon.Addon);
+                                if (Parameters.RarirtyRoll)
+                                {
+                                    for (int i = 0; i < 5 - (int)addon.Addon.RarityType + 1; i++)
+                                    {
+                                        addonList.Add(addon.Addon);
+                                    }
+                                }
+                                else
+                                {
+                                    addonList.Add(addon.Addon);
+                                }
                             }
                         }
                     }
@@ -443,14 +513,71 @@ public class RouletteManager : MonoBehaviour
             }
 
             RandomRouletteFn.Shuffle(addonList);
+            if (Parameters.RarirtyRoll)
+            {
+                rdm = UnityEngine.Random.Range(0, addonList.Count);
+                result.Addons.Add(addonList[rdm]);
 
-            rdm = UnityEngine.Random.Range(0, addonList.Count);
-            result.Addons.Add(addonList[rdm]);
-            addonList.RemoveAt(rdm);
+                Addons tmp = addonList[rdm];
 
-            rdm = UnityEngine.Random.Range(0, addonList.Count);
-            result.Addons.Add(addonList[rdm]);
-            addonList.RemoveAt(rdm);
+                while (tmp == addonList[rdm])
+                {
+                    rdm = UnityEngine.Random.Range(0, addonList.Count);
+                }
+
+                result.Addons.Add(addonList[rdm]);
+            }
+            else
+            {
+                rdm = UnityEngine.Random.Range(0, addonList.Count);
+                result.Addons.Add(addonList[rdm]);
+                addonList.RemoveAt(rdm);
+
+                rdm = UnityEngine.Random.Range(0, addonList.Count);
+                result.Addons.Add(addonList[rdm]);
+                addonList.RemoveAt(rdm);
+            }
+        }
+    }
+
+    void SetupStreak()
+    {
+        KCharRemaining = 0;
+        SCharRemaining = 0;
+
+        KPerkRemaining = 0;
+        SPerkRemaining = 0;
+
+        ItemRemaining = 0;
+
+        AddonRarityRemaining = 0;
+
+        streakOnGoing = true;
+        currentList = EnabledDatas;
+
+        for (int i = 0; i < currentList.EnabledKillers.Count; i++)
+        {
+            if (currentList.EnabledKillers[i].Enabled) KCharRemaining++;
+        }
+
+        for (int i = 0; i < currentList.EnabledSurvivors.Count; i++)
+        {
+            if (currentList.EnabledKillers[i].Enabled) SCharRemaining++;
+        }
+    }
+
+    void UpdateStreakList()
+    {
+        if (result.Character.Type == Characters.CharacterType.Killers)
+        {
+            for (int i = currentList.EnabledKillers.Count - 1; i >= 0; i--)
+            {
+                if (currentList.EnabledKillers[i].Character == result.Character) currentList.EnabledKillers.RemoveAt(i);
+            }
+        }
+        else
+        {
+
         }
     }
 
@@ -465,6 +592,7 @@ public class RouletteManager : MonoBehaviour
     public void SetRollPerk(bool b) { Parameters.RollPerks = b; }
     public void SetRollAddon(bool b) { Parameters.RollAddons = b; }
     public void SetRollItem(bool b) { Parameters.RollItems = b; }
+    public void SetRarityRoll(bool b) { Parameters.RarirtyRoll = b; }
 }
 
 public static class RandomRouletteFn
