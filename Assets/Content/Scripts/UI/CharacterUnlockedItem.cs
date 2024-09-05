@@ -192,6 +192,14 @@ public class CharacterUnlockedItem : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            foreach (var perk in Perks)
+            {
+                ChangePerkState(perk.AddonSlot);
+            }
+        }
     }
 
     [ContextMenu("Setup")]

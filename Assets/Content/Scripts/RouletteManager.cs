@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1)]
 public class RouletteManager : MonoBehaviour
 {
     public static RouletteManager Instance { get; private set; }
@@ -225,15 +226,17 @@ public class RouletteManager : MonoBehaviour
 
     public Parameter Parameters;
 
-    EnabledData currentList;
+    [ReadOnly] public EnabledData CurrentList;
 
     int rdm;
 
-    Result result;
+    public Result Results;
 
     public bool StreakOnGoing = false;
 
     public bool StreakStopped = false;
+
+    public Action<Result> OnRollMade;
 
     void Awake()
     {
@@ -351,7 +354,7 @@ public class RouletteManager : MonoBehaviour
         EnabledDatas.EnabledItems = items;
     }
 
-    public Result Roll(MainRollType rollType)
+    public void Roll(MainRollType rollType)
     {
         if (Parameters.CharacterStreakMode || Parameters.PerkStreakMode)
         {
@@ -365,7 +368,7 @@ public class RouletteManager : MonoBehaviour
             SetCurrentList();
         }
 
-        result = new Result();
+        Results = new Result();
 
         RandomCharacter(rollType);
 
@@ -381,19 +384,19 @@ public class RouletteManager : MonoBehaviour
             UpdateStreakList(rollType);
         }
 
-        return result;
+        OnRollMade?.Invoke(Results);
     }
     
     void SetCurrentList()
     {
-        currentList = new EnabledData();
-        currentList.EnabledSurvivors = new List<EnabledCharacter>();
-        currentList.EnabledSurvivorPerks = new List<EnabledPerk>();
+        CurrentList = new EnabledData();
+        CurrentList.EnabledSurvivors = new List<EnabledCharacter>();
+        CurrentList.EnabledSurvivorPerks = new List<EnabledPerk>();
 
-        currentList.EnabledKillers = new List<EnabledCharacter>();
-        currentList.EnabledKillerPerks = new List<EnabledPerk>();
+        CurrentList.EnabledKillers = new List<EnabledCharacter>();
+        CurrentList.EnabledKillerPerks = new List<EnabledPerk>();
 
-        currentList.EnabledItems = new List<EnabledItem>();
+        CurrentList.EnabledItems = new List<EnabledItem>();
 
         for (int i = 0; i < EnabledDatas.EnabledSurvivors.Count; i++)
         {
@@ -402,7 +405,7 @@ public class RouletteManager : MonoBehaviour
             chara.Enabled = EnabledDatas.EnabledSurvivors[i].Enabled;
             chara.Character = EnabledDatas.EnabledSurvivors[i].Character;
 
-            currentList.EnabledSurvivors.Add(chara);
+            CurrentList.EnabledSurvivors.Add(chara);
         }
 
         for (int i = 0; i < EnabledDatas.EnabledKillers.Count; i++)
@@ -422,7 +425,7 @@ public class RouletteManager : MonoBehaviour
                 chara.EnabledKillerAddons.Add(addon);
             }
 
-            currentList.EnabledKillers.Add(chara);
+            CurrentList.EnabledKillers.Add(chara);
         }
 
         for (int i = 0; i < EnabledDatas.EnabledSurvivorPerks.Count; i++)
@@ -432,7 +435,7 @@ public class RouletteManager : MonoBehaviour
             perk.Enabled = EnabledDatas.EnabledSurvivorPerks[i].Enabled;
             perk.Perk = EnabledDatas.EnabledSurvivorPerks[i].Perk;
 
-            currentList.EnabledSurvivorPerks.Add(perk);
+            CurrentList.EnabledSurvivorPerks.Add(perk);
         }
 
         for (int i = 0; i < EnabledDatas.EnabledKillerPerks.Count; i++)
@@ -442,13 +445,13 @@ public class RouletteManager : MonoBehaviour
             perk.Enabled = EnabledDatas.EnabledKillerPerks[i].Enabled;
             perk.Perk = EnabledDatas.EnabledKillerPerks[i].Perk;
 
-            currentList.EnabledKillerPerks.Add(perk);
+            CurrentList.EnabledKillerPerks.Add(perk);
         }
 
         if (Parameters.PerkStreakMode)
         {
-            AddStreakPerkDud(currentList.EnabledSurvivorPerks, false);
-            AddStreakPerkDud(currentList.EnabledKillerPerks, true);
+            AddStreakPerkDud(CurrentList.EnabledSurvivorPerks, false);
+            AddStreakPerkDud(CurrentList.EnabledKillerPerks, true);
         }
 
         for (int i = 0; i < EnabledDatas.EnabledItems.Count; i++)
@@ -468,7 +471,7 @@ public class RouletteManager : MonoBehaviour
                 item.EnabledItemAddons.Add(addon);
             }
 
-            currentList.EnabledItems.Add(item);
+            CurrentList.EnabledItems.Add(item);
         }
     }
 
@@ -480,7 +483,7 @@ public class RouletteManager : MonoBehaviour
         {
             case MainRollType.Killer:
 
-                foreach (var killer in currentList.EnabledKillers)
+                foreach (var killer in CurrentList.EnabledKillers)
                 {
                     if (killer.Enabled)
                     {
@@ -492,7 +495,7 @@ public class RouletteManager : MonoBehaviour
 
             case MainRollType.Survivor:
 
-                foreach (var survivor in currentList.EnabledSurvivors)
+                foreach (var survivor in CurrentList.EnabledSurvivors)
                 {
                     if (survivor.Enabled)
                     {
@@ -504,7 +507,7 @@ public class RouletteManager : MonoBehaviour
 
             case MainRollType.Both:
 
-                foreach (var killer in currentList.EnabledKillers)
+                foreach (var killer in CurrentList.EnabledKillers)
                 {
                     if (killer.Enabled)
                     {
@@ -512,7 +515,7 @@ public class RouletteManager : MonoBehaviour
                     }
                 }
 
-                foreach (var survivor in currentList.EnabledSurvivors)
+                foreach (var survivor in CurrentList.EnabledSurvivors)
                 {
                     if (survivor.Enabled)
                     {
@@ -524,16 +527,16 @@ public class RouletteManager : MonoBehaviour
 
         rdm = UnityEngine.Random.Range(0, CharacterToRoll.Count);
 
-        result.Character = CharacterToRoll[rdm];
+        Results.Character = CharacterToRoll[rdm];
     }
 
     void RandomPerks()
     {
         List<Perks> perkList = new List<Perks>();
 
-        if (result.Character.Type == Characters.CharacterType.Killers)
+        if (Results.Character.Type == Characters.CharacterType.Killers)
         {
-            foreach (var killerPerk in currentList.EnabledKillerPerks)
+            foreach (var killerPerk in CurrentList.EnabledKillerPerks)
             {
                 if (killerPerk.Enabled)
                 {
@@ -543,7 +546,7 @@ public class RouletteManager : MonoBehaviour
         }
         else
         {
-            foreach (var survivorPerk in currentList.EnabledSurvivorPerks)
+            foreach (var survivorPerk in CurrentList.EnabledSurvivorPerks)
             {
                 if (survivorPerk.Enabled)
                 {
@@ -567,39 +570,39 @@ public class RouletteManager : MonoBehaviour
         if (perkList.Count > 0)
         {
             rdm = UnityEngine.Random.Range(0, perkList.Count);
-            result.Perks.Add(perkList[rdm]);
+            Results.Perks.Add(perkList[rdm]);
             perkList.RemoveAt(rdm);
         }
 
         if (perkList.Count > 0)
         {
             rdm = UnityEngine.Random.Range(0, perkList.Count);
-            result.Perks.Add(perkList[rdm]);
+            Results.Perks.Add(perkList[rdm]);
             perkList.RemoveAt(rdm);
         }
 
         if (perkList.Count > 0)
         {
             rdm = UnityEngine.Random.Range(0, perkList.Count);
-            result.Perks.Add(perkList[rdm]);
+            Results.Perks.Add(perkList[rdm]);
             perkList.RemoveAt(rdm);
         }
 
         if (perkList.Count > 0)
         {
             rdm = UnityEngine.Random.Range(0, perkList.Count);
-            result.Perks.Add(perkList[rdm]);
+            Results.Perks.Add(perkList[rdm]);
             perkList.RemoveAt(rdm);
         }
     }
 
     void RandomItem()
     {
-        if (result.Character.Type != Characters.CharacterType.Survivors) return;
+        if (Results.Character.Type != Characters.CharacterType.Survivors) return;
 
         List<Items> itemList = new List<Items>();
 
-        foreach (var item in currentList.EnabledItems)
+        foreach (var item in CurrentList.EnabledItems)
         {
             if (item.Enabled && item.Item != Duds.ItemDud)
             {
@@ -631,18 +634,18 @@ public class RouletteManager : MonoBehaviour
 
         rdm = UnityEngine.Random.Range(0, itemList.Count);
 
-        result.Item = itemList[rdm];
+        Results.Item = itemList[rdm];
     }
 
     void RandomAddons()
     {
         List<Addons> addonList = new List<Addons>();
 
-        if (result.Character != null && result.Character.Type == Characters.CharacterType.Killers)
+        if (Results.Character != null && Results.Character.Type == Characters.CharacterType.Killers)
         {
-            foreach (var killer in currentList.EnabledKillers)
+            foreach (var killer in CurrentList.EnabledKillers)
             {
-                if (killer.Character == result.Character)
+                if (killer.Character == Results.Character)
                 {
                     foreach (var addon in killer.EnabledKillerAddons)
                     {
@@ -666,11 +669,11 @@ public class RouletteManager : MonoBehaviour
         }
         else
         {
-            if (result.Item != null && result.Item != Duds.ItemDud)
+            if (Results.Item != null && Results.Item != Duds.ItemDud)
             {
-                foreach (var item in currentList.EnabledItems)
+                foreach (var item in CurrentList.EnabledItems)
                 {
-                    if (item.Item == result.Item)
+                    if (item.Item == Results.Item)
                     {
                         foreach (var addon in item.EnabledItemAddons)
                         {
@@ -710,7 +713,7 @@ public class RouletteManager : MonoBehaviour
             if (Parameters.RarirtyRoll)
             {
                 rdm = UnityEngine.Random.Range(0, addonList.Count);
-                result.Addons.Add(addonList[rdm]);
+                Results.Addons.Add(addonList[rdm]);
 
                 Addons tmp = addonList[rdm];
 
@@ -719,16 +722,16 @@ public class RouletteManager : MonoBehaviour
                     rdm = UnityEngine.Random.Range(0, addonList.Count);
                 }
 
-                result.Addons.Add(addonList[rdm]);
+                Results.Addons.Add(addonList[rdm]);
             }
             else
             {
                 rdm = UnityEngine.Random.Range(0, addonList.Count);
-                result.Addons.Add(addonList[rdm]);
+                Results.Addons.Add(addonList[rdm]);
                 addonList.RemoveAt(rdm);
 
                 rdm = UnityEngine.Random.Range(0, addonList.Count);
-                result.Addons.Add(addonList[rdm]);
+                Results.Addons.Add(addonList[rdm]);
                 addonList.RemoveAt(rdm);
             }
         }
@@ -745,9 +748,9 @@ public class RouletteManager : MonoBehaviour
     {
         if (Parameters.DudPerk)
         {
-            int perkCount = isKiller ? currentList.ActiveKillersPerks : currentList.ActiveSurvivorsPerks;
+            int perkCount = isKiller ? CurrentList.ActiveKillersPerks : CurrentList.ActiveSurvivorsPerks;
 
-            int neededSlot = (isKiller ? currentList.ActiveKillers : currentList.ActiveSurvivors) * 4;
+            int neededSlot = (isKiller ? CurrentList.ActiveKillers : CurrentList.ActiveSurvivors) * 4;
 
             int countToAdd = neededSlot - perkCount;
 
@@ -765,13 +768,13 @@ public class RouletteManager : MonoBehaviour
 
     void UpdateStreakList(MainRollType rollType)
     {
-        if (result.Character.Type == Characters.CharacterType.Killers)
+        if (Results.Character.Type == Characters.CharacterType.Killers)
         {
             if (Parameters.CharacterStreakMode)
             {
-                foreach (var killer in currentList.EnabledKillers)
+                foreach (var killer in CurrentList.EnabledKillers)
                 {
-                    if (killer.Character == result.Character)
+                    if (killer.Character == Results.Character)
                     {
                         killer.Enabled = false;
                     }
@@ -780,11 +783,11 @@ public class RouletteManager : MonoBehaviour
 
             if (Parameters.PerkStreakMode)
             {
-                foreach (var perk in result.Perks)
+                foreach (var perk in Results.Perks)
                 {
                     bool found = false;
 
-                    foreach (var eperk in currentList.EnabledKillerPerks)
+                    foreach (var eperk in CurrentList.EnabledKillerPerks)
                     {
                         if (!eperk.Enabled) continue;
 
@@ -802,9 +805,9 @@ public class RouletteManager : MonoBehaviour
         {
             if (Parameters.CharacterStreakMode)
             {
-                foreach (var survivor in currentList.EnabledSurvivors)
+                foreach (var survivor in CurrentList.EnabledSurvivors)
                 {
-                    if (survivor.Character == result.Character)
+                    if (survivor.Character == Results.Character)
                     {
                         survivor.Enabled = false;
                     }
@@ -813,11 +816,11 @@ public class RouletteManager : MonoBehaviour
 
             if (Parameters.PerkStreakMode)
             {
-                foreach (var perk in result.Perks)
+                foreach (var perk in Results.Perks)
                 {
                     bool found = false;
 
-                    foreach (var eperk in currentList.EnabledSurvivorPerks)
+                    foreach (var eperk in CurrentList.EnabledSurvivorPerks)
                     {
                         if (!eperk.Enabled) continue;
 
@@ -831,22 +834,22 @@ public class RouletteManager : MonoBehaviour
                 }
             }
         }
-        Debug.Log(currentList.ActiveKillers + " - " + currentList.ActiveKillersPerks + " - " + currentList.ActiveSurvivors + " - " + currentList.ActiveSurvivorsPerks);
+        //Debug.Log(currentList.ActiveKillers + " - " + currentList.ActiveKillersPerks + " - " + currentList.ActiveSurvivors + " - " + currentList.ActiveSurvivorsPerks);
 
         if (Parameters.CharacterStreakMode)
         {
             switch (rollType)
             {
                 case MainRollType.Killer:
-                    if (currentList.ActiveKillers == 0) StreakStopped = true;
+                    if (CurrentList.ActiveKillers == 0) StreakStopped = true;
                     break;
 
                 case MainRollType.Survivor:
-                    if (currentList.ActiveSurvivors == 0) StreakStopped = true;
+                    if (CurrentList.ActiveSurvivors == 0) StreakStopped = true;
                     break;
 
                 case MainRollType.Both:
-                    if (currentList.ActiveKillers == 0 && currentList.ActiveSurvivors == 0) StreakStopped = true;
+                    if (CurrentList.ActiveKillers == 0 && CurrentList.ActiveSurvivors == 0) StreakStopped = true;
                     break;
             }
         }
@@ -856,15 +859,15 @@ public class RouletteManager : MonoBehaviour
             switch (rollType)
             {
                 case MainRollType.Killer:
-                    if (currentList.ActiveKillersPerks == 0) StreakStopped = true;
+                    if (CurrentList.ActiveKillersPerks == 0) StreakStopped = true;
                     break;
 
                 case MainRollType.Survivor:
-                    if (currentList.ActiveSurvivorsPerks == 0) StreakStopped = true;
+                    if (CurrentList.ActiveSurvivorsPerks == 0) StreakStopped = true;
                     break;
 
                 case MainRollType.Both:
-                    if (currentList.ActiveKillersPerks == 0 && currentList.ActiveSurvivorsPerks == 0) StreakStopped = true;
+                    if (CurrentList.ActiveKillersPerks == 0 && CurrentList.ActiveSurvivorsPerks == 0) StreakStopped = true;
                     break;
             }
         }
@@ -882,6 +885,9 @@ public class RouletteManager : MonoBehaviour
     public void SetRollAddon(bool b) { Parameters.RollAddons = b; }
     public void SetRollItem(bool b) { Parameters.RollItems = b; }
     public void SetRarityRoll(bool b) { Parameters.RarirtyRoll = b; }
+
+    public void SetCharacterStreak(bool b) { Parameters.CharacterStreakMode = b; }
+    public void SetPerkStreak(bool b) { Parameters.PerkStreakMode = b; }
 
     public void ResetStreak()
     {

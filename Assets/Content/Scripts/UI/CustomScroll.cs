@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class CustomScroll : MonoBehaviour
 {
+    [SerializeField] RectTransform Viewport;
+
     [SerializeField] float Speed = 5;
 
     [Space(10)]
 
     [SerializeField] float min = 0;
-    [SerializeField] float max = 1;
+    public float Max = 1;
 
     RectTransform tr;
 
     float ratio;
 
     Vector3 mouseStartPos;
+
+    bool mouseClicked = false;
 
     private void OnEnable()
     {
@@ -30,38 +34,47 @@ public class CustomScroll : MonoBehaviour
     {
         if (!tr) return;
 
-        Vector2 tmp = tr.anchorMin;
-
-        float scroll = Input.mouseScrollDelta.y;
-
-
-        if (Input.GetMouseButtonDown(2))
+        if (mouseClicked || RectTransformUtility.RectangleContainsScreenPoint(Viewport, Input.mousePosition))
         {
-            mouseStartPos = Input.mousePosition;
+            Vector2 tmp = tr.anchorMin;
+
+            float scroll = Input.mouseScrollDelta.y;
+
+
+            if (Input.GetMouseButtonDown(2))
+            {
+                mouseStartPos = Input.mousePosition;
+                mouseClicked = true;
+            }
+
+            if (Input.GetMouseButton(2))
+            {
+                Vector2 v = Input.mousePosition - mouseStartPos;
+
+                scroll += v.normalized.y * v.magnitude / 100;
+            }
+
+            tmp.y -= scroll * Time.deltaTime * Speed * ratio;
+
+            tmp.y = Mathf.Clamp(tmp.y, min, Max);
+
+            tr.anchorMin = tmp;
+
+            tmp.x = 1;
+            tmp.y += 1;
+
+            tr.anchorMax = tmp;
         }
 
-        if (Input.GetMouseButton(2))
+        if (Input.GetMouseButtonUp(2))
         {
-            Vector2 v = Input.mousePosition - mouseStartPos;
-
-            scroll += v.normalized.y * v.magnitude / 100;
+            mouseClicked = false;
         }
-
-        tmp.y -= scroll * Time.deltaTime * Speed * ratio;
-
-        tmp.y = Mathf.Clamp(tmp.y, min, max);
-
-        tr.anchorMin = tmp;
-
-        tmp.x = 1;
-        tmp.y += 1;
-
-        tr.anchorMax = tmp;
     }
 
     public void SetMaxValue(float f)
     {
-        max = f;
+        Max = f;
     }
 
 }

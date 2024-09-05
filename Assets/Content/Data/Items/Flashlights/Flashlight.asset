@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Flashlight
   m_EditorClassIdentifier: 
   Type: 0
-  Rarity: 0
+  Rarity: 1
   Icon: {fileID: 21300000, guid: e45598ecee20a1243a10a34d3cc522e3, type: 3}
   Name: Flashlight
   EditName: 0
