@@ -542,7 +542,7 @@ public class RouletteManager : MonoBehaviour
 
                 foreach (var killer in CurrentList.EnabledKillers)
                 {
-                    if (killer.Enabled)
+                    if (killer.Enabled && killer.Character != character)
                     {
                         CharacterToRoll.Add(killer.Character);
                     }
@@ -554,7 +554,7 @@ public class RouletteManager : MonoBehaviour
 
                 foreach (var survivor in CurrentList.EnabledSurvivors)
                 {
-                    if (survivor.Enabled)
+                    if (survivor.Enabled && survivor.Character != character)
                     {
                         CharacterToRoll.Add(survivor.Character);
                     }
@@ -566,6 +566,13 @@ public class RouletteManager : MonoBehaviour
         rdm = UnityEngine.Random.Range(0, CharacterToRoll.Count);
 
         Results.Character = CharacterToRoll[rdm];
+
+        if(character.Type == Characters.CharacterType.Killers)
+        {
+            Results.Addons = new List<Addons>();
+
+            RandomAddons();
+        }
 
         OnRollMade?.Invoke(Results);
     }
