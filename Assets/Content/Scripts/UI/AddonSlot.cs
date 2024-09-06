@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AddonSlot : MonoBehaviour
+public class AddonSlot : Slot
 {
     public Equipables Equipable;
-
-    [Space(10)]
-
-    public Image Icon;
-    public Image BG;
 
     [SerializeField] Sprite[] BgRarity;
 

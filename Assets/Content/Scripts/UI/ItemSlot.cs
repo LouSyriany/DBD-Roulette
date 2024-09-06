@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemSlot : MonoBehaviour
+public class ItemSlot : Slot
 {
     public Items Item;
-
-    [Space(10)]
-
-    public Image Icon;
-    public Image BG;
 
     [SerializeField] Sprite[] BgRarity;
 

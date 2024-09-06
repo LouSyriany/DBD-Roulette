@@ -3,19 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterSlot : MonoBehaviour
+public class CharacterSlot : Slot
 {
     public Characters Character;
-
-    [Space(10)]
-
-    public Image Icon;
-    public Image BG;
-
-    [Space(10)]
-
-    public Color KillerColor = new Color(0.475f, 0.116f, 0.152f);
-    public Color SurvivorColor = new Color(0.384f, 0.464f, 0.518f);
 
     void OnEnable()
     {

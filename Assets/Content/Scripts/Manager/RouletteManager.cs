@@ -387,7 +387,8 @@ public class RouletteManager : MonoBehaviour
 
         OnRollMade?.Invoke(Results);
     }
-    
+   
+
     void SetCurrentList()
     {
         CurrentList = new EnabledData();
@@ -531,6 +532,44 @@ public class RouletteManager : MonoBehaviour
         Results.Character = CharacterToRoll[rdm];
     }
 
+    public void RerollCharacter(Characters character)
+    {
+        List<Characters> CharacterToRoll = new List<Characters>();
+
+        switch (character.Type)
+        {
+            case Characters.CharacterType.Killers:
+
+                foreach (var killer in CurrentList.EnabledKillers)
+                {
+                    if (killer.Enabled)
+                    {
+                        CharacterToRoll.Add(killer.Character);
+                    }
+                }
+
+                break;
+
+            case Characters.CharacterType.Survivors:
+
+                foreach (var survivor in CurrentList.EnabledSurvivors)
+                {
+                    if (survivor.Enabled)
+                    {
+                        CharacterToRoll.Add(survivor.Character);
+                    }
+                }
+
+                break;
+        }
+
+        rdm = UnityEngine.Random.Range(0, CharacterToRoll.Count);
+
+        Results.Character = CharacterToRoll[rdm];
+
+        OnRollMade?.Invoke(Results);
+    }
+
     void RandomPerks()
     {
         List<Perks> perkList = new List<Perks>();
@@ -597,6 +636,53 @@ public class RouletteManager : MonoBehaviour
         }
     }
 
+    public void RerollPerk(Perks perk)
+    {
+        List<Perks> perkList = new List<Perks>();
+
+        if (Results.Character.Type == Characters.CharacterType.Killers)
+        {
+            foreach (var killerPerk in CurrentList.EnabledKillerPerks)
+            {
+                if (killerPerk.Enabled && killerPerk.Perk != perk)
+                {
+                    perkList.Add(killerPerk.Perk);
+                }
+            }
+        }
+        else
+        {
+            foreach (var survivorPerk in CurrentList.EnabledSurvivorPerks)
+            {
+                if (survivorPerk.Enabled && survivorPerk.Perk != perk)
+                {
+                    perkList.Add(survivorPerk.Perk);
+                }
+            }
+        }
+
+        RandomRouletteFn.Shuffle(perkList);
+
+        rdm = UnityEngine.Random.Range(0, perkList.Count);
+
+        for (int i = 0; i < Results.Perks.Count; i++)
+        {
+            if (perk == Results.Perks[i])
+            {
+                while (Results.Perks.Contains(perkList[rdm]))
+                {
+                    rdm = UnityEngine.Random.Range(0, perkList.Count);
+                }
+
+                Results.Perks[i] = perkList[rdm];
+
+                break;
+            }
+        }
+
+        OnRollMade?.Invoke(Results);
+    }
+
     void RandomItem()
     {
         if (Results.Character.Type != Characters.CharacterType.Survivors) return;
@@ -636,6 +722,43 @@ public class RouletteManager : MonoBehaviour
         rdm = UnityEngine.Random.Range(0, itemList.Count);
 
         Results.Item = itemList[rdm];
+    }
+
+    public void RerollItem(Items item)
+    {
+        if (Results.Character.Type != Characters.CharacterType.Survivors) return;
+
+        List<Items> itemList = new List<Items>();
+
+        foreach (var itemlist in CurrentList.EnabledItems)
+        {
+            if (itemlist.Enabled && itemlist.Item != Duds.ItemDud && item != itemlist.Item)
+            {
+                if (Parameters.RarirtyRoll)
+                {
+                    for (int i = 0; i < 5 - (int)itemlist.Item.Rarity; i++)
+                    {
+                        itemList.Add(itemlist.Item);
+                    }
+                }
+                else
+                {
+                    itemList.Add(itemlist.Item);
+                }
+            }
+        }
+
+        RandomRouletteFn.Shuffle(itemList);
+
+        rdm = UnityEngine.Random.Range(0, itemList.Count);
+
+        Results.Item = itemList[rdm];
+
+        Results.Addons = new List<Addons>();
+
+        RandomAddons();
+
+        OnRollMade?.Invoke(Results);
     }
 
     void RandomAddons()
@@ -736,6 +859,88 @@ public class RouletteManager : MonoBehaviour
                 addonList.RemoveAt(rdm);
             }
         }
+    }
+
+    public void RerollAddon(Addons addon)
+    {
+        List<Addons> addonList = new List<Addons>();
+
+        if (Results.Character != null && Results.Character.Type == Characters.CharacterType.Killers)
+        {
+            foreach (var killer in CurrentList.EnabledKillers)
+            {
+                if (killer.Character == Results.Character)
+                {
+                    foreach (var kaddon in killer.EnabledKillerAddons)
+                    {
+                        if (kaddon.Enabled && kaddon.Addon != Duds.AddonDud && kaddon.Addon != addon)
+                        {
+                            if (Parameters.RarirtyRoll)
+                            {
+                                for (int i = 0; i < 5 - (int)kaddon.Addon.RarityType + 1; i++)
+                                {
+                                    addonList.Add(kaddon.Addon);
+                                }
+                            }
+                            else
+                            {
+                                addonList.Add(kaddon.Addon);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (Results.Item != null && Results.Item != Duds.ItemDud)
+            {
+                foreach (var item in CurrentList.EnabledItems)
+                {
+                    if (item.Item == Results.Item)
+                    {
+                        foreach (var saddon in item.EnabledItemAddons)
+                        {
+                            if (saddon.Enabled && saddon.Addon != Duds.AddonDud && saddon.Addon != addon)
+                            {
+                                if (Parameters.RarirtyRoll)
+                                {
+                                    for (int i = 0; i < 5 - (int)saddon.Addon.RarityType + 1; i++)
+                                    {
+                                        addonList.Add(saddon.Addon);
+                                    }
+                                }
+                                else
+                                {
+                                    addonList.Add(saddon.Addon);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        RandomRouletteFn.Shuffle(addonList);
+
+        rdm = UnityEngine.Random.Range(0, addonList.Count);
+
+        for (int i = 0; i < Results.Addons.Count; i++)
+        {
+            if (addon == Results.Addons[i])
+            {
+                while (Results.Addons.Contains(addonList[rdm]))
+                {
+                    rdm = UnityEngine.Random.Range(0, addonList.Count);
+                }
+
+                Results.Addons[i] = addonList[rdm];
+
+                break;
+            }
+        }
+
+        OnRollMade?.Invoke(Results);
     }
 
     void SetupStreak()

@@ -149,4 +149,34 @@ public class RouletteResultVisual : MonoBehaviour
             item.gameObject.SetActive(false);
         }
     }
+
+    public void RerollElement(Slot slot)
+    {
+        if (slot.GetType() == typeof(AddonSlot))
+        {
+            AddonSlot addonSlot = slot as AddonSlot;
+
+            if(addonSlot.Equipable.GetType() == typeof(Addons))
+            {
+                RouletteManager.Instance.RerollAddon(addonSlot.Equipable as Addons);
+            }
+
+            if(addonSlot.Equipable.GetType() == typeof(Perks))
+            {
+                RouletteManager.Instance.RerollPerk(addonSlot.Equipable as Perks);
+            }
+        }
+
+        if (slot.GetType() == typeof(ItemSlot))
+        {
+            ItemSlot itemSlot = slot as ItemSlot;
+            RouletteManager.Instance.RerollItem(itemSlot.Item);
+        }
+
+        if (slot.GetType() == typeof(CharacterSlot))
+        {
+            CharacterSlot characterSlot = slot as CharacterSlot;
+            RouletteManager.Instance.RerollCharacter(characterSlot.Character);
+        }
+    }
 }
