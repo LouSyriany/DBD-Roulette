@@ -16,11 +16,11 @@ public class CharacterUnlockedItem : MonoBehaviour
         [HideInInspector] public float Lerp = 1;
     }
 
-    [SerializeField] Characters Character;
+    public Characters Character;
 
     [Space(5)]
 
-    [SerializeField] CharacterSlot CharacterSlot;
+    public CharacterSlot CharacterSlot;
 
     [Space(5)]
 
@@ -248,6 +248,19 @@ public class CharacterUnlockedItem : MonoBehaviour
         else
         {
             if (AddonsRoot) AddonsRoot.SetActive(false);
+        }
+    }
+
+    public void CheckState()
+    {
+        foreach (var perk in Perks)
+        {
+            pendingChange.Add(perk);
+        }
+
+        foreach (var addon in Addons)
+        {
+            pendingChange.Add(addon);
         }
     }
 

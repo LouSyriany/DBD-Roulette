@@ -1,6 +1,8 @@
+using System;
 using System.Text;
 using UnityEngine;
 
+[Serializable]
 public class Equipables : ScriptableObject
 {
     public Sprite Icon;

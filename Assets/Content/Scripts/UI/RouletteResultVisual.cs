@@ -45,7 +45,7 @@ public class RouletteResultVisual : MonoBehaviour
 
     public void ShowResult(RouletteManager.Result result)
     {
-        if (Character)
+        if (RouletteManager.Instance.Parameters.RollCharacters && Character)
         {
             Character.gameObject.SetActive(true);
             Character.Character = result.Character;
@@ -58,7 +58,7 @@ public class RouletteResultVisual : MonoBehaviour
 
         if (Item)
         {
-            if (result.Character.Type == Characters.CharacterType.Survivors && result.Item != null && result.Item != RouletteManager.Instance.Duds.ItemDud)
+            if (RouletteManager.Instance.Parameters.RollItems && result.Character.Type == Characters.CharacterType.Survivors && result.Item != null && result.Item != RouletteManager.Instance.Duds.ItemDud)
             {
                 Item.gameObject.SetActive(true);
 
@@ -78,18 +78,21 @@ public class RouletteResultVisual : MonoBehaviour
                 PerksSlot[i].gameObject.SetActive(false);
             }
 
-            foreach (Perks perk in result.Perks)
+            if (RouletteManager.Instance.Parameters.RollPerks)
             {
-                if (perk != RouletteManager.Instance.Duds.PerkDud)
+                foreach (Perks perk in result.Perks)
                 {
-                    for (int i = 0; i < PerksSlot.Count; i++)
+                    if (perk != RouletteManager.Instance.Duds.PerkDud)
                     {
-                        if (!PerksSlot[i].gameObject.activeSelf)
+                        for (int i = 0; i < PerksSlot.Count; i++)
                         {
-                            PerksSlot[i].gameObject.SetActive(true);
-                            PerksSlot[i].Equipable = perk;
-                            PerksSlot[i].Setup();
-                            break;
+                            if (!PerksSlot[i].gameObject.activeSelf)
+                            {
+                                PerksSlot[i].gameObject.SetActive(true);
+                                PerksSlot[i].Equipable = perk;
+                                PerksSlot[i].Setup();
+                                break;
+                            }
                         }
                     }
                 }
@@ -103,18 +106,21 @@ public class RouletteResultVisual : MonoBehaviour
                 AddonsSlot[i].gameObject.SetActive(false);
             }
 
-            foreach (Addons addon in result.Addons)
+            if (RouletteManager.Instance.Parameters.RollAddons)
             {
-                if (addon != RouletteManager.Instance.Duds.AddonDud)
+                foreach (Addons addon in result.Addons)
                 {
-                    for (int i = 0; i < AddonsSlot.Count; i++)
+                    if (addon != RouletteManager.Instance.Duds.AddonDud)
                     {
-                        if (!AddonsSlot[i].gameObject.activeSelf)
+                        for (int i = 0; i < AddonsSlot.Count; i++)
                         {
-                            AddonsSlot[i].gameObject.SetActive(true);
-                            AddonsSlot[i].Equipable = addon;
-                            AddonsSlot[i].Setup();
-                            break;
+                            if (!AddonsSlot[i].gameObject.activeSelf)
+                            {
+                                AddonsSlot[i].gameObject.SetActive(true);
+                                AddonsSlot[i].Equipable = addon;
+                                AddonsSlot[i].Setup();
+                                break;
+                            }
                         }
                     }
                 }

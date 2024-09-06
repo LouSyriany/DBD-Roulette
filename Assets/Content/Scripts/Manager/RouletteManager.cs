@@ -201,6 +201,7 @@ public class RouletteManager : MonoBehaviour
 
         [Space(5)]
 
+        public bool RollCharacters = true;
         public bool RollAddons = true;
         public bool RollItems = true;
         public bool RollPerks = true;
@@ -881,6 +882,7 @@ public class RouletteManager : MonoBehaviour
     public void SetDudAddonCount(int i) { Parameters.DudAddonCount = i; }
     public void SetDudItemCount(int i) { Parameters.DudItemCount = i; }
 
+    public void SetRollCharacters(bool b) { Parameters.RollCharacters = b; }
     public void SetRollPerk(bool b) { Parameters.RollPerks = b; }
     public void SetRollAddon(bool b) { Parameters.RollAddons = b; }
     public void SetRollItem(bool b) { Parameters.RollItems = b; }

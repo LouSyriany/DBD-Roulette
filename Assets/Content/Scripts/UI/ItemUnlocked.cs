@@ -147,4 +147,18 @@ public class ItemUnlocked : MonoBehaviour
             }
         }
     }
+
+
+    public void CheckState()
+    {
+        foreach (var item in Items)
+        {
+            pendingChangeItem.Add(item);
+        }
+
+        foreach (var item in Addons)
+        {
+            pendingChange.Add(item);
+        }
+    }
 }

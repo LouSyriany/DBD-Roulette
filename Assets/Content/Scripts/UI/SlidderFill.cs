@@ -10,7 +10,7 @@ public class SlidderFill : MonoBehaviour
     [SerializeField] int MaxValue = 100;
 
 
-    [SerializeField] int currentValue = 50;
+    public int currentValue = 50;
 
     [SerializeField] string Suffixe = "";
 
@@ -41,6 +41,15 @@ public class SlidderFill : MonoBehaviour
         }
     }
 
+    void Setup()
+    {
+        float sliderValue = currentValue / (float)MaxValue;
+
+        if (Fill) Fill.rectTransform.anchorMax = new Vector2(sliderValue, 1);
+
+        if (Text) Text.text = currentValue.ToString() + Suffixe;
+    }
+
     public void ChangeValue(bool up)
     {
         if (up) 
@@ -59,12 +68,12 @@ public class SlidderFill : MonoBehaviour
         OnValueChange?.Invoke(currentValue);
     }
 
-    void Setup()
+    public void SetValue(int i)
     {
-        float sliderValue = currentValue / (float)MaxValue;
+        currentValue = i;
 
-        if (Fill) Fill.rectTransform.anchorMax = new Vector2(sliderValue, 1);
+        Setup();
 
-        if (Text) Text.text = currentValue.ToString() + Suffixe;
+        OnValueChange?.Invoke(currentValue);
     }
 }
