@@ -253,14 +253,73 @@ public class CharacterUnlockedItem : MonoBehaviour
 
     public void CheckState()
     {
+        if (Character.Type == Characters.CharacterType.Killers)
+        {
+            foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledKillers)
+            {
+                if (item.Character == Character)
+                {
+                    item.Enabled = CharacterState;
+                }
+            }
+        }
+        else
+        {
+            foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledSurvivors)
+            {
+                if (item.Character == Character)
+                {
+                    item.Enabled = CharacterState;
+                }
+            }
+        }
+
         foreach (var perk in Perks)
         {
             pendingChange.Add(perk);
+
+            if (Character.Type == Characters.CharacterType.Killers)
+            {
+                foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledKillerPerks)
+                {
+                    if (item.Perk == perk.AddonSlot.Equipable as Perks)
+                    {
+                        item.Enabled = perk.State;
+                    }
+                }
+            }
+            else
+            {
+                foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledSurvivorPerks)
+                {
+                    if (item.Perk == perk.AddonSlot.Equipable as Perks)
+                    {
+                        item.Enabled = perk.State;
+                    }
+                }
+            }
         }
 
         foreach (var addon in Addons)
         {
             pendingChange.Add(addon);
+
+            if (Character.Type == Characters.CharacterType.Killers)
+            {
+                foreach (var killer in RouletteManager.Instance.EnabledDatas.EnabledKillers)
+                {
+                    if (killer.Character == Character)
+                    {
+                        foreach (var kaddon in killer.EnabledKillerAddons)
+                        {
+                            if (kaddon.Addon == addon.AddonSlot.Equipable as Addons)
+                            {
+                                kaddon.Enabled = addon.State;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 

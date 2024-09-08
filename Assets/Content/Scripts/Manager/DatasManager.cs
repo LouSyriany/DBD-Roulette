@@ -8,12 +8,13 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+[DefaultExecutionOrder(1)]
 public class DatasManager : MonoBehaviour
 {
     [Serializable]
     class SavedEquipable
     {
-        public Equipables Equipable;
+        public string Equipable;
 
         public bool State = true;
     }
@@ -21,14 +22,14 @@ public class DatasManager : MonoBehaviour
     [Serializable]
     class ItemSaved
     {
-        public Items Item;
+        public string Item;
         public bool ItemState;
     }
 
     [Serializable]
     class SavedCharacterUnlockedData
     {
-        public Characters Character;
+        public string Character;
         public bool CharacterState = true;
         public List<SavedEquipable> Perks = new List<SavedEquipable>();
         public List<SavedEquipable> Addons = new List<SavedEquipable>();
@@ -110,7 +111,7 @@ public class DatasManager : MonoBehaviour
         {
             SavedCharacterUnlockedData data = new SavedCharacterUnlockedData();
 
-            data.Character = CharacterUnlockedItems[i].Character;
+            data.Character = CharacterUnlockedItems[i].Character.name;
             data.CharacterState = CharacterUnlockedItems[i].CharacterState;
 
             foreach (var perk in CharacterUnlockedItems[i].Perks)
@@ -118,7 +119,7 @@ public class DatasManager : MonoBehaviour
                 if (perk.AddonSlot == null) continue;
 
                 SavedEquipable nperk = new SavedEquipable();
-                nperk.Equipable = perk.AddonSlot.Equipable;
+                nperk.Equipable = perk.AddonSlot.Equipable.name;
                 nperk.State = perk.State;
                 data.Perks.Add(nperk);
             }
@@ -128,7 +129,7 @@ public class DatasManager : MonoBehaviour
                 if (addon.AddonSlot == null) continue;
 
                 SavedEquipable naddon = new SavedEquipable();
-                naddon.Equipable = addon.AddonSlot.Equipable;
+                naddon.Equipable = addon.AddonSlot.Equipable.name;
                 naddon.State = addon.State;
                 data.Addons.Add(naddon);
             }
@@ -152,7 +153,7 @@ public class DatasManager : MonoBehaviour
 
                 ItemSaved nitem = new ItemSaved();
 
-                nitem.Item = item.ItemSlot.Item;
+                nitem.Item = item.ItemSlot.Item.name;
                 nitem.ItemState = item.State;
 
                 data.ItemSaved.Add(nitem);
@@ -163,7 +164,7 @@ public class DatasManager : MonoBehaviour
                 if (addon.AddonSlot == null) continue;
                 SavedEquipable naddon = new SavedEquipable();
 
-                naddon.Equipable = addon.AddonSlot.Equipable;
+                naddon.Equipable = addon.AddonSlot.Equipable.name;
                 naddon.State = addon.State;
 
                 data.Addons.Add(naddon);
@@ -240,7 +241,7 @@ public class DatasManager : MonoBehaviour
         {
             foreach (var character in CharacterUnlockedItems)
             {
-                if (data.Character == character.Character)
+                if (data.Character == character.Character.name)
                 {
                     character.CharacterState = data.CharacterState;
 
@@ -248,7 +249,7 @@ public class DatasManager : MonoBehaviour
                     {
                         foreach (var item in data.Perks)
                         {
-                            if (item.Equipable == perk.AddonSlot.Equipable)
+                            if (item.Equipable == perk.AddonSlot.Equipable.name)
                             {
                                 perk.State = item.State;
                             }
@@ -259,7 +260,7 @@ public class DatasManager : MonoBehaviour
                     {
                         foreach (var item in data.Addons)
                         {
-                            if (item.Equipable == addon.AddonSlot.Equipable)
+                            if (item.Equipable == addon.AddonSlot.Equipable.name)
                             {
                                 addon.State = item.State;
                             }
@@ -303,7 +304,7 @@ public class DatasManager : MonoBehaviour
                 {
                     foreach (var item in itemUnlocked.Items)
                     {
-                        if (itemSaved.Item == item.ItemSlot.Item)
+                        if (itemSaved.Item == item.ItemSlot.Item.name)
                         {
                             item.State = itemSaved.ItemState;
                         }
@@ -314,7 +315,7 @@ public class DatasManager : MonoBehaviour
                 {
                     foreach (var addon in itemUnlocked.Addons)
                     {
-                        if (addonSaved.Equipable == addon.AddonSlot.Equipable)
+                        if (addonSaved.Equipable == addon.AddonSlot.Equipable.name)
                         {
                             addon.State = addonSaved.State;
                         }
@@ -379,7 +380,7 @@ public class DatasManager : MonoBehaviour
 
     string LoadData()
     {
-        if(File.Exists(Application.persistentDataPath + fileName))
+        if (File.Exists(Application.persistentDataPath + fileName))
         {
             return File.ReadAllText(Application.persistentDataPath + fileName);
         }

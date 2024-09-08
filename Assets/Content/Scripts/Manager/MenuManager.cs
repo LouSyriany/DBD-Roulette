@@ -7,6 +7,14 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    class RectEnabled
+    {
+        public Characters Character;
+        public Equipables Equipable;
+        public RectTransform Tr = new RectTransform();
+        public bool State = true;
+    }
+
     [SerializeField] RectTransform NormalMode;
     [SerializeField] RouletteResultVisual NormalModeVisual;
 
@@ -22,7 +30,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject CharacterSlotGo;
 
     [SerializeField] GameObject EquipableSlotGo;
-    
+
     [Space(10)]
 
     [SerializeField] GameObject StreakEntry;
@@ -38,6 +46,9 @@ public class MenuManager : MonoBehaviour
     List<CharacterSlot> characters;
 
     List<AddonSlot> equipables;
+
+    List<RectEnabled> characterTrs = new List<RectEnabled>();
+    List<RectEnabled> equipableTrs = new List<RectEnabled>();
 
     Color offColor = new Color(0.59f, 0.06f, 0.06f, 0.42f);
 
@@ -60,9 +71,9 @@ public class MenuManager : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
 
-        List<RectTransform> characterTrs = new List<RectTransform>();
+        //List<RectTransform> characterTrs = new List<RectTransform>();
 
-        List<RectTransform> equipableTrs = new List<RectTransform>();
+        //List<RectTransform> equipableTrs = new List<RectTransform>();
 
         List<RouletteManager.EnabledCharacter> enabledCharacters = new List<RouletteManager.EnabledCharacter>();
 
@@ -102,7 +113,15 @@ public class MenuManager : MonoBehaviour
 
                 nchara.Setup();
 
-                characterTrs.Add(nCharago.GetComponent<RectTransform>());
+                RectEnabled newRect = new RectEnabled();
+
+                newRect.Character = nchara.Character;
+
+                newRect.Tr = nchara.GetComponent<RectTransform>();
+
+                newRect.State = character.Enabled;
+
+                characterTrs.Add(newRect);
 
                 characters.Add(nchara);
             }
@@ -120,12 +139,24 @@ public class MenuManager : MonoBehaviour
 
                 nperk.Setup();
 
-                equipableTrs.Add(nperk.GetComponent<RectTransform>());
+                RectEnabled newRect = new RectEnabled();
+
+                newRect.Equipable = nperk.Equipable;
+
+                newRect.Tr = nperk.GetComponent<RectTransform>();
+
+                newRect.State = perk.Enabled;
+
+                equipableTrs.Add(newRect);
 
                 equipables.Add(nperk);
             }
         }
 
+        /*
+        SetRect(characterTrs, 10f, RemainerCharactersScroll);
+
+        SetRect(equipableTrs, 10f, RemainerEquipableScroll);
         int line = 1;
         int column = 0;
 
@@ -149,7 +180,6 @@ public class MenuManager : MonoBehaviour
                 }
             }
         }
-
         line = 1;
         column = 0;
         divider = 10f;
@@ -172,28 +202,111 @@ public class MenuManager : MonoBehaviour
                 }
             }
         }
+        */
 
-        UpdateRemainers(rollType);
+        UpdateRemainers();
     }
 
-    void UpdateRemainers(RouletteManager.MainRollType rollType)
+    void UpdateRemainers()
     {
         foreach (CharacterSlot character in characters)
         {
             if (character.Character == RouletteManager.Instance.Results.Character)
             {
                 character.Icon.color = offColor;
+
+                foreach (var item in characterTrs)
+                {
+                    if (item.Character == character.Character)
+                    {
+                        item.State = false;
+                    }
+                }
             }
         }
+
+        List<RectEnabled> tmpTrue = new List<RectEnabled>();
+        List<RectEnabled> tmpFalse = new List<RectEnabled>();
+
+        foreach (var item in characterTrs)
+        {
+            if (item.State)
+            {
+                tmpTrue.Add(item);
+            }
+            else
+            {
+                tmpFalse.Add(item);
+            }
+        }
+
+        characterTrs = new List<RectEnabled>();
+        characterTrs.AddRange(tmpTrue);
+        characterTrs.AddRange(tmpFalse);
+
+        SetRect(characterTrs, 10f, RemainerCharactersScroll);
 
         foreach (AddonSlot equipable in equipables)
         {
             foreach (Perks perk in RouletteManager.Instance.Results.Perks)
             {
-                if(equipable.Equipable as Perks == perk)
+                if (equipable.Equipable as Perks == perk)
                 {
                     equipable.Icon.color = offColor;
-                    break;
+
+                    foreach (var item in equipableTrs)
+                    {
+                        if (item.Equipable == equipable.Equipable)
+                        {
+                            item.State = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        tmpTrue = new List<RectEnabled>();
+        tmpFalse = new List<RectEnabled>();
+
+        foreach (var item in equipableTrs)
+        {
+            if (item.State)
+            {
+                tmpTrue.Add(item);
+            }
+            else
+            {
+                tmpFalse.Add(item);
+            }
+        }
+
+        equipableTrs = new List<RectEnabled>();
+        equipableTrs.AddRange(tmpTrue);
+        equipableTrs.AddRange(tmpFalse);
+
+        SetRect(equipableTrs, 10f, RemainerEquipableScroll);
+    }
+
+    void SetRect(List<RectEnabled> trs, float divider, CustomScroll scroll)
+    {
+        int line = 1;
+        int column = 0;
+
+        for (int i = 0; i < trs.Count; i++)
+        {
+            trs[i].Tr.anchorMin = new Vector2(column / divider, 1 - (1 / divider) * line);
+            trs[i].Tr.anchorMax = new Vector2((column + 1.0f) / divider, 1 - (1 / divider) * line + (1 / divider));
+
+            column++;
+
+            if (column > divider - 1)
+            {
+                column = 0;
+                line++;
+
+                if (line > divider + 1)
+                {
+                    scroll.Max += 1 / divider;
                 }
             }
         }
@@ -219,7 +332,7 @@ public class MenuManager : MonoBehaviour
         {
             if (streakEntries.Count > 3)
             {
-                StreakScroll.Max += (1/3f);
+                StreakScroll.Max += (1 / 3f);
             }
         }
     }
@@ -237,7 +350,7 @@ public class MenuManager : MonoBehaviour
                     RouletteManager.Instance.Roll(rollType);
 
                     AddStreakEntry();
-                    UpdateRemainers(rollType);
+                    UpdateRemainers();
                 }
                 else
                 {
@@ -287,7 +400,7 @@ public class MenuManager : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        
+
         foreach (Transform child in RemainerEquipableScroll.transform)
         {
             GameObject.Destroy(child.gameObject);
@@ -303,7 +416,7 @@ public class MenuManager : MonoBehaviour
         StreakModeVisual.ResetVisual();
         NormalModeVisual.ResetVisual();
 
-        if (RouletteManager.Instance.Parameters.CharacterStreakMode  || RouletteManager.Instance.Parameters.PerkStreakMode)
+        if (RouletteManager.Instance.Parameters.CharacterStreakMode || RouletteManager.Instance.Parameters.PerkStreakMode)
         {
             NormalMode.gameObject.SetActive(false);
             StreakMode.gameObject.SetActive(true);
