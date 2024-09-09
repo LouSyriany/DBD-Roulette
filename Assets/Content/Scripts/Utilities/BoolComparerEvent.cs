@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BoolEvent : MonoBehaviour
+public class BoolComparerEvent : MonoBehaviour
 {
+    [SerializeField, ReadOnly] bool BoolToCompare = false;
+
     [SerializeField] UnityEvent<bool> OnBoolReceiveTrue;
     [SerializeField] UnityEvent<bool> OnBoolReceiveFalse;
 
     public void CompareBool(bool b)
     {
-        if (b)
+        if (b == BoolToCompare)
         {
             OnBoolReceiveTrue?.Invoke(b);
         }
@@ -18,5 +20,10 @@ public class BoolEvent : MonoBehaviour
         {
             OnBoolReceiveFalse?.Invoke(b);
         }
+    }
+
+    public void SetBool(bool b)
+    {
+        BoolToCompare = b;
     }
 }

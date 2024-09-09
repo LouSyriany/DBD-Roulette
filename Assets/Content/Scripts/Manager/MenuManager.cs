@@ -54,13 +54,6 @@ public class MenuManager : MonoBehaviour
 
     void SetupRemainers(RouletteManager.MainRollType rollType)
     {
-        characters = new List<CharacterSlot>();
-
-        equipables = new List<AddonSlot>();
-
-        RemainerCharactersScroll.Max = 0;
-        RemainerEquipableScroll.Max = 0;
-
         foreach (Transform child in RemainerCharactersScroll.transform)
         {
             GameObject.Destroy(child.gameObject);
@@ -71,33 +64,25 @@ public class MenuManager : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
 
-        //List<RectTransform> characterTrs = new List<RectTransform>();
+        characters = new List<CharacterSlot>();
 
-        //List<RectTransform> equipableTrs = new List<RectTransform>();
+        RemainerCharactersScroll.Max = 0;
 
         List<RouletteManager.EnabledCharacter> enabledCharacters = new List<RouletteManager.EnabledCharacter>();
-
-        List<RouletteManager.EnabledPerk> enabledAddons = new List<RouletteManager.EnabledPerk>();
 
         switch (rollType)
         {
             case RouletteManager.MainRollType.Killer:
                 enabledCharacters.AddRange(RouletteManager.Instance.CurrentList.EnabledKillers);
-                enabledAddons.AddRange(RouletteManager.Instance.CurrentList.EnabledKillerPerks);
                 break;
 
             case RouletteManager.MainRollType.Survivor:
                 enabledCharacters.AddRange(RouletteManager.Instance.CurrentList.EnabledSurvivors);
-                enabledAddons.AddRange(RouletteManager.Instance.CurrentList.EnabledSurvivorPerks);
                 break;
 
             case RouletteManager.MainRollType.Both:
                 enabledCharacters.AddRange(RouletteManager.Instance.CurrentList.EnabledKillers);
                 enabledCharacters.AddRange(RouletteManager.Instance.CurrentList.EnabledSurvivors);
-
-                enabledAddons.AddRange(RouletteManager.Instance.CurrentList.EnabledKillerPerks);
-                enabledAddons.AddRange(RouletteManager.Instance.CurrentList.EnabledSurvivorPerks);
-
                 break;
         }
 
@@ -127,6 +112,29 @@ public class MenuManager : MonoBehaviour
             }
         }
 
+        equipables = new List<AddonSlot>();
+
+        RemainerEquipableScroll.Max = 0;
+
+        List<RouletteManager.EnabledPerk> enabledAddons = new List<RouletteManager.EnabledPerk>();
+
+        switch (rollType)
+        {
+            case RouletteManager.MainRollType.Killer:
+                enabledAddons.AddRange(RouletteManager.Instance.CurrentList.EnabledKillerPerks);
+                break;
+
+            case RouletteManager.MainRollType.Survivor:
+                enabledAddons.AddRange(RouletteManager.Instance.CurrentList.EnabledSurvivorPerks);
+                break;
+
+            case RouletteManager.MainRollType.Both:
+                enabledAddons.AddRange(RouletteManager.Instance.CurrentList.EnabledKillerPerks);
+                enabledAddons.AddRange(RouletteManager.Instance.CurrentList.EnabledSurvivorPerks);
+
+                break;
+        }
+
         foreach (RouletteManager.EnabledPerk perk in enabledAddons)
         {
             if ((RouletteManager.Instance.Results.Perks.Contains(perk.Perk) || perk.Enabled) && perk.Perk != RouletteManager.Instance.Duds.PerkDud)
@@ -153,57 +161,6 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        /*
-        SetRect(characterTrs, 10f, RemainerCharactersScroll);
-
-        SetRect(equipableTrs, 10f, RemainerEquipableScroll);
-        int line = 1;
-        int column = 0;
-
-        float divider = 10f;
-
-        for (int i = 0; i < characterTrs.Count; i++)
-        {
-            characterTrs[i].anchorMin = new Vector2(column / divider, 1 - (1 / divider) * line);
-            characterTrs[i].anchorMax = new Vector2((column + 1.0f) / divider, 1 - (1 / divider) * line + .1f);
-
-            column++;
-
-            if (column > divider - 1)
-            {
-                column = 0;
-                line++;
-
-                if (line > divider + 1)
-                {
-                    RemainerEquipableScroll.Max += 1 / divider;
-                }
-            }
-        }
-        line = 1;
-        column = 0;
-        divider = 10f;
-
-        for (int i = 0; i < equipableTrs.Count; i++)
-        {
-            equipableTrs[i].anchorMin = new Vector2(column / divider, 1 - (1 / divider) * line);
-            equipableTrs[i].anchorMax = new Vector2((column + 1.0f) / divider, 1 - (1 / divider) * line + (1 / divider));
-
-            column++;
-
-            if (column > divider - 1)
-            {
-                column = 0;
-                line++;
-
-                if (line > divider + 1)
-                {
-                    RemainerEquipableScroll.Max += 1 / divider;
-                }
-            }
-        }
-        */
-
         UpdateRemainers();
     }
 
@@ -211,18 +168,21 @@ public class MenuManager : MonoBehaviour
     {
         foreach (CharacterSlot character in characters)
         {
-            if (character.Character == RouletteManager.Instance.Results.Character)
+            if (RouletteManager.Instance.Parameters.CharacterStreakMode)
             {
-                character.Icon.color = offColor;
-
-                foreach (var item in characterTrs)
+                if (character.Character == RouletteManager.Instance.Results.Character)
                 {
-                    if (item.Character == character.Character)
+                    character.Icon.color = offColor;
+
+                    foreach (var item in characterTrs)
                     {
-                        item.State = false;
+                        if (item.Character == character.Character)
+                        {
+                            item.State = false;
+                        }
                     }
                 }
-            }
+            }     
         }
 
         List<RectEnabled> tmpTrue = new List<RectEnabled>();
@@ -248,17 +208,20 @@ public class MenuManager : MonoBehaviour
 
         foreach (AddonSlot equipable in equipables)
         {
-            foreach (Perks perk in RouletteManager.Instance.Results.Perks)
+            if (RouletteManager.Instance.Parameters.PerkStreakMode)
             {
-                if (equipable.Equipable as Perks == perk)
+                foreach (Perks perk in RouletteManager.Instance.Results.Perks)
                 {
-                    equipable.Icon.color = offColor;
-
-                    foreach (var item in equipableTrs)
+                    if (equipable.Equipable as Perks == perk)
                     {
-                        if (item.Equipable == equipable.Equipable)
+                        equipable.Icon.color = offColor;
+
+                        foreach (var item in equipableTrs)
                         {
-                            item.State = false;
+                            if (item.Equipable == equipable.Equipable)
+                            {
+                                item.State = false;
+                            }
                         }
                     }
                 }
@@ -285,6 +248,7 @@ public class MenuManager : MonoBehaviour
         equipableTrs.AddRange(tmpFalse);
 
         SetRect(equipableTrs, 10f, RemainerEquipableScroll);
+
     }
 
     void SetRect(List<RectEnabled> trs, float divider, CustomScroll scroll)
