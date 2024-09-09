@@ -43,9 +43,9 @@ public class MenuManager : MonoBehaviour
 
     List<RectTransform> streakEntries = new List<RectTransform>();
 
-    List<CharacterSlot> characters;
+    List<CharacterSlot> characters = new List<CharacterSlot>();
 
-    List<AddonSlot> equipables;
+    List<AddonSlot> equipables = new List<AddonSlot>();
 
     List<RectEnabled> characterTrs = new List<RectEnabled>();
     List<RectEnabled> equipableTrs = new List<RectEnabled>();
@@ -407,6 +407,11 @@ public class MenuManager : MonoBehaviour
         }
 
         streakEntries = new List<RectTransform>();
+        characterTrs = new List<RectEnabled>();
+        equipableTrs = new List<RectEnabled>();
+
+        characters = new List<CharacterSlot>();
+        equipables = new List<AddonSlot>();
 
         StreakModeVisual.ResetVisual();
     }
