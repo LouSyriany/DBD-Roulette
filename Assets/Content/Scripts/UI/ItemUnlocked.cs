@@ -160,5 +160,27 @@ public class ItemUnlocked : MonoBehaviour
         {
             pendingChange.Add(item);
         }
+
+        foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledItems)
+        {
+            foreach (var nitem in Items)
+            {
+                if (nitem.ItemSlot.Item == item.Item)
+                {
+                    item.Enabled = nitem.State;
+                }
+            }
+
+            foreach (var addon in item.EnabledItemAddons)
+            {
+                foreach (var naddon in Addons)
+                {
+                    if (naddon.AddonSlot.Equipable as Addons == addon.Addon)
+                    {
+                        addon.Enabled = naddon.State;
+                    }
+                }
+            }
+        }
     }
 }
