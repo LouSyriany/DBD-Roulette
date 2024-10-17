@@ -15,6 +15,8 @@ public class RouletteResultVisual : MonoBehaviour
 
     bool hasSubscribe = false;
 
+    bool sendOnce = false;
+
     void OnEnable()
     {
         if (RouletteManager.Instance)
@@ -130,6 +132,34 @@ public class RouletteResultVisual : MonoBehaviour
         if (IsOneShot)
         {
             enabled = false;
+        }
+
+        if (IsOneShot && !sendOnce && RouletteManager.Instance.StreakOnGoing)
+        {
+            sendOnce = true;
+
+            MenuManager.StreakResult streakResult = new MenuManager.StreakResult();
+
+            streakResult.Character = Character.Character;
+            streakResult.Item = Item.Item;
+
+            foreach (var perk in PerksSlot)
+            {
+                if (perk.Equipable != null)
+                {
+                    streakResult.Perks.Add(perk.Equipable);
+                }
+            }
+
+            foreach (var addon in AddonsSlot)
+            {
+                if (addon.Equipable != null)
+                {
+                    streakResult.Addons.Add(addon.Equipable);
+                }
+            }
+
+            MenuManager.Instance.Streak.Add(streakResult);
         }
     }
 

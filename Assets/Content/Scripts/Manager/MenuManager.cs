@@ -7,6 +7,19 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager Instance { get; private set; }
+
+    [Serializable]
+    public class StreakResult
+    {
+        public Characters Character;
+
+        public Items Item;
+
+        public List<Equipables> Perks = new List<Equipables>();
+        public List<Equipables> Addons = new List<Equipables>();
+    }
+
     class RectEnabled
     {
         public Characters Character;
@@ -14,6 +27,8 @@ public class MenuManager : MonoBehaviour
         public RectTransform Tr = new RectTransform();
         public bool State = true;
     }
+
+    public List<StreakResult> Streak = new List<StreakResult>();
 
     [SerializeField] RectTransform NormalMode;
     [SerializeField] RouletteResultVisual NormalModeVisual;
@@ -51,6 +66,18 @@ public class MenuManager : MonoBehaviour
     List<RectEnabled> equipableTrs = new List<RectEnabled>();
 
     Color offColor = new Color(0.59f, 0.06f, 0.06f, 0.42f);
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void SetupRemainers(RouletteManager.MainRollType rollType)
     {
@@ -369,6 +396,8 @@ public class MenuManager : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
+
+        Streak = new List<StreakResult>();
 
         streakEntries = new List<RectTransform>();
         characterTrs = new List<RectEnabled>();

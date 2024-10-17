@@ -12,6 +12,15 @@ using UnityEditor;
 public class DatasManager : MonoBehaviour
 {
     [Serializable]
+    class SavedStreak
+    {
+        public string Character;
+        public ItemSaved Item;
+        public SavedEquipable[] Addons = new SavedEquipable[2];
+        public SavedEquipable[] Perks = new SavedEquipable[4];
+    }
+
+    [Serializable]
     class SavedEquipable
     {
         public string Equipable;
@@ -66,6 +75,8 @@ public class DatasManager : MonoBehaviour
     [SerializeField] List<CharacterUnlockedItem> CharacterUnlockedItems = new List<CharacterUnlockedItem>();
 
     [SerializeField] List<ItemUnlocked> ItemsUnlocked = new List<ItemUnlocked>();
+
+    [SerializeField] List<SavedStreak> SavedStreaks = new List<SavedStreak>();
 
     [SerializeField] SettingsManager settings;
 
