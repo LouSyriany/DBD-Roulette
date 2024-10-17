@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
-  m_Name: KillerAddon_K37TheDarkLord_B_TravelersHat
+  m_Name: KillerAddon_K03TheHillbilly_B_HighSpeedIdlerScrew
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 18b045c8b01910149921bbda482c11f9, type: 3}
-  Name: Traveler's Hat
+  Icon: {fileID: 21300000, guid: 46a1944207439b648aa93561e0681892, type: 3}
+  Name: High-Speed Idler Screw
   Descriton: 
   RarityType: 1

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
-  m_Name: KillerAddon_K37TheDarkLord_C_WhiteWolfMedallion
+  m_Name: KillerAddon_K37TheDarkLord_A_TravelersHat
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: a14d9f18110f0414c89110bdfa406ef0, type: 3}
-  Name: White Wolf Medallion
+  Icon: {fileID: 21300000, guid: 18b045c8b01910149921bbda482c11f9, type: 3}
+  Name: Traveler's Hat
   Descriton: 
-  RarityType: 2
+  RarityType: 0

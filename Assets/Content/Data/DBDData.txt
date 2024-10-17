@@ -46,22 +46,22 @@
 	# K03 The Hillbilly				
 	KillerAddon_K03TheHillbilly_A_Counterweight	Killer Addon	Common	Counterweight	
 	KillerAddon_K03TheHillbilly_A_CrackedPrimerBulb	Killer Addon	Common	Cracked Primer Bulb	
-	KillerAddon_K03TheHillbilly_A_DadsBoots	Killer Addon	Common	Dad's Boots	
+	KillerAddon_K03TheHillbilly_A_DiscardedAirFilter	Killer Addon	Common	Discarded Air Filter	
 	KillerAddon_K03TheHillbilly_A_SteelToeBoots	Killer Addon	Common	Steel Toe Boots	
 	KillerAddon_K03TheHillbilly_B_CloggedIntake	Killer Addon	Uncommon	Clogged Intake	
 	KillerAddon_K03TheHillbilly_B_GreasedThrottle	Killer Addon	Uncommon	Greased Throttle	
+	KillerAddon_K03TheHillbilly_B_HighSpeedIdlerScrew	Killer Addon	Uncommon	High-Speed Idler Screw	
 	KillerAddon_K03TheHillbilly_B_Off-BrandMotorOil	Killer Addon	Uncommon	Off-Brand Motor Oil	
-	KillerAddon_K03TheHillbilly_B_SpikedBoots	Killer Addon	Uncommon	Spiked Boots	
 	KillerAddon_K03TheHillbilly_B_ThermalCasing	Killer Addon	Uncommon	Thermal Casing	
 	KillerAddon_K03TheHillbilly_C_BegrimedChains	Killer Addon	Rare	Begrimed Chains	
-	KillerAddon_K03TheHillbilly_C_DiscardedAirFilter	Killer Addon	Rare	Discarded Air Filter	
+	KillerAddon_K03TheHillbilly_C_DadsBoots	Killer Addon	Rare	Dad's Boots	
 	KillerAddon_K03TheHillbilly_C_LowKickbackChains	Killer Addon	Rare	Low Kickback Chains	
 	KillerAddon_K03TheHillbilly_C_RaggedEngine	Killer Addon	Rare	Ragged Engine	
 	KillerAddon_K03TheHillbilly_C_TheThompsonsMix	Killer Addon	Rare	The Thompsons' Mix	
 	KillerAddon_K03TheHillbilly_D_ApexMuffler	Killer Addon	Very Rare	Apex Muffler	
 	KillerAddon_K03TheHillbilly_D_FilthySlippers	Killer Addon	Very Rare	Filthy Slippers	
-	KillerAddon_K03TheHillbilly_D_HighSpeedIdlerScrew	Killer Addon	Very Rare	High-Speed Idler Screw	
 	KillerAddon_K03TheHillbilly_D_LoProChains	Killer Addon	Very Rare	LoPro Chains	
+	KillerAddon_K03TheHillbilly_D_SpikedBoots	Killer Addon	Very Rare	Spiked Boots	
 	KillerAddon_K03TheHillbilly_E_IridescentEngravings	Killer Addon	Ultra Rare	Iridescent Engravings	
 	KillerAddon_K03TheHillbilly_E_TunedCarburettor	Killer Addon	Ultra Rare	Tuned Carburettor	
 	# K04 The Nurse				
@@ -761,17 +761,17 @@
 	KillerAddon_K37TheDarkLord_A_CerberusTalon	Killer Addon	Common	Cerberus Talon	
 	KillerAddon_K37TheDarkLord_A_ClockTowerGear	Killer Addon	Common	Clock Tower Gear	
 	KillerAddon_K37TheDarkLord_A_RubyCirclet	Killer Addon	Common	Ruby Circlet	
-	KillerAddon_K37TheDarkLord_A_SylphFeather	Killer Addon	Common	Sylph Feather	
+	KillerAddon_K37TheDarkLord_A_TravelersHat	Killer Addon	Common	Traveler's Hat	
 	KillerAddon_K37TheDarkLord_B_BloodFilledGoblet	Killer Addon	Uncommon	Blood-Filled Goblet	
 	KillerAddon_K37TheDarkLord_B_MagicalTicket	Killer Addon	Uncommon	Magical Ticket	
 	KillerAddon_K37TheDarkLord_B_MoonstoneNecklace	Killer Addon	Uncommon	Moonstone Necklace	
-	KillerAddon_K37TheDarkLord_B_TravelersHat	Killer Addon	Uncommon	Traveler's Hat	
+	KillerAddon_K37TheDarkLord_B_WhiteWolfMedallion	Killer Addon	Uncommon	White Wolf Medallion	
 	KillerAddon_K37TheDarkLord_B_WingedBoots	Killer Addon	Uncommon	Winged Boots	
 	KillerAddon_K37TheDarkLord_C_ForceofEcho	Killer Addon	Rare	Force of Echo	
 	KillerAddon_K37TheDarkLord_C_KillerDoll	Killer Addon	Rare	Killer Doll	
 	KillerAddon_K37TheDarkLord_C_PocketWatch	Killer Addon	Rare	Pocket Watch	
 	KillerAddon_K37TheDarkLord_C_Sunglasses	Killer Addon	Rare	Sunglasses	
-	KillerAddon_K37TheDarkLord_C_WhiteWolfMedallion	Killer Addon	Rare	White Wolf Medallion	
+	KillerAddon_K37TheDarkLord_C_SylphFeather	Killer Addon	Rare	Sylph Feather	
 	KillerAddon_K37TheDarkLord_D_CubeofZoe	Killer Addon	Very Rare	Cube of Zoe	
 	KillerAddon_K37TheDarkLord_D_LapisLazuli	Killer Addon	Very Rare	Lapis Lazuli	
 	KillerAddon_K37TheDarkLord_D_MedusasHair	Killer Addon	Very Rare	Medusa's Hair	

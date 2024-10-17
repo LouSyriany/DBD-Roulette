@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
-  m_Name: KillerAddon_K03TheHillbilly_A_DadsBoots
+  m_Name: KillerAddon_K37TheDarkLord_C_SylphFeather
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 2bc1c9036bb9e9049bbaa930a7d96ec3, type: 3}
-  Name: Dad's Boots
+  Icon: {fileID: 21300000, guid: 46f44febf60ff324b9e6c61acfe5c577, type: 3}
+  Name: Sylph Feather
   Descriton: 
-  RarityType: 0
+  RarityType: 2

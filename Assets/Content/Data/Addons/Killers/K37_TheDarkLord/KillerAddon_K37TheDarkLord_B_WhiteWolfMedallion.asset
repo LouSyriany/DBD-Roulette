@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
-  m_Name: KillerAddon_K03TheHillbilly_D_HighSpeedIdlerScrew
+  m_Name: KillerAddon_K37TheDarkLord_B_WhiteWolfMedallion
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 46a1944207439b648aa93561e0681892, type: 3}
-  Name: High-Speed Idler Screw
+  Icon: {fileID: 21300000, guid: a14d9f18110f0414c89110bdfa406ef0, type: 3}
+  Name: White Wolf Medallion
   Descriton: 
-  RarityType: 3
+  RarityType: 1
