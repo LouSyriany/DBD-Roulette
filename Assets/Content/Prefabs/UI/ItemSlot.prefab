@@ -49,9 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96270d1f64c8e2b4a830b093fcb6d7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: a10ff8ec937228c489b80a980ff180d7, type: 2}
   Icon: {fileID: 5917585710881467462}
   BG: {fileID: 4901831792305476295}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Item: {fileID: 11400000, guid: a10ff8ec937228c489b80a980ff180d7, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
   - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
@@ -76,7 +79,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4398974135341892334
 RectTransform:
   m_ObjectHideFlags: 0
