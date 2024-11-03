@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 789d84133d2afe9499a0ca2980496aef, type: 3}
   Name: Zarina Kassir
+  ID: S21_ZarinaKassir
   UniquePerks:
-  - {fileID: 11400000, guid: cf53a85272f3f0e4a93ffb587bf718e0, type: 2}
-  - {fileID: 11400000, guid: 5961f53f2095e564f830b1adeb092208, type: 2}
-  - {fileID: 11400000, guid: f9514b95f8f7293458431e8229483457, type: 2}
+  - {fileID: 11400000, guid: d7560ee4f61f6be49843cc3caf985217, type: 2}
+  - {fileID: 11400000, guid: 3de28257f38186f40820112409366a23, type: 2}
+  - {fileID: 11400000, guid: fc3c231b3c9788f409babe25f28476e9, type: 2}
   KillerAddons: []

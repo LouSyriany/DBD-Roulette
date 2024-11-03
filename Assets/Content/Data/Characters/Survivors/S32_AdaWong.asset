@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: cce1693346c11064c99c3bd37505c8b1, type: 3}
   Name: Ada Wong
+  ID: S32_AdaWong
   UniquePerks:
-  - {fileID: 11400000, guid: c889b0a3f68439440a8fe931d2b0b5b0, type: 2}
-  - {fileID: 11400000, guid: 8e2af8f69c0909041aa08ae420834b84, type: 2}
-  - {fileID: 11400000, guid: ec6dbcf961ca6a2458369a078ccd67fb, type: 2}
+  - {fileID: 11400000, guid: 30d63b06d2c1d714382db8fe092c5d11, type: 2}
+  - {fileID: 11400000, guid: 16d01273a0c51994bbcc11fe87abef99, type: 2}
+  - {fileID: 11400000, guid: 8b627dfe3cb65c145bfd7fdf6d1834f2, type: 2}
   KillerAddons: []

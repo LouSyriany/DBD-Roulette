@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: f19a0bb939f4bd642961d5e8e06236bd, type: 3}
   Name: David King
+  ID: S10_DavidKing
   UniquePerks:
-  - {fileID: 11400000, guid: cc947be425c61df45921e1ddb9c5c35b, type: 2}
-  - {fileID: 11400000, guid: d7f1d4f7ae721cb409f474a9c4a2211f, type: 2}
-  - {fileID: 11400000, guid: 2b04555c1a9a82c468b24bdfecfd826c, type: 2}
+  - {fileID: 11400000, guid: 2a87e9c96edd47e4186b8af11a14d9c5, type: 2}
+  - {fileID: 11400000, guid: 99da8ee2a6a24b4429752f81dced8a3d, type: 2}
+  - {fileID: 11400000, guid: e187020d7b667e542a36831fb97826e3, type: 2}
   KillerAddons: []

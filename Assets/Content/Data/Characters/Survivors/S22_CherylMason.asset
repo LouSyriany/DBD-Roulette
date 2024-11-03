@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 65efaca3ad965fa488995dc7d4172f4b, type: 3}
   Name: Cheryl Mason
+  ID: S22_CherylMason
   UniquePerks:
-  - {fileID: 11400000, guid: d89794f3e26dd4f4e886bbc8c6f2117a, type: 2}
-  - {fileID: 11400000, guid: 3ee061915471b2d4685069da904be11b, type: 2}
-  - {fileID: 11400000, guid: 16167344f70d89d4fb82c6c8953ca915, type: 2}
+  - {fileID: 11400000, guid: 58e516a682c1e284db057eb769e72aa0, type: 2}
+  - {fileID: 11400000, guid: 9e2162fa5c52f0f499e04d3dd48c0054, type: 2}
+  - {fileID: 11400000, guid: 7e3776e96b100044a9dc9dbc00dfacb6, type: 2}
   KillerAddons: []

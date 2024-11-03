@@ -383,11 +383,12 @@ public class RouletteManager : MonoBehaviour
         if ((Parameters.CharacterStreakMode || Parameters.PerkStreakMode) && StreakOnGoing)
         {
             UpdateStreakList(rollType);
+
+            DatasManager.Instance.AddStreakEntries();
         }
 
         OnRollMade?.Invoke(Results);
     }
-   
 
     void SetCurrentList()
     {

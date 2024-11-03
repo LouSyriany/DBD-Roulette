@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 5a0ca6b2cf0d92146be59146dfbf4bee, type: 3}
   Name: Nea Karlsson
+  ID: S05_NeaKarlsson
   UniquePerks:
-  - {fileID: 11400000, guid: 181175e8a1a87e345a91b78dff9eec6e, type: 2}
-  - {fileID: 11400000, guid: aa107990eaa1adb47a1ca74247fd4612, type: 2}
-  - {fileID: 11400000, guid: 11995f82f483c504c96df83d74fdb857, type: 2}
+  - {fileID: 11400000, guid: e83fb2d97d6db924496489063e3e25e7, type: 2}
+  - {fileID: 11400000, guid: fc2ce4a162513364ba63e5d5f1bf040c, type: 2}
+  - {fileID: 11400000, guid: 0178a62061bac8b48b7b0f96a8819178, type: 2}
   KillerAddons: []

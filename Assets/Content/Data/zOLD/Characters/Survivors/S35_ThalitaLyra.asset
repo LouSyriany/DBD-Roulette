@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: S35_ThalitaLyra
+  m_EditorClassIdentifier: 
+  Type: 1
+  Icon: {fileID: 21300000, guid: 6e0dc2240fda9c54497e7de487990ab3, type: 3}
+  Name: Thalita Lyra
+  ID: S35_ThalitaLyra
+  UniquePerks:
+  - {fileID: 11400000, guid: 1506bc25d643cde49a1fbb98a756c48d, type: 2}
+  - {fileID: 11400000, guid: 1a3370f2dce10ee49b245e4a48ca9415, type: 2}
+  - {fileID: 11400000, guid: 7ad7eca1cea2fce4b8cbb74733ff07a1, type: 2}
+  KillerAddons: []

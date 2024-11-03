@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: c93e47c081bc56949bbe6667ce3f4529, type: 3}
   Name: Renato Lyra
+  ID: S36_RenatoLyra
   UniquePerks:
-  - {fileID: 11400000, guid: 821ac3bb4c002954788432e8c95495ea, type: 2}
-  - {fileID: 11400000, guid: c2fb6e6d3008d8a40befc89b5ade586a, type: 2}
-  - {fileID: 11400000, guid: 51f9348efb65fb141a5bbec062a8fb59, type: 2}
+  - {fileID: 11400000, guid: 9c6f96c6f2a49974ab3882745bf81f80, type: 2}
+  - {fileID: 11400000, guid: a22827fab5a6a704b94d1745fc354df1, type: 2}
+  - {fileID: 11400000, guid: f8de2d895f9733f4297c3181401ec321, type: 2}
   KillerAddons: []

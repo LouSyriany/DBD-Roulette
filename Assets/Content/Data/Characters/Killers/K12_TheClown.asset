@@ -15,28 +15,29 @@ MonoBehaviour:
   Type: 0
   Icon: {fileID: 21300000, guid: 6e18f694f4c3e5e48bdf5eb35cd6d3e5, type: 3}
   Name: The Clown
+  ID: K12_TheClown
   UniquePerks:
-  - {fileID: 11400000, guid: 216a59eaefcc0ad49925bb4f76ea0945, type: 2}
-  - {fileID: 11400000, guid: 8615eea053b91bc44bcfb1aa38993c94, type: 2}
-  - {fileID: 11400000, guid: 60d2b78b6fee8b14aba06df13ba3dc4b, type: 2}
+  - {fileID: 11400000, guid: fceee9119c688094d8d08484a0492426, type: 2}
+  - {fileID: 11400000, guid: 119a08677afacec4182438e6668e50a9, type: 2}
+  - {fileID: 11400000, guid: 5a9e6e112ee042a4c8f6285ca8fd6460, type: 2}
   KillerAddons:
-  - {fileID: 11400000, guid: 3311c590e62c4674d8f0622c0b8ff09e, type: 2}
-  - {fileID: 11400000, guid: a92ea7ed082d28d4b802412d39942d83, type: 2}
-  - {fileID: 11400000, guid: 5f507f7064134ab49b8a35a09a29374a, type: 2}
-  - {fileID: 11400000, guid: 11907afba553bed45b526831c0d2a0b1, type: 2}
-  - {fileID: 11400000, guid: 67da394c835ce0b478901c7c3745ae7b, type: 2}
-  - {fileID: 11400000, guid: 54fe4564426a84f47a28ad8618fa1a01, type: 2}
-  - {fileID: 11400000, guid: c43b1065aa6d95e49b5f8bfbbe5220f7, type: 2}
-  - {fileID: 11400000, guid: b4ce2a11bed7af640be679f1446e0de7, type: 2}
-  - {fileID: 11400000, guid: 7306cbe08d4d1b14b9278f22b47d05f7, type: 2}
-  - {fileID: 11400000, guid: 89aee63603fa06a408d5a928e3d18dd7, type: 2}
-  - {fileID: 11400000, guid: 3112a25f71b96074c87748f1bf82f6d7, type: 2}
-  - {fileID: 11400000, guid: 4cb7cabe2bd2f2045a57f0696be037d5, type: 2}
-  - {fileID: 11400000, guid: cfe9e71b7483666408d610af0054a210, type: 2}
-  - {fileID: 11400000, guid: 54d435c681653dd4fbd4fc03f4876516, type: 2}
-  - {fileID: 11400000, guid: 68d4db177e219984a99557273aff0e17, type: 2}
-  - {fileID: 11400000, guid: 6deb9cdf810da314ca7abc685f58c362, type: 2}
-  - {fileID: 11400000, guid: db8845cf5e0213f4bab0dab2cdf3358b, type: 2}
-  - {fileID: 11400000, guid: e221fc056ea961d4c9062da6accafe87, type: 2}
-  - {fileID: 11400000, guid: f1506829ee6ee4944947b0ca635f0098, type: 2}
-  - {fileID: 11400000, guid: b052b7448b01aa54d85a8b2add7287d5, type: 2}
+  - {fileID: 11400000, guid: e435c7a39d76ea84e9f5599beda0da03, type: 2}
+  - {fileID: 11400000, guid: ea7dac0a4a39cdd47a2783c75f9fca9d, type: 2}
+  - {fileID: 11400000, guid: 8f5d4a5537d39a545929ed7b28baf13f, type: 2}
+  - {fileID: 11400000, guid: 623e1e441f412f240a122f5299aee644, type: 2}
+  - {fileID: 11400000, guid: 1bfdd81602dddb844b75db158d7a2886, type: 2}
+  - {fileID: 11400000, guid: a1013937de6ffa44382029b6bcf00524, type: 2}
+  - {fileID: 11400000, guid: feb9a020ad0699a409ae0614e479d350, type: 2}
+  - {fileID: 11400000, guid: 5d84eb916bc32414eaa582d2836e57ef, type: 2}
+  - {fileID: 11400000, guid: 9997459fc49900a4d8082103c9995f41, type: 2}
+  - {fileID: 11400000, guid: 9e75cb164944fa14eab71611948afb2a, type: 2}
+  - {fileID: 11400000, guid: 212d70104cf871b4a8354e170d54d97e, type: 2}
+  - {fileID: 11400000, guid: d0abc6f337c192b47af7290dec184cf2, type: 2}
+  - {fileID: 11400000, guid: caf8ecaecb54b7c42b075b080a3c6f26, type: 2}
+  - {fileID: 11400000, guid: 3d4c826032c7c9b418056fb409fb398e, type: 2}
+  - {fileID: 11400000, guid: a43d62f24f40168428fa03b663b871ff, type: 2}
+  - {fileID: 11400000, guid: f40456f1dff532242b894364ab584dcb, type: 2}
+  - {fileID: 11400000, guid: 0034e0febb5532246a06c4fb9fc09900, type: 2}
+  - {fileID: 11400000, guid: 29370243d1f56af499feffde01c4fab7, type: 2}
+  - {fileID: 11400000, guid: 70ff40a203555a0448cdaed0a3f24aa8, type: 2}
+  - {fileID: 11400000, guid: 80a2f48c1f56c264e913a07efc3fd940, type: 2}

@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 10f9ea289b65bd54eb39e3bf81ecabc9, type: 3}
   Name: Yui Kimura
+  ID: S20_YuiKimura
   UniquePerks:
-  - {fileID: 11400000, guid: ebe5df60774568e4bbf484b96d227e2a, type: 2}
-  - {fileID: 11400000, guid: 708f431004f75584994b3f430f08e04e, type: 2}
-  - {fileID: 11400000, guid: 1c33ce6d8c0e5314294376729e6ede3e, type: 2}
+  - {fileID: 11400000, guid: 0f316c7e189b25e46855dd99d70736f4, type: 2}
+  - {fileID: 11400000, guid: cc7449c1e543e2c4282149a629c6f5d4, type: 2}
+  - {fileID: 11400000, guid: 26521b6b1a2ffd14ba995d8ae11cfb2c, type: 2}
   KillerAddons: []

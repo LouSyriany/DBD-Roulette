@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: b8ace7a9e0788084f94df3f9427ba7fa, type: 3}
   Name: Jeff Johansen
+  ID: S15_JeffJohansen
   UniquePerks:
-  - {fileID: 11400000, guid: 26c0e33222975ef4f82a6defb3beb852, type: 2}
-  - {fileID: 11400000, guid: 276c0daa81255624a85085b10235a6e7, type: 2}
-  - {fileID: 11400000, guid: 09fa6545cb7aa4447af1ca77fba6dd94, type: 2}
+  - {fileID: 11400000, guid: 8bff03c895721424a810bc094c900815, type: 2}
+  - {fileID: 11400000, guid: 5bbc494cdca9eb94483166223ce0125f, type: 2}
+  - {fileID: 11400000, guid: 0fcfc8fe32077a349bd3ded68135eebd, type: 2}
   KillerAddons: []

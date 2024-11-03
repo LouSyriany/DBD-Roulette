@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: S26_JillValentine
+  m_EditorClassIdentifier: 
+  Type: 1
+  Icon: {fileID: 21300000, guid: ecb3c7261cbaaff46b37111e9c61248f, type: 3}
+  Name: Jill Valentine
+  ID: S26_JillValentine
+  UniquePerks:
+  - {fileID: 11400000, guid: a3447a64a78732147bbbbb9cc6dd9021, type: 2}
+  - {fileID: 11400000, guid: 53f1f25e79c0cce439db178a1c7dbf92, type: 2}
+  - {fileID: 11400000, guid: 8e73829abd4d4f04fb26418bc0d58972, type: 2}
+  KillerAddons: []

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: K23_TheTrickster
+  m_EditorClassIdentifier: 
+  Type: 0
+  Icon: {fileID: 21300000, guid: 4aae0d18d2b7f2044a54e09a35ee630d, type: 3}
+  Name: The Trickster
+  ID: K23_TheTrickster
+  UniquePerks:
+  - {fileID: 11400000, guid: 2aff300eb76c55e4ca247d2185943d83, type: 2}
+  - {fileID: 11400000, guid: 919b9bc2f5827b5468258a3afb5f143c, type: 2}
+  - {fileID: 11400000, guid: e848b4bd1fba00e4c9799ca5f8160bce, type: 2}
+  KillerAddons:
+  - {fileID: 11400000, guid: 24c1b21b670128f478b1ec9eedd41ade, type: 2}
+  - {fileID: 11400000, guid: 79929348f29f63543ae3ec8ae5da9df3, type: 2}
+  - {fileID: 11400000, guid: 6a0b88c422c946b4490ebf3e7167d7b9, type: 2}
+  - {fileID: 11400000, guid: aacb151dc3ceaa14b957cf50d0ff54b0, type: 2}
+  - {fileID: 11400000, guid: ba2b31dce36ae8448a788083bd6465f6, type: 2}
+  - {fileID: 11400000, guid: 9eb695c8ad705714fbd2c5262f33da71, type: 2}
+  - {fileID: 11400000, guid: a9955744d90209a4c874c944a52ce692, type: 2}
+  - {fileID: 11400000, guid: 3c0da5a838c4e5143ad8a725750e895d, type: 2}
+  - {fileID: 11400000, guid: 56379c0c4d7d12848a48fc7e5f564455, type: 2}
+  - {fileID: 11400000, guid: ef19d049aa9113645b0edfb9f522a865, type: 2}
+  - {fileID: 11400000, guid: f429cdb5395025f4091c8cf8691b988f, type: 2}
+  - {fileID: 11400000, guid: 297593784e42a104ca33de448ffe4e0f, type: 2}
+  - {fileID: 11400000, guid: 3bf88b260c580d441962591a0ef903f1, type: 2}
+  - {fileID: 11400000, guid: b0d9f77b55876084487a41aa89ac3c01, type: 2}
+  - {fileID: 11400000, guid: c865cb7742ac8e74fa962c36b3c92a2e, type: 2}
+  - {fileID: 11400000, guid: 4a02d9bee9a8524418103ff70789fa55, type: 2}
+  - {fileID: 11400000, guid: 222e106fe9c94354cbe6f3bdefe3279c, type: 2}
+  - {fileID: 11400000, guid: 567c16023fd701d41b2ce6622ff67271, type: 2}
+  - {fileID: 11400000, guid: 38e3d817a3bfdba48b0168083c7986cb, type: 2}
+  - {fileID: 11400000, guid: fc5cf83bf1fdbf6449668b72dc6477d3, type: 2}

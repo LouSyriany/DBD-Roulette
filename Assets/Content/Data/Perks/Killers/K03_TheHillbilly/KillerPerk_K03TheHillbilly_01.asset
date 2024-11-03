@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4bf2233ed23cb42a29230076fc3c15, type: 3}
+  m_Name: KillerPerk_K03TheHillbilly_01
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 77ef48c24dc9a8d498c334be0d72858f, type: 3}
+  Name: Enduring
+  Descriton: "Like a hunting scent hound, you smell traces of blood at a great distance.\\n\\n<indent=10%>-
+    <#e2ce97>Pools of Blood<sprite=3></color>IconStatusEffects bleedingIconStatusEffects
+    bleeding are shown in <#d41c1c>bright red</color> and can be tracked for <#e8c252>2</color>/<#199b1e>3</color>/<#ac3ee3>4</color>
+    seconds longer than normal.</indent>\\n\\n<#e2ce97><i>\"Pebbles shimmering in
+    the moonlight; my life drips down in a trail so easy to follow.\"</i></color>
+    \r"

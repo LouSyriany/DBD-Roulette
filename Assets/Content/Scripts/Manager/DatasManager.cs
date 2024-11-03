@@ -11,13 +11,15 @@ using UnityEditor;
 [DefaultExecutionOrder(1)]
 public class DatasManager : MonoBehaviour
 {
+    public static DatasManager Instance { get; private set; }
+
     [Serializable]
-    class SavedStreak
+    class SavedRollEntry
     {
         public string Character;
-        public ItemSaved Item;
-        public SavedEquipable[] Addons = new SavedEquipable[2];
-        public SavedEquipable[] Perks = new SavedEquipable[4];
+        public string Item;
+        public List<string> Addons = new List<string>();
+        public List<string> Perks = new List<string>();
     }
 
     [Serializable]
@@ -76,7 +78,7 @@ public class DatasManager : MonoBehaviour
 
     [SerializeField] List<ItemUnlocked> ItemsUnlocked = new List<ItemUnlocked>();
 
-    [SerializeField] List<SavedStreak> SavedStreaks = new List<SavedStreak>();
+    [SerializeField] List<SavedRollEntry> SavedStreaks = new List<SavedRollEntry>();
 
     [SerializeField] SettingsManager settings;
 
@@ -107,6 +109,18 @@ public class DatasManager : MonoBehaviour
         }
     }
 #endif
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
@@ -271,10 +285,20 @@ public class DatasManager : MonoBehaviour
                     {
                         foreach (var item in data.Addons)
                         {
-                            if (item.Equipable == addon.AddonSlot.Equipable.name)
+                            try
                             {
-                                addon.State = item.State;
+                                if (item.Equipable == addon.AddonSlot.Equipable.name)
+                                {
+                                    addon.State = item.State;
+                                }
                             }
+                            catch (Exception)
+                            {
+                                Debug.Log(item.Equipable);
+                                Debug.Log(addon);
+                                throw;
+                            }
+                            
                         }
                     }
                 }
@@ -387,6 +411,44 @@ public class DatasManager : MonoBehaviour
         File.WriteAllText(Application.persistentDataPath + fileName, data);
 
         GUIUtility.systemCopyBuffer = Application.persistentDataPath + fileName;
+    }
+
+    public void AddStreakEntries()
+    {
+        RouletteManager.Result result = RouletteManager.Instance.Results;
+
+        SavedRollEntry newEntry = new SavedRollEntry();
+
+        newEntry.Character = result.Character.ID;
+
+        if (result.Item.name != "dudItem")
+        {
+            newEntry.Item = result.Item.name;
+        }
+
+        foreach (var addon in result.Addons)
+        {
+            if (addon.name != "dudAddon")
+            {
+                newEntry.Perks.Add(addon.name);
+            }
+        }
+
+        foreach (var perk in result.Perks)
+        {
+            if(perk.name != "dudPerk")
+            {
+                newEntry.Perks.Add(perk.name);
+            }
+        }
+
+        SavedStreaks.Add(newEntry);
+        //Debug.Log(JsonUtility.ToJson(newEntry));
+    }
+
+    public void ResetStreakEntries()
+    {
+        SavedStreaks = new List<SavedRollEntry>();
     }
 
     string LoadData()

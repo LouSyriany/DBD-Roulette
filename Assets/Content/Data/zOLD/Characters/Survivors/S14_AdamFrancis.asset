@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: S14_AdamFrancis
+  m_EditorClassIdentifier: 
+  Type: 1
+  Icon: {fileID: 21300000, guid: b60cffc00cea65148898c79393e2d51b, type: 3}
+  Name: Adam Francis
+  ID: S14_AdamFrancis
+  UniquePerks:
+  - {fileID: 11400000, guid: ec9979688f5bfbb43be99a165a1233f0, type: 2}
+  - {fileID: 11400000, guid: 39e3c27cb6045ec49a21a2a92cb2bf67, type: 2}
+  - {fileID: 11400000, guid: 7813c8f1aa7fb1f4cb4a672bd3d718e7, type: 2}
+  KillerAddons: []

@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: b4b648a9ba522f3448add83b12a22f28, type: 3}
   Name: David Tapp
+  ID: S12_DavidTapp
   UniquePerks:
-  - {fileID: 11400000, guid: c1dc86038de18d4459545995fc2ebb11, type: 2}
-  - {fileID: 11400000, guid: ca4e3116545b48a4aa9988566705056e, type: 2}
-  - {fileID: 11400000, guid: 67ad705cc5e193849abfdca55a7fa32f, type: 2}
+  - {fileID: 11400000, guid: 1441ee30c56af2043b6ad4ec22aad42c, type: 2}
+  - {fileID: 11400000, guid: 457690c37dbeac641835751b83bee11b, type: 2}
+  - {fileID: 11400000, guid: 3a6c07bf540a1db4192677aa981e2ee2, type: 2}
   KillerAddons: []

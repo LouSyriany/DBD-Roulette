@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 249b65f675a13504aabe362dcca325d2, type: 3}
   Name: Kate Denson
+  ID: S13_KateDenson
   UniquePerks:
-  - {fileID: 11400000, guid: fd5377299747cf349aa430f9564556f0, type: 2}
-  - {fileID: 11400000, guid: 52148d198e5582048bfeec84e44eeab2, type: 2}
-  - {fileID: 11400000, guid: 9a6b95214d2e9ef409c71bc9f017d1e6, type: 2}
+  - {fileID: 11400000, guid: 9e5ba62967c82a44d89d09c7ab90572e, type: 2}
+  - {fileID: 11400000, guid: 02ed36d0f58735e41a11b94861d16ceb, type: 2}
+  - {fileID: 11400000, guid: 419761b6100187443a6e7b95a8f3b1b3, type: 2}
   KillerAddons: []

@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 083431cc830edf84685fd483481fa5c9, type: 3}
   Name: Quentin Smith
+  ID: S11_QuentinSmith
   UniquePerks:
-  - {fileID: 11400000, guid: 646a62e9b6a7c6849a22082677b8fd05, type: 2}
-  - {fileID: 11400000, guid: aee9895b90e92d6438c5dcbf747a97df, type: 2}
-  - {fileID: 11400000, guid: c1e0b20fb573b6243bac80cc5706a133, type: 2}
+  - {fileID: 11400000, guid: 71d9dcecb86cd0f4f941538004c39f0c, type: 2}
+  - {fileID: 11400000, guid: 707c501545f0ee54aab9bc0f2bd1e1ef, type: 2}
+  - {fileID: 11400000, guid: 327bebda866ae414291b92e0e50a816f, type: 2}
   KillerAddons: []

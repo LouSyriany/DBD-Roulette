@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 46ef0813d23049444a264aac85ed7eb0, type: 3}
   Name: Dwight Fairfield
+  ID: S01_DwightFairfield
   UniquePerks:
-  - {fileID: 11400000, guid: c2638ab2ff19ac94eaf12b71cf8bca61, type: 2}
-  - {fileID: 11400000, guid: edf7bdc3223018842bf954b3f3659195, type: 2}
-  - {fileID: 11400000, guid: 45499a696d1b2a74db1e1cd4cea34717, type: 2}
+  - {fileID: 11400000, guid: e62532abf7061e64db46734d0873f70a, type: 2}
+  - {fileID: 11400000, guid: fb87cd624bfbdbd4986e47179d125627, type: 2}
+  - {fileID: 11400000, guid: 29c687bb05ab38847aafed4792a04321, type: 2}
   KillerAddons: []

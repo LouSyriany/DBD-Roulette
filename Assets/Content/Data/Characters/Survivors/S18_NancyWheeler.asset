@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 555e650b7378f4a41835e6c1a722f3bf, type: 3}
   Name: Nancy Wheeler
+  ID: S18_NancyWheeler
   UniquePerks:
-  - {fileID: 11400000, guid: 4d9547ddca8592b43b465ae39ec48f14, type: 2}
-  - {fileID: 11400000, guid: a7d40197dbb1bc04786381d57ad84ac1, type: 2}
-  - {fileID: 11400000, guid: bf6136da4b12b2143b36fcd0d4b77961, type: 2}
+  - {fileID: 11400000, guid: 3c9505652eaf06d48b7a60407b3ea507, type: 2}
+  - {fileID: 11400000, guid: 2705573013d54254199557f5596396b9, type: 2}
+  - {fileID: 11400000, guid: 1955639230a224b42829052aa8b3e038, type: 2}
   KillerAddons: []

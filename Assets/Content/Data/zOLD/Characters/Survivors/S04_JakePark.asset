@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: S04_JakePark
+  m_EditorClassIdentifier: 
+  Type: 1
+  Icon: {fileID: 21300000, guid: 34191a1204c5117409047401c69ed19c, type: 3}
+  Name: Jake Park
+  ID: S04_JakePark
+  UniquePerks:
+  - {fileID: 11400000, guid: 68931a0eeb2406149985771f34dfa152, type: 2}
+  - {fileID: 11400000, guid: af78e19c2c277644c8f81e30930df59c, type: 2}
+  - {fileID: 11400000, guid: 09af3668ead5c764884f841604858364, type: 2}
+  KillerAddons: []

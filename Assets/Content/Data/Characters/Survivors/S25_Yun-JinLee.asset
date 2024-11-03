@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 7e36b7c1f9c7b7742be0876a78c59d35, type: 3}
   Name: Yun-Jin Lee
+  ID: S25_Yun-JinLee
   UniquePerks:
-  - {fileID: 11400000, guid: d7beae1cd10bfdc43b5e5775e7a544c7, type: 2}
-  - {fileID: 11400000, guid: 0bfafbc4b306e1c46a882251154e373c, type: 2}
-  - {fileID: 11400000, guid: 9bab07a93facb3c44888a6384a354e5a, type: 2}
+  - {fileID: 11400000, guid: 97dc50deaa6149d49b2d89a44fe5146e, type: 2}
+  - {fileID: 11400000, guid: a6952a904c741ca4b8a3721b52e29ef1, type: 2}
+  - {fileID: 11400000, guid: 1310ccf5873aaaa40a109141b41817d6, type: 2}
   KillerAddons: []

@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: ee073db911993574f82ff8da38c82333, type: 3}
   Name: Bill Overbeck
+  ID: S08_BillOverbeck
   UniquePerks:
-  - {fileID: 11400000, guid: 5afa0b5312533b444824a6a1d7fcc2c7, type: 2}
-  - {fileID: 11400000, guid: 1905bb8e66c15c14bb45c64b3c1830aa, type: 2}
-  - {fileID: 11400000, guid: 647d6f1d6d6f5ba438d43f1667a84c07, type: 2}
+  - {fileID: 11400000, guid: b45db973113508a40ad9797a2d5bdffd, type: 2}
+  - {fileID: 11400000, guid: 7b997a955cfcb114d85763efd55d984a, type: 2}
+  - {fileID: 11400000, guid: f945dd32d2af3ce43ac41a209f899f85, type: 2}
   KillerAddons: []

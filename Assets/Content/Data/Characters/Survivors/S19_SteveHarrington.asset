@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 4dd3a4baa3486ce4ab4145bd0b50a3cc, type: 3}
   Name: Steve Harrington
+  ID: S19_SteveHarrington
   UniquePerks:
-  - {fileID: 11400000, guid: b170778dfef4e8945ba4ef8c99212b79, type: 2}
-  - {fileID: 11400000, guid: 7d05a39ebcff33a4db757f7b0cbbcd10, type: 2}
-  - {fileID: 11400000, guid: b4c56871ff39e2c418cd38f382f86081, type: 2}
+  - {fileID: 11400000, guid: 451678cabf15606428a3e7c296068131, type: 2}
+  - {fileID: 11400000, guid: 1cea81d6edf1b3b41a73aae61ceddaba, type: 2}
+  - {fileID: 11400000, guid: 322578cee0b42d649b9b2f388e653b68, type: 2}
   KillerAddons: []

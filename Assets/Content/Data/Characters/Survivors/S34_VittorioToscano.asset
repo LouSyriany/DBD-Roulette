@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: f6b97a1bea38a3b448714239361ff337, type: 3}
   Name: Vittorio Toscano
+  ID: S34_VittorioToscano
   UniquePerks:
-  - {fileID: 11400000, guid: b8c18d49e60493d4698bb9545d755ce5, type: 2}
-  - {fileID: 11400000, guid: 24a0d5d83e5bdcc4fb8d54bd21c376ef, type: 2}
-  - {fileID: 11400000, guid: 8b70fe93e4c344d4d81068ec033aebd8, type: 2}
+  - {fileID: 11400000, guid: 622572061162fb44cbefe7ca0abb0d77, type: 2}
+  - {fileID: 11400000, guid: 8b2b65d7116214e45a505eb1aaa7d34d, type: 2}
+  - {fileID: 11400000, guid: 4f2979f6e690bd9428e4c93630710adf, type: 2}
   KillerAddons: []

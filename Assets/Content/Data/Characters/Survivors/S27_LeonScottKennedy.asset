@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: b3d4d83eafe8ceb4a9fbb5ecc36d53d3, type: 3}
   Name: Leon Scott Kennedy
+  ID: S27_LeonScottKennedy
   UniquePerks:
-  - {fileID: 11400000, guid: 55969bf901bfbd74da5c4d892b7f1476, type: 2}
-  - {fileID: 11400000, guid: 8c4199411cf4db54284f6550264c79ea, type: 2}
-  - {fileID: 11400000, guid: 4e010faeb96bbb246b756f205bf6149e, type: 2}
+  - {fileID: 11400000, guid: 20be6572b04fffa4284b029d91da0991, type: 2}
+  - {fileID: 11400000, guid: 9b80832b5b5a2054bb91f500cbe01767, type: 2}
+  - {fileID: 11400000, guid: 5ec157d5df3b8e04899e3ee078030ddc, type: 2}
   KillerAddons: []

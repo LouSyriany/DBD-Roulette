@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 21fcaa4549e03e645884f7914a1c26e5, type: 3}
   Name: Meg Thomas
+  ID: S02_MegThomas
   UniquePerks:
-  - {fileID: 11400000, guid: 28deaf4d3886d8f48a02cb2f322ef6ac, type: 2}
-  - {fileID: 11400000, guid: 0e950e428168279499b0256d89507833, type: 2}
-  - {fileID: 11400000, guid: 4d175efc1765ea04ca4a03a9a5a4d171, type: 2}
+  - {fileID: 11400000, guid: 204705475996613429fe9b25bcc62003, type: 2}
+  - {fileID: 11400000, guid: 9b81a487c8886b2409840adadc26807f, type: 2}
+  - {fileID: 11400000, guid: 017b96491cffc5e48a4d2872cae0c071, type: 2}
   KillerAddons: []

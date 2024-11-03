@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: K19_TheDeathslinger
+  m_EditorClassIdentifier: 
+  Type: 0
+  Icon: {fileID: 21300000, guid: aa5ec10f97c4a7c4e88a9a1c137f6f24, type: 3}
+  Name: The Deathslinger
+  ID: K19_TheDeathslinger
+  UniquePerks:
+  - {fileID: 11400000, guid: 8d781931ad934324cb58e5e36e5601a8, type: 2}
+  - {fileID: 11400000, guid: f00c1ac08dabdbc498ae305f5034c005, type: 2}
+  - {fileID: 11400000, guid: 9b733ed7b89237b42a11ccd29343c829, type: 2}
+  KillerAddons:
+  - {fileID: 11400000, guid: 6526bdffef338cb46aab0115c8efda4d, type: 2}
+  - {fileID: 11400000, guid: 529ede2fc961a0b40be4ed61c98a14f8, type: 2}
+  - {fileID: 11400000, guid: 1f715bde0f5961a45969c280fb8142a7, type: 2}
+  - {fileID: 11400000, guid: e2a4c02cafc0b5e40a2375769c8cb561, type: 2}
+  - {fileID: 11400000, guid: a9497a4392e03b242a1aa6955991de9c, type: 2}
+  - {fileID: 11400000, guid: ec67a130a4bd8874f8855060e8ac3d71, type: 2}
+  - {fileID: 11400000, guid: dbc30066f8414724f89773d8bd905afb, type: 2}
+  - {fileID: 11400000, guid: 46b2ac7d336ab4c439de45b91fc4d872, type: 2}
+  - {fileID: 11400000, guid: fedc0e4180b74814785463eb402f9b41, type: 2}
+  - {fileID: 11400000, guid: d7747993e22042b4e800a2e7ec527269, type: 2}
+  - {fileID: 11400000, guid: 7602280f169a77644bed57d781f8fca5, type: 2}
+  - {fileID: 11400000, guid: 8a096064b229a9345acb2408998a566c, type: 2}
+  - {fileID: 11400000, guid: c3278737a02f87d439a2b0adcdcf8c67, type: 2}
+  - {fileID: 11400000, guid: 40619b22ddbba974d9029e2e555467a8, type: 2}
+  - {fileID: 11400000, guid: 57862fc8b0ed10040935ebe2c6833704, type: 2}
+  - {fileID: 11400000, guid: f5aca358afb62fb4881a8c5ba3796b69, type: 2}
+  - {fileID: 11400000, guid: 956bf1f773f07e84fb571f7cf74191f2, type: 2}
+  - {fileID: 11400000, guid: 20216d99986cf184189bce2ae29b6686, type: 2}
+  - {fileID: 11400000, guid: e24fdc7db62848d4fb4c7cdf25ea5b6c, type: 2}
+  - {fileID: 11400000, guid: f9a5e0bbbae46c149a56200b2d2c3ebf, type: 2}

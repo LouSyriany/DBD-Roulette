@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 5e65efb2bd20086489e8628a99212b3a, type: 3}
   Name: Rebecca Chambers
+  ID: S33_RebeccaChambers
   UniquePerks:
-  - {fileID: 11400000, guid: 24a6dd2f25b9a044aba6682b353e329f, type: 2}
-  - {fileID: 11400000, guid: 377081947fc8bfc4291305b7827abbc5, type: 2}
-  - {fileID: 11400000, guid: a128b68590d7b964984c0474433efe65, type: 2}
+  - {fileID: 11400000, guid: 9f03b85e4c1afee45b65a96c6be72b2f, type: 2}
+  - {fileID: 11400000, guid: f2f2209a3d96dba47bb960d0348da95b, type: 2}
+  - {fileID: 11400000, guid: 02666af37ee0f7343b336de0780f4158, type: 2}
   KillerAddons: []

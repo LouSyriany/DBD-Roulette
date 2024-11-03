@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: b60cffc00cea65148898c79393e2d51b, type: 3}
   Name: Adam Francis
+  ID: S14_AdamFrancis
   UniquePerks:
-  - {fileID: 11400000, guid: ec9979688f5bfbb43be99a165a1233f0, type: 2}
-  - {fileID: 11400000, guid: 39e3c27cb6045ec49a21a2a92cb2bf67, type: 2}
-  - {fileID: 11400000, guid: 7813c8f1aa7fb1f4cb4a672bd3d718e7, type: 2}
+  - {fileID: 11400000, guid: 5d3703b8493237142a4e30b51647d854, type: 2}
+  - {fileID: 11400000, guid: 065dd6b937ddf384e9a4cc70bc6ffe0d, type: 2}
+  - {fileID: 11400000, guid: b5eab32fe86f80a4cb75a23623b7de97, type: 2}
   KillerAddons: []

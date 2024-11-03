@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 6e0dc2240fda9c54497e7de487990ab3, type: 3}
   Name: Thalita Lyra
+  ID: S35_ThalitaLyra
   UniquePerks:
-  - {fileID: 11400000, guid: 1506bc25d643cde49a1fbb98a756c48d, type: 2}
-  - {fileID: 11400000, guid: 1a3370f2dce10ee49b245e4a48ca9415, type: 2}
-  - {fileID: 11400000, guid: 7ad7eca1cea2fce4b8cbb74733ff07a1, type: 2}
+  - {fileID: 11400000, guid: cc4c3e3dc943a3c41934d70abde10ed1, type: 2}
+  - {fileID: 11400000, guid: 61fe572e34b959b459f7d5b703dd25e8, type: 2}
+  - {fileID: 11400000, guid: c2622760178c4ff4fbc0f459eb6113b7, type: 2}
   KillerAddons: []

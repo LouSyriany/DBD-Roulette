@@ -98,7 +98,7 @@ public class ScriptableHelper
                     }
 
                     iconPath += "/Addons/Killers/" + charName + "/";
-                    iconPath += "IconAddon_" + FormatKillersAddonsName(idSplit[3]) + ".png";
+                    iconPath += "IconAddon_" + FormatName(tabSplit[4]) + ".png";
 
                     assetPath += "/Addons/Killers/" + charName + "/";
                     assetPath += id;
@@ -113,9 +113,21 @@ public class ScriptableHelper
                         AssetDatabase.CreateFolder(AddonsPath, "Survivors");
                     }
 
-                    iconPath = GetItemAddonPath(idSplit, true);
+                    if (!AssetDatabase.IsValidFolder(AddonsPath + "/Survivors/" + idSplit[1]))
+                    {
+                        AssetDatabase.CreateFolder(AddonsPath + "/Survivors", idSplit[1]);
+                    }
 
-                    assetPath = GetItemAddonPath(idSplit, false);
+                    //iconPath = GetItemAddonPath(idSplit, true);
+
+                    iconPath += "/Addons/Survivors/" + idSplit[1] + "/";
+                    iconPath += "IconAddon_" + FormatName(tabSplit[4]) + ".png";
+
+
+                    //assetPath = GetItemAddonPath(idSplit, false);
+                    assetPath += "/Addons/Survivors/" + idSplit[1] + "/";
+                    assetPath += id;
+                    assetPath += ".asset";
 
                     break;
 
@@ -139,7 +151,7 @@ public class ScriptableHelper
                     }
 
                     iconPath += "/Perks/Killers/" + charName + "/";
-                    iconPath += "Iconperks_" + idSplit[3] + ".png";
+                    iconPath += "Iconperks_" + FormatName(tabSplit[4]) + ".png";
 
                     assetPath += "/Perks/Killers/" + charName + "/";
                     assetPath += id;
@@ -175,7 +187,7 @@ public class ScriptableHelper
                     
 
                     iconPath += "/Perks/Survivors/" + charName + "/";
-                    iconPath += "Iconperks_" + idSplit[3] + ".png";
+                    iconPath += "Iconperks_" + FormatName(tabSplit[4]) + ".png";
 
                     assetPath += "/Perks/Survivors/" + charName + "/";
                     assetPath += id;
@@ -208,14 +220,14 @@ public class ScriptableHelper
                         {
                             addon = (Addons)AssetDatabase.LoadAssetAtPath(assetPath, typeof(Addons));
 
-                            addon = SetupAddon(addon, tex, GetRarityType(idSplit[2]), tabSplit[5], tabSplit[4]);
+                            addon = SetupAddon(addon, tex, GetRarityType(tabSplit[3]), tabSplit[5], tabSplit[4]);
                         }
                     }
                     else
                     {
                         if (tex)
                         {
-                            addon = SetupAddon(addon, tex, GetRarityType(idSplit[2]), tabSplit[5], tabSplit[4]);
+                            addon = SetupAddon(addon, tex, GetRarityType(tabSplit[3]), tabSplit[5], tabSplit[4]);
                         }
 
                         AssetDatabase.CreateAsset(addon, assetPath);
@@ -401,22 +413,64 @@ public class ScriptableHelper
         }
     }
 
-    static string FormatKillersAddonsName(string text)
+    static List<char> specialCharacters = new List<char>()
+    {
+        ' ',
+        '"',
+        '\'',
+        '-',
+        '.',
+        ',',
+        '%',
+        '(',
+        ')',
+        '&',
+        ':',
+        '!',
+        '?'
+    };
+
+    static char CheckAccents(char c)
+    {
+        switch (c)
+        {
+            case 'é':
+                return 'e';
+
+            case 'è':
+                return 'e';
+
+            case 'à':
+                return 'a';
+
+            case 'â':
+                return 'a';
+                
+            default:
+                return c;
+        }
+    }
+
+    static string FormatName(string text)
     {
         if (string.IsNullOrWhiteSpace(text)) return "";
         StringBuilder newText = new StringBuilder(text.Length * 2);
-        newText.Append(text[0]);
-        for (int i = 1; i < text.Length; i++)
+        //newText.Append(text[0]);
+        for (int i = 0; i < text.Length; i++)
         {
-            if (text[i] == ' ') continue;
+            char character = text[i];
 
-            if (char.IsUpper(text[i]))
+            if (specialCharacters.Contains(character)) continue;
+
+            character = CheckAccents(character);
+
+            if (char.IsUpper(character))
             {
-                newText.Append(char.ToLower(text[i]));
+                newText.Append(char.ToLower(character));
             }
             else
             {
-                newText.Append(text[i]);
+                newText.Append(character);
             }
         }
         return newText.ToString();
@@ -448,23 +502,23 @@ public class ScriptableHelper
             default:
                 break;
 
-            case "A":
+            case "Common":
                 rarity = Rarity.RarityTypes.Common;
                 break;
 
-            case "B":
+            case "Uncommon":
                 rarity = Rarity.RarityTypes.Uncommon;
                 break;
 
-            case "C":
+            case "Rare":
                 rarity = Rarity.RarityTypes.Rare;
                 break;
 
-            case "D":
+            case "Very Rare":
                 rarity = Rarity.RarityTypes.VeryRare;
                 break;
 
-            case "E":
+            case "Ultra Rare":
                 rarity = Rarity.RarityTypes.UltraRare;
                 break;
         }

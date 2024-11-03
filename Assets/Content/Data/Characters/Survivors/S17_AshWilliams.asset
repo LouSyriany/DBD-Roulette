@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 3dee126e16b74f74a9c9fd7a3a8cf428, type: 3}
   Name: Ash Williams
+  ID: S17_AshWilliams
   UniquePerks:
-  - {fileID: 11400000, guid: 8a238a62302fa9d4c8fa3827d6b89e58, type: 2}
-  - {fileID: 11400000, guid: 74d4559e4b2c5064896dbd6c587980e0, type: 2}
-  - {fileID: 11400000, guid: 9911a5803edc7aa45bd78503a9640bcd, type: 2}
+  - {fileID: 11400000, guid: 6291a08507c65c7459d0e3eeee6e3498, type: 2}
+  - {fileID: 11400000, guid: 52921b0a1ed4ed74988bb061b6439dd8, type: 2}
+  - {fileID: 11400000, guid: 9e55027110689c24487b058d52f4e187, type: 2}
   KillerAddons: []

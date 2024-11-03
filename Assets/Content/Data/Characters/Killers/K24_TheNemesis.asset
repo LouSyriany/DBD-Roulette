@@ -15,28 +15,29 @@ MonoBehaviour:
   Type: 0
   Icon: {fileID: 21300000, guid: 343bd37b9490d5549b2875fe0c6e5324, type: 3}
   Name: The Nemesis
+  ID: K24_TheNemesis
   UniquePerks:
-  - {fileID: 11400000, guid: 925a14b99dbba6342a32a2867f8000b6, type: 2}
-  - {fileID: 11400000, guid: c02a4a72b986b5f49a6c6da3d8b2d49b, type: 2}
-  - {fileID: 11400000, guid: d4a7b85ff81d2904092404aa5bff68d3, type: 2}
+  - {fileID: 11400000, guid: 562fb6f3049f6e94cbe09a95bc718b8c, type: 2}
+  - {fileID: 11400000, guid: 00e6134d8ad04d146b537da78b91e01d, type: 2}
+  - {fileID: 11400000, guid: b1859680f9d811647ae4fe3252129ae4, type: 2}
   KillerAddons:
-  - {fileID: 11400000, guid: a9a839ec6e3794446b7240f75ca6714e, type: 2}
-  - {fileID: 11400000, guid: e768563e6008e9f41b4de2e53b6beb1c, type: 2}
-  - {fileID: 11400000, guid: 3473f39a0ecbd834b850b41e6fa25fad, type: 2}
-  - {fileID: 11400000, guid: 42b60d415e482104eab234e17380066d, type: 2}
-  - {fileID: 11400000, guid: 491adbc7fde69e543a07f62415e97653, type: 2}
-  - {fileID: 11400000, guid: 485e1b37256b5914ca65064382d19c84, type: 2}
-  - {fileID: 11400000, guid: 8c2e9295d4530e940b62bbceb78f731f, type: 2}
-  - {fileID: 11400000, guid: 599f7bce89dd9f947964446dea57b925, type: 2}
-  - {fileID: 11400000, guid: 9a1ba14f394545f4b88439f283ba891e, type: 2}
-  - {fileID: 11400000, guid: 741cb9d666f1db14c92daa1b219cc873, type: 2}
-  - {fileID: 11400000, guid: da19d7f9a1bc51541b04dfd8f608f88c, type: 2}
-  - {fileID: 11400000, guid: b580faa4983687149a353fb379cdb0a4, type: 2}
-  - {fileID: 11400000, guid: 075e04f565dcbb745af313a20be907fb, type: 2}
-  - {fileID: 11400000, guid: dc0af260b8d4f2d478979a8d6bb20249, type: 2}
-  - {fileID: 11400000, guid: 3efe655eeffb55d45ac2539be7c85aac, type: 2}
-  - {fileID: 11400000, guid: 3437b78e2db4fb24c988bc5e50fe2139, type: 2}
-  - {fileID: 11400000, guid: 519f10f7d4f6e3146b7ac95cd6128170, type: 2}
-  - {fileID: 11400000, guid: 8a13959e0b254844b9d83b91e2f0d9f1, type: 2}
-  - {fileID: 11400000, guid: 7eac81480832fc44f8251030245ade10, type: 2}
-  - {fileID: 11400000, guid: d5d754aa8caaa4c43997f0c974a5733e, type: 2}
+  - {fileID: 11400000, guid: 653d019ba73147549a08303e40d5cc2e, type: 2}
+  - {fileID: 11400000, guid: 63d8bc8d081da034ba01ce1973555046, type: 2}
+  - {fileID: 11400000, guid: 311ecac0cbad8324d835aaa2bb3ce2d3, type: 2}
+  - {fileID: 11400000, guid: 7beee20133b22454fa5ced707ec76792, type: 2}
+  - {fileID: 11400000, guid: fce364c330559cd43b8372a0d949d88a, type: 2}
+  - {fileID: 11400000, guid: fdcf769c696e5344a86f939137094929, type: 2}
+  - {fileID: 11400000, guid: f31ae487f53e5324a978b3afd518c594, type: 2}
+  - {fileID: 11400000, guid: 4fb207088b56a5745ac8b7ccb6ef4f6c, type: 2}
+  - {fileID: 11400000, guid: e43bfda179245f7429929ce6838a84e7, type: 2}
+  - {fileID: 11400000, guid: e5ca2a42956e32540897e9b7cf18be98, type: 2}
+  - {fileID: 11400000, guid: 36444a2fcfc369f46a3faa402bdfa691, type: 2}
+  - {fileID: 11400000, guid: 7ef6bc45b0f85d04186c7fd46633a23d, type: 2}
+  - {fileID: 11400000, guid: d6438853fd920d0458580c78ebb920c7, type: 2}
+  - {fileID: 11400000, guid: ffb3afadcf6730a42ae5cf0fb2586ea2, type: 2}
+  - {fileID: 11400000, guid: e3d9afde04ac9b0438557b39e207b435, type: 2}
+  - {fileID: 11400000, guid: 05398c9ef3512f14995d5bde95b7401d, type: 2}
+  - {fileID: 11400000, guid: e43c47ec45c19c84a9e76d0abf6a9407, type: 2}
+  - {fileID: 11400000, guid: 9b77ecec7e92f854ead6d6e5d8b2ef51, type: 2}
+  - {fileID: 11400000, guid: c3cb9a21687b6aa4384956322ca81bcd, type: 2}
+  - {fileID: 11400000, guid: 0fc38dc957025b747bca6a0231cde654, type: 2}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,16 @@ public class Characters : ScriptableObject
     public Sprite Icon;
     [ReadOnly] public string Name = "";
 
+    [ReadOnly] public string ID = "";
+
     public List<Perks> UniquePerks;
 
     public List<Addons> KillerAddons;
 
     public void SetName(string name)
     {
+        ID = name;
+
         switch (Type)
         {
             case CharacterType.Killers:

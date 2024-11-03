@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 65aa5add95f76554889f02a76dfc5b15, type: 3}
   Name: Laurie Strode
+  ID: S06_LaurieStrode
   UniquePerks:
-  - {fileID: 11400000, guid: 956ee2daaff06954fa67b7720f0233b6, type: 2}
-  - {fileID: 11400000, guid: 38088115048892d43a4d342bba1c5f85, type: 2}
-  - {fileID: 11400000, guid: d013feb2c9f6b40419d35dc33c1bef8a, type: 2}
+  - {fileID: 11400000, guid: fbc5de0f20581084ebcb8a9aea48477e, type: 2}
+  - {fileID: 11400000, guid: dc27c1874d9e1a34fbe1f59257b03953, type: 2}
+  - {fileID: 11400000, guid: 7f15a87292526ce41bc6c22a4deb0e28, type: 2}
   KillerAddons: []

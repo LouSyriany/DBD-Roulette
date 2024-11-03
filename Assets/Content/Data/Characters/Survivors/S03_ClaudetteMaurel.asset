@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 05f8d117ea09da04082284a79fc9ff8d, type: 3}
   Name: Claudette Maurel
+  ID: S03_ClaudetteMaurel
   UniquePerks:
-  - {fileID: 11400000, guid: c9150c8affda2b444bea1c02658e4209, type: 2}
-  - {fileID: 11400000, guid: 84b41aab3c233a94da024ab751b276dc, type: 2}
-  - {fileID: 11400000, guid: cfa3e4e4caba68b44940c2acc2dfef76, type: 2}
+  - {fileID: 11400000, guid: d6f0450e09aeaae4192a0c84bfdeba63, type: 2}
+  - {fileID: 11400000, guid: b54c4102a8acc2343a453bad908500fd, type: 2}
+  - {fileID: 11400000, guid: 8bb8fac5af720b14991dc80e92c6a11c, type: 2}
   KillerAddons: []

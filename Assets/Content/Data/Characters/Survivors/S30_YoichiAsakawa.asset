@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 324f6215dc6a2634faf613406e72d6d9, type: 3}
   Name: Yoichi Asakawa
+  ID: S30_YoichiAsakawa
   UniquePerks:
-  - {fileID: 11400000, guid: ad78a10de3ad3da43a1379ed85892dd9, type: 2}
-  - {fileID: 11400000, guid: d8e6a14edcf499a42bcdc731af9c0f50, type: 2}
-  - {fileID: 11400000, guid: 6e878ebb0778b7e4b97f89d595920912, type: 2}
+  - {fileID: 11400000, guid: a684a49029ab01e4f816169954c24182, type: 2}
+  - {fileID: 11400000, guid: 057f45eb26b8b0049842d5b74338a54a, type: 2}
+  - {fileID: 11400000, guid: bca0f360e2aa3b647a43d5b463aa695a, type: 2}
   KillerAddons: []

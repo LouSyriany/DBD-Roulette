@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
+  m_Name: KillerAddon_K01TheTrapper_Addon_11
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 1617e2ee3bb5220448e396aa93ccbd94, type: 3}
+  Name: Rusted Jaws
+  Descriton: "These Bear Trap jaws are covered with crusty and volatile rust spots,
+    making injuries particularly difficult to heal.\\n\\n\\t-Survivors injured by
+    a Bear Trap suffer from the Mangled Status Effect for 70 seconds.\r"
+  RarityType: 2

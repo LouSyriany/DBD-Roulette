@@ -15,8 +15,9 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 34191a1204c5117409047401c69ed19c, type: 3}
   Name: Jake Park
+  ID: S04_JakePark
   UniquePerks:
-  - {fileID: 11400000, guid: 68931a0eeb2406149985771f34dfa152, type: 2}
-  - {fileID: 11400000, guid: af78e19c2c277644c8f81e30930df59c, type: 2}
-  - {fileID: 11400000, guid: 09af3668ead5c764884f841604858364, type: 2}
+  - {fileID: 11400000, guid: f12819a1c76cdc34b8787311aaaf7fa1, type: 2}
+  - {fileID: 11400000, guid: 0b2ebe9468c79aa4dbf677680628acdc, type: 2}
+  - {fileID: 11400000, guid: cd7bf23bc93d7e440a3352361890d9d2, type: 2}
   KillerAddons: []

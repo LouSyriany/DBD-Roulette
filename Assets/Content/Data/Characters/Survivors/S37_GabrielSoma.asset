@@ -15,8 +15,8 @@ MonoBehaviour:
   Type: 1
   Icon: {fileID: 21300000, guid: 195d93a8016c7b04eafcc44f26fbef97, type: 3}
   Name: Gabriel Soma
+  ID: S37_GabrielSoma
   UniquePerks:
-  - {fileID: 11400000, guid: 62668c7929b1de5439edd7947ebad4c3, type: 2}
-  - {fileID: 11400000, guid: 5324b0f76ab3ba84cb9ae1373ff35101, type: 2}
-  - {fileID: 11400000, guid: 16aec2ea1797a584dba981fe2437e5eb, type: 2}
+  - {fileID: 11400000, guid: 51559398ac6c55742af1d0ee9bc17c4a, type: 2}
+  - {fileID: 11400000, guid: ef34c9163f894e948ae60cedb98132f5, type: 2}
   KillerAddons: []
