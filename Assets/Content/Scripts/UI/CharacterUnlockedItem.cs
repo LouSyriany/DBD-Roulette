@@ -9,6 +9,8 @@ public class CharacterUnlockedItem : MonoBehaviour
     [Serializable]
     public class ClickableEquipableElement
     {
+        [HideInInspector] public string Name;
+
         public AddonSlot AddonSlot;
 
         public bool State = true;
@@ -28,9 +30,9 @@ public class CharacterUnlockedItem : MonoBehaviour
 
     [Space(5)]
 
-    public List<ClickableEquipableElement> Perks;
+    public List<ClickableEquipableElement> Perks = new List<ClickableEquipableElement>();
     
-    public List<ClickableEquipableElement> Addons;
+    public List<ClickableEquipableElement> Addons = new List<ClickableEquipableElement>();
 
     public bool CharacterState = true;
 
@@ -44,22 +46,39 @@ public class CharacterUnlockedItem : MonoBehaviour
 
     Color offColor = new Color(0.59f, 0.06f, 0.06f, 0.42f);
 
+    private void OnValidate()
+    {
+        foreach (var addon in Addons)
+        {
+            if (addon.AddonSlot != null) addon.Name = addon.AddonSlot.name;
+        }
+    }
+
     void OnEnable()
     {
         Setup();
+        CheckState();
+        UpdateVisual(true);
     }
 
     void Update()
+    {
+        UpdateVisual();
+    }
+
+    void UpdateVisual(bool forceState = false)
     {
         foreach (var item in pendingChange)
         {
             if (item.State)
             {
                 item.Lerp += Time.deltaTime * 5f;
+                if (forceState) item.Lerp = 1;
             }
             else
             {
                 item.Lerp -= Time.deltaTime * 5f;
+                if (forceState) item.Lerp = 0;
             }
 
             item.Lerp = Mathf.Clamp01(item.Lerp);
@@ -73,24 +92,25 @@ public class CharacterUnlockedItem : MonoBehaviour
             if ((pendingChange[i].State && pendingChange[i].Lerp >= 1) || (!pendingChange[i].State && pendingChange[i].Lerp <= 0)) pendingChange.RemoveAt(i);
         }
 
-        if(lastCharacterState != CharacterState)
+        if (lastCharacterState != CharacterState)
         {
             if (CharacterState)
             {
                 characterLerp += Time.deltaTime * 5f;
+                if (forceState) characterLerp = 1;
             }
             else
             {
                 characterLerp -= Time.deltaTime * 5f;
+                if (forceState) characterLerp = 0;
             }
 
             characterLerp = Mathf.Clamp01(characterLerp);
 
-
             if (CharacterSlot) CharacterSlot.Icon.color = Color.Lerp(offColor, Color.white, characterLerp);
         }
 
-        if((CharacterState && characterLerp >= 1) || (!CharacterState && characterLerp <= 0))
+        if ((CharacterState && characterLerp >= 1) || (!CharacterState && characterLerp <= 0))
         {
             lastCharacterState = CharacterState;
         }
@@ -98,72 +118,34 @@ public class CharacterUnlockedItem : MonoBehaviour
 
     public void ChangePerkState(AddonSlot addonSlot)
     {
-        bool state = true;
-
         foreach (var item in Perks)
         {
             if (item.AddonSlot == addonSlot)
             {
-                item.State = state = !item.State;
+                item.State = !item.State;
 
                 pendingChange.Add(item);
 
-                break;
-            }
-        }
+                DatasManagerV2.Instance.UpdateState(item.AddonSlot.Equipable, item.State);
 
-        if (Character.Type == Characters.CharacterType.Killers)
-        {
-            foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledKillerPerks)
-            {
-                if (item.Perk == addonSlot.Equipable as Perks)
-                {
-                    item.Enabled = state;
-                }
-            }
-        }
-        else
-        {
-            foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledSurvivorPerks)
-            {
-                if (item.Perk == addonSlot.Equipable as Perks)
-                {
-                    item.Enabled = state;
-                }
+                break;
             }
         }
     }
 
     public void ChangeAddonsState(AddonSlot addonSlot)
     {
-        bool state = true;
-
         foreach (var item in Addons)
         {
             if (item.AddonSlot == addonSlot)
             {
-                item.State = state = !item.State;
+                item.State = !item.State;
 
                 pendingChange.Add(item);
 
-                break;
-            }
-        }
+                DatasManagerV2.Instance.UpdateState(item.AddonSlot.Equipable, item.State);
 
-        if(Character.Type == Characters.CharacterType.Killers)
-        {
-            foreach (var killer in RouletteManager.Instance.EnabledDatas.EnabledKillers)
-            {
-                if (killer.Character == Character)
-                {
-                    foreach (var addon in killer.EnabledKillerAddons)
-                    {
-                        if (addon.Addon == addonSlot.Equipable as Addons)
-                        {
-                            addon.Enabled = state;
-                        }
-                    }
-                }
+                break;
             }
         }
     }
@@ -172,26 +154,7 @@ public class CharacterUnlockedItem : MonoBehaviour
     {
         CharacterState = !CharacterState;
 
-        if(Character.Type == Characters.CharacterType.Killers)
-        {
-            foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledKillers)
-            {
-                if (item.Character == Character)
-                {
-                    item.Enabled = CharacterState;
-                }
-            }
-        }
-        else
-        {
-            foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledSurvivors)
-            {
-                if (item.Character == Character)
-                {
-                    item.Enabled = CharacterState;
-                }
-            }
-        }
+        DatasManagerV2.Instance.UpdateState(Character, CharacterState);
 
         if (Input.GetKey(KeyCode.LeftControl))
         {
@@ -253,74 +216,39 @@ public class CharacterUnlockedItem : MonoBehaviour
 
     public void CheckState()
     {
-        if (Character.Type == Characters.CharacterType.Killers)
+        CharacterState = DatasManagerV2.Instance.GetState(Character);
+
+        foreach (var item in Perks)
         {
-            foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledKillers)
-            {
-                if (item.Character == Character)
-                {
-                    item.Enabled = CharacterState;
-                }
-            }
-        }
-        else
-        {
-            foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledSurvivors)
-            {
-                if (item.Character == Character)
-                {
-                    item.Enabled = CharacterState;
-                }
-            }
+            item.State = DatasManagerV2.Instance.GetState(item.AddonSlot.Equipable);
+            pendingChange.Add(item);
         }
 
-        foreach (var perk in Perks)
+        foreach (var item in Addons)
         {
-            pendingChange.Add(perk);
-
-            if (Character.Type == Characters.CharacterType.Killers)
-            {
-                foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledKillerPerks)
-                {
-                    if (item.Perk == perk.AddonSlot.Equipable as Perks)
-                    {
-                        item.Enabled = perk.State;
-                    }
-                }
-            }
-            else
-            {
-                foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledSurvivorPerks)
-                {
-                    if (item.Perk == perk.AddonSlot.Equipable as Perks)
-                    {
-                        item.Enabled = perk.State;
-                    }
-                }
-            }
-        }
-
-        foreach (var addon in Addons)
-        {
-            pendingChange.Add(addon);
-
-            if (Character.Type == Characters.CharacterType.Killers)
-            {
-                foreach (var killer in RouletteManager.Instance.EnabledDatas.EnabledKillers)
-                {
-                    if (killer.Character == Character)
-                    {
-                        foreach (var kaddon in killer.EnabledKillerAddons)
-                        {
-                            if (kaddon.Addon == addon.AddonSlot.Equipable as Addons)
-                            {
-                                kaddon.Enabled = addon.State;
-                            }
-                        }
-                    }
-                }
-            }
+            item.State = DatasManagerV2.Instance.GetState(item.AddonSlot.Equipable);
+            pendingChange.Add(item);
         }
     }
 
+
+    public void InvertCharacter()
+    {
+        ChangeCharacterState();
+    }
+
+    public void InvertPerks()
+    {
+        foreach (var item in Perks)
+        {
+            ChangePerkState(item.AddonSlot);
+        }
+    }
+    public void InvertAddons()
+    {
+        foreach (var item in Addons)
+        {
+            ChangeAddonsState(item.AddonSlot);
+        }
+    }
 }

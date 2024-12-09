@@ -21,6 +21,9 @@ public class CustomScroll : MonoBehaviour
 
     bool mouseClicked = false;
 
+    Vector2 startA = Vector2.zero;
+    Vector2 startB = Vector2.zero;
+
     private void OnEnable()
     {
         ratio = Screen.width / Screen.height;
@@ -28,6 +31,9 @@ public class CustomScroll : MonoBehaviour
         {
             tr = GetComponent<RectTransform>();
         }
+
+        startA = tr.anchorMin;
+        startB = tr.anchorMax;
     }
 
     void Update()
@@ -77,4 +83,12 @@ public class CustomScroll : MonoBehaviour
         Max = f;
     }
 
+    public void ResetScroll()
+    {
+        if (tr)
+        {
+            tr.anchorMin = startA;
+            tr.anchorMax = startB;
+        }
+    }
 }

@@ -219,7 +219,7 @@ public class RouletteManager : MonoBehaviour
         public List<Addons> Addons = new List<Addons>();
     }
 
-    [SerializeField] RouletteData Data;
+    public RouletteData Data;
 
     public Dud Duds;
 
@@ -384,7 +384,7 @@ public class RouletteManager : MonoBehaviour
         {
             UpdateStreakList(rollType);
 
-            DatasManager.Instance.AddStreakEntries();
+            //DatasManager.Instance.AddStreakEntries();
         }
 
         OnRollMade?.Invoke(Results);

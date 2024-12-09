@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+    /*
     public static MenuManager Instance { get; private set; }
 
     class RectEnabled
@@ -391,7 +392,7 @@ public class MenuManager : MonoBehaviour
         characters = new List<CharacterSlot>();
         equipables = new List<AddonSlot>();
 
-        DatasManager.Instance.ResetStreakEntries();
+        //DatasManager.Instance.ResetStreakEntries();
 
         StreakModeVisual.ResetVisual();
     }
@@ -413,4 +414,5 @@ public class MenuManager : MonoBehaviour
             StreakMode.gameObject.SetActive(false);
         }
     }
+    */
 }

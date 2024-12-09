@@ -8,6 +8,8 @@ public class ItemUnlocked : MonoBehaviour
     [Serializable]
     public class ClickableEquipableElement
     {
+        public Rarity.RarityTypes Rarity;
+
         public AddonSlot AddonSlot;
 
         public bool State = true;
@@ -25,22 +27,12 @@ public class ItemUnlocked : MonoBehaviour
         [HideInInspector] public float Lerp = 1;
     }
 
-    //[SerializeField] Items Item;
-
-    //[SerializeField] ItemSlot ItemSlot;
-
-    //[SerializeField] TMPro.TextMeshProUGUI Name;
-
     [Space(5)]
 
-    public List<ClickableEquipableItem> Items;
+    public List<Items> Items;
+
+    public List<ClickableEquipableItem> ItemsSlot;
     public List<ClickableEquipableElement> Addons;
-
-    //public bool ItemState = true;
-
-    //bool lastItemState = true;
-
-    //float itemLerp = 1;
 
     List<ClickableEquipableItem> pendingChangeItem = new List<ClickableEquipableItem>();
 
@@ -48,17 +40,70 @@ public class ItemUnlocked : MonoBehaviour
 
     Color offColor = new Color(0.59f, 0.06f, 0.06f, 0.42f);
 
+    void OnEnable()
+    {
+        Setup();
+        CheckState();
+        UpdateVisual(true);
+    }
+
     void Update()
+    {
+        UpdateVisual();
+    }
+
+    public void Setup()
+    {
+        if (Items.Count == 0) return;
+
+        foreach (var item in ItemsSlot)
+        {
+            item.ItemSlot.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < Items.Count; i++)
+        {
+            ItemsSlot[i].ItemSlot.Item = Items[i];
+            ItemsSlot[i].ItemSlot.gameObject.SetActive(true);
+            ItemsSlot[i].ItemSlot.Setup();
+        }
+
+        foreach (var item in Addons)
+        {
+            item.AddonSlot.gameObject.SetActive(false);
+        }
+
+        foreach (var item in Items[0].ItemAddons)
+        {
+            foreach (var addonSlot in Addons)
+            {
+                if (!addonSlot.AddonSlot.gameObject.activeSelf)
+                {
+                    if (addonSlot.Rarity == item.RarityType)
+                    {
+                        addonSlot.AddonSlot.Equipable = item;
+                        addonSlot.AddonSlot.gameObject.SetActive(true);
+                        addonSlot.AddonSlot.Setup();
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    void UpdateVisual(bool forceState = false)
     {
         foreach (var item in pendingChange)
         {
             if (item.State)
             {
                 item.Lerp += Time.deltaTime * 5f;
+                if (forceState) item.Lerp = 1;
             }
             else
             {
                 item.Lerp -= Time.deltaTime * 5f;
+                if (forceState) item.Lerp = 0;
             }
 
             item.Lerp = Mathf.Clamp01(item.Lerp);
@@ -77,10 +122,12 @@ public class ItemUnlocked : MonoBehaviour
             if (item.State)
             {
                 item.Lerp += Time.deltaTime * 5f;
+                if (forceState) item.Lerp = 1;
             }
             else
             {
                 item.Lerp -= Time.deltaTime * 5f;
+                if (forceState) item.Lerp = 0;
             }
 
             item.Lerp = Mathf.Clamp01(item.Lerp);
@@ -97,90 +144,66 @@ public class ItemUnlocked : MonoBehaviour
 
     public void ChangeAddonsState(AddonSlot addonSlot)
     {
-        bool state = true;
-
         foreach (var item in Addons)
         {
             if (item.AddonSlot == addonSlot)
             {
-                item.State = state = !item.State;
+                item.State = !item.State;
 
                 pendingChange.Add(item);
 
-                break;
-            }
-        }
+                DatasManagerV2.Instance.UpdateState(item.AddonSlot.Equipable, item.State);
 
-        foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledItems)
-        {
-            foreach (var addon in item.EnabledItemAddons)
-            {
-                if(addon.Addon == addonSlot.Equipable as Addons) 
-                {
-                    addon.Enabled = state;
-                }
+                break;
             }
         }
     }
 
     public void ChangeItemState(ItemSlot itemSlot)
     {
-        bool state = true;
-
-        foreach (var item in Items)
+        foreach (var item in ItemsSlot)
         {
             if (item.ItemSlot == itemSlot)
             {
-                item.State = state = !item.State;
+                item.State = !item.State;
 
                 pendingChangeItem.Add(item);
+
+                DatasManagerV2.Instance.UpdateState(item.ItemSlot.Item, item.State);
 
                 break;
             }
         }
-
-        foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledItems)
-        {
-            if(item.Item == itemSlot.Item)
-            {
-                item.Enabled = state;
-            }
-        }
     }
-
 
     public void CheckState()
     {
-        foreach (var item in Items)
+        foreach (var item in ItemsSlot)
         {
+            item.State = DatasManagerV2.Instance.GetState(item.ItemSlot.Item);
             pendingChangeItem.Add(item);
         }
 
         foreach (var item in Addons)
         {
+            item.State = DatasManagerV2.Instance.GetState(item.AddonSlot.Equipable);
             pendingChange.Add(item);
         }
+    }
 
-        foreach (var item in RouletteManager.Instance.EnabledDatas.EnabledItems)
+    public void InvertItems()
+    {
+        foreach (var item in ItemsSlot)
         {
-            foreach (var nitem in Items)
-            {
-                if (nitem.ItemSlot.Item == item.Item)
-                {
-                    item.Enabled = nitem.State;
-                }
-            }
+            ChangeItemState(item.ItemSlot);
+        }
+    }
 
-            foreach (var addon in item.EnabledItemAddons)
-            {
-                foreach (var naddon in Addons)
-                {
-                    if (naddon.AddonSlot.Equipable as Addons == addon.Addon)
-                    {
-                        addon.Enabled = naddon.State;
-                    }
-                }
-            }
+    public void InvertAddons()
+    {
+        foreach (var item in Addons)
+        {
+            ChangeAddonsState(item.AddonSlot);
         }
     }
 }

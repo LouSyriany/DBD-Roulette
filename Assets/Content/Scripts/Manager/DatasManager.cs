@@ -11,6 +11,7 @@ using UnityEditor;
 [DefaultExecutionOrder(1)]
 public class DatasManager : MonoBehaviour
 {
+    /*
     public static DatasManager Instance { get; private set; }
 
     [Serializable]
@@ -172,7 +173,7 @@ public class DatasManager : MonoBehaviour
         {
             SavedItemUnlockedData data = new SavedItemUnlockedData();
 
-            foreach (var item in ItemsUnlocked[i].Items)
+            foreach (var item in ItemsUnlocked[i].ItemsSlot)
             {
                 if (item.ItemSlot == null) continue;
 
@@ -303,7 +304,7 @@ public class DatasManager : MonoBehaviour
                     }
                 }
 
-                character.CheckState();
+                //character.CheckState();
             }
         }
 
@@ -337,7 +338,7 @@ public class DatasManager : MonoBehaviour
             {
                 foreach (var itemSaved in data.ItemSaved)
                 {
-                    foreach (var item in itemUnlocked.Items)
+                    foreach (var item in itemUnlocked.ItemsSlot)
                     {
                         if (itemSaved.Item == item.ItemSlot.Item.name)
                         {
@@ -406,12 +407,10 @@ public class DatasManager : MonoBehaviour
         #endregion
     }
 
-    void SaveData(string data)
-    {
-        File.WriteAllText(Application.persistentDataPath + fileName, data);
 
-        GUIUtility.systemCopyBuffer = Application.persistentDataPath + fileName;
-    }
+    
+
+
 
     public void AddStreakEntries()
     {
@@ -451,6 +450,15 @@ public class DatasManager : MonoBehaviour
         SavedStreaks = new List<SavedRollEntry>();
     }
 
+
+
+
+    void SaveData(string data)
+    {
+        File.WriteAllText(Application.persistentDataPath + fileName, data);
+
+        GUIUtility.systemCopyBuffer = Application.persistentDataPath + fileName;
+    }
     string LoadData()
     {
         if (File.Exists(Application.persistentDataPath + fileName))
@@ -459,4 +467,5 @@ public class DatasManager : MonoBehaviour
         }
         return "";
     }
+    */
 }

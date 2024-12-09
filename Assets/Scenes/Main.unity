@@ -3141,7 +3141,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.45
+  m_fontSize: 15.6
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7470,7 +7470,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.7
+  m_fontSize: 23.45
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13162,7 +13162,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.7
+  m_fontSize: 19.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13804,7 +13804,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.8
+  m_fontSize: 15.95
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15049,7 +15049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &442383461
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19943,7 +19943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &602032418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20094,7 +20094,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.45
+  m_fontSize: 18.85
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25363,43 +25363,56 @@ MonoBehaviour:
   CharacterSlot: {fileID: 0}
   Name: {fileID: 0}
   Perks:
-  - AddonSlot: {fileID: 619243387}
+  - Name: 
+    AddonSlot: {fileID: 619243387}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 35856089}
+  - Name: 
+    AddonSlot: {fileID: 35856089}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 877954327}
+  - Name: 
+    AddonSlot: {fileID: 877954327}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 952154548}
+  - Name: 
+    AddonSlot: {fileID: 952154548}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 54163188}
+  - Name: 
+    AddonSlot: {fileID: 54163188}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1580848751}
+  - Name: 
+    AddonSlot: {fileID: 1580848751}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1957331870}
+  - Name: 
+    AddonSlot: {fileID: 1957331870}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1295111840}
+  - Name: 
+    AddonSlot: {fileID: 1295111840}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 421574390}
+  - Name: 
+    AddonSlot: {fileID: 421574390}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 821943590}
+  - Name: 
+    AddonSlot: {fileID: 821943590}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1191218856}
+  - Name: 
+    AddonSlot: {fileID: 1191218856}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 814507413}
+  - Name: 
+    AddonSlot: {fileID: 814507413}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 464680372}
+  - Name: 
+    AddonSlot: {fileID: 464680372}
     State: 1
     Lerp: 1
   Addons: []
@@ -28833,7 +28846,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.15
+  m_fontSize: 17.45
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -32084,9 +32097,9 @@ RectTransform:
   m_Father: {fileID: 7515103358385958301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -376.13333, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1003982632
 MonoBehaviour:
@@ -34480,7 +34493,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.85
+  m_fontSize: 22.5
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -35721,7 +35734,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21
+  m_fontSize: 22.7
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -36025,9 +36038,9 @@ RectTransform:
   m_Father: {fileID: 362450848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -352, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1137947871
 MonoBehaviour:
@@ -46608,7 +46621,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.8
+  m_fontSize: 22.45
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -50714,7 +50727,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.8
+  m_fontSize: 22.45
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -50848,7 +50861,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 23.75
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -50982,7 +50995,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.6
+  m_fontSize: 17.95
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -52761,7 +52774,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.7
+  m_fontSize: 22.35
   m_fontSizeBase: 23.37
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -52828,7 +52841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1515787467
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55737,9 +55750,9 @@ RectTransform:
   m_Father: {fileID: 362450848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -352, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592112807
 MonoBehaviour:
@@ -60340,9 +60353,9 @@ RectTransform:
   m_Father: {fileID: 362450848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -352, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1723424117
 MonoBehaviour:
@@ -63435,7 +63448,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.8
+  m_fontSize: 22.45
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -72897,7 +72910,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.5
+  m_fontSize: 19.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -75552,43 +75565,56 @@ MonoBehaviour:
   CharacterSlot: {fileID: 0}
   Name: {fileID: 0}
   Perks:
-  - AddonSlot: {fileID: 999802184}
+  - Name: 
+    AddonSlot: {fileID: 999802184}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1663860127}
+  - Name: 
+    AddonSlot: {fileID: 1663860127}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 537775498}
+  - Name: 
+    AddonSlot: {fileID: 537775498}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 117118724190723860}
+  - Name: 
+    AddonSlot: {fileID: 117118724190723860}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 4821135635051702637}
+  - Name: 
+    AddonSlot: {fileID: 4821135635051702637}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 127529105258734731}
+  - Name: 
+    AddonSlot: {fileID: 127529105258734731}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 51164849}
+  - Name: 
+    AddonSlot: {fileID: 51164849}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1171755483}
+  - Name: 
+    AddonSlot: {fileID: 1171755483}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1663202442}
+  - Name: 
+    AddonSlot: {fileID: 1663202442}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 34349807}
+  - Name: 
+    AddonSlot: {fileID: 34349807}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 547853816}
+  - Name: 
+    AddonSlot: {fileID: 547853816}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 884203080}
+  - Name: 
+    AddonSlot: {fileID: 884203080}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1349686214}
+  - Name: 
+    AddonSlot: {fileID: 1349686214}
     State: 1
     Lerp: 1
   Addons: []
