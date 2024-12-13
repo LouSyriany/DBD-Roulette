@@ -16,5 +16,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 84c7187b6442916439dd9924b9c5478e, type: 3}
   Name: Nicolas Cage
   ID: S38_NicolasCage
-  UniquePerks: []
+  UniquePerks:
+  - {fileID: 11400000, guid: 1de750c4e8e10004ba0fb6f047faa856, type: 2}
+  - {fileID: 11400000, guid: e1cc5a150092c484394216165bcb1e33, type: 2}
+  - {fileID: 11400000, guid: d58f019f0de4ed14cad1c662ea4e1fb1, type: 2}
   KillerAddons: []

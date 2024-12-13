@@ -16,5 +16,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: f018a6f94b6653a45832857c68835b89, type: 3}
   Name: Ellen Ripley
   ID: S39_EllenRipley
-  UniquePerks: []
+  UniquePerks:
+  - {fileID: 11400000, guid: b384630469e41a94e9a822fd3627649f, type: 2}
+  - {fileID: 11400000, guid: 0f98611a01ba0134ea576042fd1864a7, type: 2}
+  - {fileID: 11400000, guid: 17095ec292c19fc4480c8dc527c98e47, type: 2}
   KillerAddons: []

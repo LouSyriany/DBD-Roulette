@@ -16,5 +16,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 574c22aa81a0eca4788e435cfd2f77fd, type: 3}
   Name: Sable Ward
   ID: S41_SableWard
-  UniquePerks: []
+  UniquePerks:
+  - {fileID: 11400000, guid: a631836f45d128e49839fcd5c2852f1b, type: 2}
+  - {fileID: 11400000, guid: 16ec564b133942140b31a845823dfc08, type: 2}
+  - {fileID: 11400000, guid: 7635d7241fe7bfd42a89325356baa4a8, type: 2}
   KillerAddons: []

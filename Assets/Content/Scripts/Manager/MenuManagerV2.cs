@@ -14,9 +14,27 @@ public class MenuManagerV2 : MonoBehaviour
     [SerializeField] RectTransform SurvivorOptions;
     [SerializeField] RectTransform ItemOptions;
 
+    [Space(10)]
+
+    [SerializeField] BoolData PerkStreak;
+    [SerializeField] BoolData CharacterStreak;
+
+    [SerializeField] GameObject NormalMode;
+    [SerializeField] GameObject StreakMode;
+
+    bool prevValue;
+
     void OnEnable()
     {
         Setup();
+    }
+
+    void FixedUpdate()
+    {
+        bool streakMode = DatasManagerV2.Instance.GetSetting(PerkStreak) || DatasManagerV2.Instance.GetSetting(CharacterStreak);
+
+        NormalMode.SetActive(!streakMode);
+        StreakMode.SetActive(streakMode);
     }
 
     void Setup()

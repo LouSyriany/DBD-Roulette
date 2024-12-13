@@ -356,7 +356,7 @@ public class ScriptableHelper
         {
             survivors[i].UniquePerks = new List<Perks>();
 
-            for (int y = 0; y < killersPerks.Count; y++)
+            for (int y = 0; y < survivorPerks.Count; y++)
             {
                 if (survivorPerks[y].name.Split('_')[1] == survivors[i].name.Replace("_", ""))
                 {

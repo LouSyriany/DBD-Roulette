@@ -16,5 +16,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 38d940a35d24ae84088c0397e570b048, type: 3}
   Name: Alan Wake
   ID: S40_AlanWake
-  UniquePerks: []
+  UniquePerks:
+  - {fileID: 11400000, guid: 8646fa0efb8f5ef46b23f1f30d39d6bb, type: 2}
+  - {fileID: 11400000, guid: dca53de15cc13d9469171866c5b8b27c, type: 2}
+  - {fileID: 11400000, guid: f19d1d6effbe09345b051607311f6182, type: 2}
   KillerAddons: []

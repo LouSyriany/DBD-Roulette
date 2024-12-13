@@ -45,7 +45,7 @@ public class RouletteResultVisual : MonoBehaviour
 
     public void ShowResult(RouletteManager.Result result)
     {
-        if (RouletteManager.Instance.Parameters.RollCharacters && Character)
+        if (RouletteManager.Instance.Results.Character != null && Character)
         {
             Character.gameObject.SetActive(true);
             Character.Character = result.Character;
@@ -58,7 +58,9 @@ public class RouletteResultVisual : MonoBehaviour
 
         if (Item)
         {
-            if (RouletteManager.Instance.Parameters.RollItems && result.Character.Type == Characters.CharacterType.Survivors && result.Item != null && result.Item != RouletteManager.Instance.Duds.ItemDud)
+            if (DatasManagerV2.Instance.GetSetting(RouletteManager.Instance.Parameters.RollItems) 
+                && result.Item != null 
+                && result.Item != RouletteManager.Instance.Duds.ItemDud)
             {
                 Item.gameObject.SetActive(true);
 
@@ -78,7 +80,7 @@ public class RouletteResultVisual : MonoBehaviour
                 PerksSlot[i].gameObject.SetActive(false);
             }
 
-            if (RouletteManager.Instance.Parameters.RollPerks)
+            if (DatasManagerV2.Instance.GetSetting(RouletteManager.Instance.Parameters.RollPerks))
             {
                 foreach (Perks perk in result.Perks)
                 {
@@ -106,7 +108,7 @@ public class RouletteResultVisual : MonoBehaviour
                 AddonsSlot[i].gameObject.SetActive(false);
             }
 
-            if (RouletteManager.Instance.Parameters.RollAddons)
+            if (DatasManagerV2.Instance.GetSetting(RouletteManager.Instance.Parameters.RollAddons))
             {
                 foreach (Addons addon in result.Addons)
                 {
