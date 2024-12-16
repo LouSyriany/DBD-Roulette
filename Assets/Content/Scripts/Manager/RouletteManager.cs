@@ -244,6 +244,8 @@ public class RouletteManager : MonoBehaviour
     public Action OnStreakStopped;
     public Action OnStreakReset;
 
+    private static System.Random s_Random = new System.Random();
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -548,44 +550,23 @@ public class RouletteManager : MonoBehaviour
             }
         }
 
-        if (!DatasManagerV2.Instance.GetSetting(Parameters.PerkStreakMode) && DatasManagerV2.Instance.GetSetting(Parameters.DudPerk))
-        {
-            int count = DatasManagerV2.Instance.GetSetting(Parameters.DudPerkCount) * perkList.Count / 100;
-
-            for (int i = 0; i < count; i++)
-            {
-                perkList.Add(Duds.PerkDud);
-            }
-        }
-
         RandomRouletteFn.Shuffle(perkList);
 
-        if (perkList.Count > 0)
+        for (int i = 0; i < 4; i++)
         {
-            rdm = UnityEngine.Random.Range(0, perkList.Count);
-            Results.Perks.Add(perkList[rdm]);
-            perkList.RemoveAt(rdm);
-        }
-
-        if (perkList.Count > 0)
-        {
-            rdm = UnityEngine.Random.Range(0, perkList.Count);
-            Results.Perks.Add(perkList[rdm]);
-            perkList.RemoveAt(rdm);
-        }
-
-        if (perkList.Count > 0)
-        {
-            rdm = UnityEngine.Random.Range(0, perkList.Count);
-            Results.Perks.Add(perkList[rdm]);
-            perkList.RemoveAt(rdm);
-        }
-
-        if (perkList.Count > 0)
-        {
-            rdm = UnityEngine.Random.Range(0, perkList.Count);
-            Results.Perks.Add(perkList[rdm]);
-            perkList.RemoveAt(rdm);
+            if (DatasManagerV2.Instance.GetSetting(Parameters.DudPerk) && !CheckRandom(DatasManagerV2.Instance.GetSetting(Parameters.DudPerkCount) / 4))
+            {
+                Results.Perks.Add(Duds.PerkDud);
+            }
+            else
+            {
+                if (perkList.Count > 0)
+                {
+                    rdm = UnityEngine.Random.Range(0, perkList.Count);
+                    Results.Perks.Add(perkList[rdm]);
+                    perkList.RemoveAt(rdm);
+                }
+            }
         }
     }
     void RandomItem()
@@ -600,35 +581,48 @@ public class RouletteManager : MonoBehaviour
         {
             if (item.Enabled && item.Item != Duds.ItemDud)
             {
-                if (DatasManagerV2.Instance.GetSetting(Parameters.RarirtyRoll))
+                itemList.Add(item.Item);
+            }
+        }
+
+        if (DatasManagerV2.Instance.GetSetting(Parameters.DudItem) && !CheckRandom(DatasManagerV2.Instance.GetSetting(Parameters.DudItemCount)))
+        {
+            Results.Item = Duds.ItemDud;
+        }
+        else
+        {
+            if (DatasManagerV2.Instance.GetSetting(Parameters.RarirtyRoll))
+            {
+                List<RandomRouletteFn.Item> items = new List<RandomRouletteFn.Item>();
+
+                foreach (var item in itemList)
                 {
-                    for (int i = 0; i < 5 - (int)item.Item.Rarity; i++)
+                    RandomRouletteFn.Item newItem = new RandomRouletteFn.Item();
+                    newItem.name = item.name;
+                    newItem.chance = item.Rarity;
+
+                    items.Add(newItem);
+                }
+
+                RandomRouletteFn.Item pickedItem = RandomRouletteFn.ProportionalWheelSelection.SelectItem(items);
+
+                foreach (var item in itemList)
+                {
+                    if (item.name == pickedItem.name)
                     {
-                        itemList.Add(item.Item);
+                        Results.Item = item;
+                        break;
                     }
                 }
-                else
-                {
-                    itemList.Add(item.Item);
-                }
             }
-        }
-
-        if (DatasManagerV2.Instance.GetSetting(Parameters.DudItem))
-        {
-            int count = DatasManagerV2.Instance.GetSetting(Parameters.DudItemCount) * itemList.Count / 100;
-
-            for (int i = 0; i < count; i++)
+            else
             {
-                itemList.Add(Duds.ItemDud);
+                RandomRouletteFn.Shuffle(itemList);
+                rdm = UnityEngine.Random.Range(0, itemList.Count);
+                Results.Item = itemList[rdm];
             }
         }
-
-        RandomRouletteFn.Shuffle(itemList);
-
-        rdm = UnityEngine.Random.Range(0, itemList.Count);
-
-        Results.Item = itemList[rdm];
+        
     }
     void RandomAddons()
     {
@@ -644,17 +638,7 @@ public class RouletteManager : MonoBehaviour
                     {
                         if (addon.Enabled && addon.Addon != Duds.AddonDud)
                         {
-                            if (DatasManagerV2.Instance.GetSetting(Parameters.RarirtyRoll))
-                            {
-                                for (int i = 0; i < 5 - (int)addon.Addon.RarityType + 1; i++)
-                                {
-                                    addonList.Add(addon.Addon);
-                                }
-                            }
-                            else
-                            {
-                                addonList.Add(addon.Addon);
-                            }
+                            addonList.Add(addon.Addon);
                         }
                     }
                 }
@@ -672,17 +656,7 @@ public class RouletteManager : MonoBehaviour
                         {
                             if (addon.Enabled && addon.Addon != Duds.AddonDud)
                             {
-                                if (DatasManagerV2.Instance.GetSetting(Parameters.RarirtyRoll))
-                                {
-                                    for (int i = 0; i < 5 - (int)addon.Addon.RarityType + 1; i++)
-                                    {
-                                        addonList.Add(addon.Addon);
-                                    }
-                                }
-                                else
-                                {
-                                    addonList.Add(addon.Addon);
-                                }
+                                addonList.Add(addon.Addon);
                             }
                         }
                     }
@@ -692,44 +666,82 @@ public class RouletteManager : MonoBehaviour
 
         if (addonList.Count > 0)
         {
-            if (DatasManagerV2.Instance.GetSetting(Parameters.DudAddon))
+            for (int i = 0; i < 2; i++)
             {
-                int count = DatasManagerV2.Instance.GetSetting(Parameters.DudAddonCount) * addonList.Count / 100;
-
-                for (int i = 0; i < count; i++)
+                if (DatasManagerV2.Instance.GetSetting(Parameters.DudAddon) && !CheckRandom(DatasManagerV2.Instance.GetSetting(Parameters.DudAddonCount) / 2))
                 {
-                    addonList.Add(Duds.AddonDud);
+                    Results.Addons.Add(Duds.AddonDud);
+                }
+                else
+                {
+                    if (DatasManagerV2.Instance.GetSetting(Parameters.RarirtyRoll))
+                    {
+                        List<RandomRouletteFn.Item> items = new List<RandomRouletteFn.Item>();
+
+                        foreach (var item in addonList)
+                        {
+                            RandomRouletteFn.Item newItem = new RandomRouletteFn.Item();
+                            newItem.name = item.name;
+                            newItem.chance = item.RarityType;
+
+                            items.Add(newItem);
+                        }
+
+                        RandomRouletteFn.Item pickedItem = RandomRouletteFn.ProportionalWheelSelection.SelectItem(items);
+
+                        for (int y = 0; i < addonList.Count; y++)
+                        {
+                            if (addonList[y].name == pickedItem.name)
+                            {
+                                Results.Addons.Add(addonList[y]);
+                                addonList.RemoveAt(y);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        RandomRouletteFn.Shuffle(addonList);
+                        rdm = UnityEngine.Random.Range(0, addonList.Count);
+                        Results.Addons.Add(addonList[rdm]);
+                        addonList.RemoveAt(rdm);
+                    }
                 }
             }
-
-            RandomRouletteFn.Shuffle(addonList);
-            if (DatasManagerV2.Instance.GetSetting(Parameters.RarirtyRoll))
-            {
-                rdm = UnityEngine.Random.Range(0, addonList.Count);
-                Results.Addons.Add(addonList[rdm]);
-
-                Addons tmp = addonList[rdm];
-
-                while (tmp == addonList[rdm])
-                {
-                    rdm = UnityEngine.Random.Range(0, addonList.Count);
-                }
-
-                Results.Addons.Add(addonList[rdm]);
-            }
-            else
-            {
-                rdm = UnityEngine.Random.Range(0, addonList.Count);
-                Results.Addons.Add(addonList[rdm]);
-                addonList.RemoveAt(rdm);
-
-                rdm = UnityEngine.Random.Range(0, addonList.Count);
-                Results.Addons.Add(addonList[rdm]);
-                addonList.RemoveAt(rdm);
-            }
+            //if (DatasManagerV2.Instance.GetSetting(Parameters.RarirtyRoll))
+            //{
+            //    rdm = UnityEngine.Random.Range(0, addonList.Count);
+            //    Results.Addons.Add(addonList[rdm]);
+            //
+            //    Addons tmp = addonList[rdm];
+            //
+            //    while (tmp == addonList[rdm])
+            //    {
+            //        rdm = UnityEngine.Random.Range(0, addonList.Count);
+            //    }
+            //
+            //    Results.Addons.Add(addonList[rdm]);
+            //}
+            //else
+            //{
+            //    
+            //}
         }
     }
 
+    bool CheckRandom(int maxValue)
+    {
+        int perCent = s_Random.Next(0, 100);
+
+        if (perCent < maxValue)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 
     public void RerollCharacter(Characters character)
     {
@@ -1100,6 +1112,90 @@ public static class RandomRouletteFn
             T value = list[k];
             list[k] = list[n];
             list[n] = value;
+        }
+    }
+
+    public class Item
+    {
+        public string name; // not only string, any type of data
+        public Rarity.RarityTypes chance;  // chance of getting this Item
+    }
+
+    public class ProportionalWheelSelection
+    {
+        public static System.Random rnd = new System.Random();
+
+        // Static method for using from anywhere. You can make its overload for accepting not only List, but arrays also: 
+        // public static Item SelectItem (Item[] items)...
+        public static Item SelectItem(List<Item> items)
+        {
+            int coValue = 45;
+            int unValue = 25;
+            int raValue = 15;
+            int vrValue = 10;
+            int urValue = 5;
+
+            // Calculate the summa of all portions.
+            int poolSize = 0;
+            for (int i = 0; i < items.Count; i++)
+            {
+                switch (items[i].chance)
+                {
+                    case Rarity.RarityTypes.Common:
+                        poolSize += coValue;
+                        break;
+
+                    case Rarity.RarityTypes.Uncommon:
+                        poolSize += unValue;
+                        break;
+
+                    case Rarity.RarityTypes.Rare:
+                        poolSize += raValue;
+                        break;
+
+                    case Rarity.RarityTypes.VeryRare:
+                        poolSize += vrValue;
+                        break;
+
+                    case Rarity.RarityTypes.UltraRare:
+                        poolSize += urValue;
+                        break;
+                }
+            }
+
+            // Get a random integer from 0 to PoolSize.
+            int randomNumber = rnd.Next(0, poolSize) + 1;
+
+            // Detect the item, which corresponds to current random number.
+            int accumulatedProbability = 0;
+            for (int i = 0; i < items.Count; i++)
+            {
+                switch (items[i].chance)
+                {
+                    case Rarity.RarityTypes.Common:
+                        accumulatedProbability += coValue;
+                        break;
+
+                    case Rarity.RarityTypes.Uncommon:
+                        accumulatedProbability += unValue;
+                        break;
+
+                    case Rarity.RarityTypes.Rare:
+                        accumulatedProbability += raValue;
+                        break;
+
+                    case Rarity.RarityTypes.VeryRare:
+                        accumulatedProbability += vrValue;
+                        break;
+
+                    case Rarity.RarityTypes.UltraRare:
+                        accumulatedProbability += urValue;
+                        break;
+                }
+                if (randomNumber <= accumulatedProbability)
+                    return items[i];
+            }
+            return null;    // this code will never come while you use this programm right :)
         }
     }
 }
