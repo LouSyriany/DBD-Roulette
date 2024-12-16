@@ -163,6 +163,14 @@ public class CharacterUnlockedItem : MonoBehaviour
                 ChangePerkState(perk.AddonSlot);
             }
         }
+
+        if (Input.GetKey(KeyCode.LeftAlt))
+        {
+            foreach (var addon in Addons)
+            {
+                ChangeAddonsState(addon.AddonSlot);
+            }
+        }
     }
 
     [ContextMenu("Setup")]

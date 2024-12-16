@@ -101,12 +101,19 @@ public class DatasManagerV2 : MonoBehaviour
 
     public SettingsData Settings;
 
+    public List<RouletteManager.Result> StreakData;
+
     string saveFileName = "/DBDRouletteSaveData.save";
 
     string streakfileName = "/DBDRouletteStreakData.save";
 
     public Action OnUserDataSaved;
     public Action OnUserDataLoaded;
+
+    public Action OnStreakDataSaved;
+    public Action OnStreakDataLoaded;
+
+    List<string> streakContent = new List<string>();
 
 #if UNITY_EDITOR
 
@@ -298,6 +305,199 @@ public class DatasManagerV2 : MonoBehaviour
         }
 
         return false;
+    }
+
+
+    public void SaveStreakData()
+    {
+        string save = Application.version + '\n';
+
+        foreach (var item in streakContent)
+        {
+            save += item + '\n';
+        }
+
+        SaveData(save, Application.persistentDataPath + streakfileName);
+        OnStreakDataSaved?.Invoke();
+    }
+    public void LoadStreakData()
+    {
+        StreakData = new List<RouletteManager.Result>();
+
+        string save = LoadData(Application.persistentDataPath + streakfileName);
+
+        if (save == "") return;
+
+        string[] saveLines = save.Split('\n');
+
+        if (!CheckVersion(saveLines[0]))
+        {
+            Debug.LogError("Can't read streak data");
+            return;
+        }
+
+        for (int i = 1; i < saveLines.Length; i++)
+        {
+            if(saveLines[i] != "") AddNewEntry(ReadEntry(saveLines[i]));
+        }
+
+        OnStreakDataLoaded?.Invoke();
+
+        RouletteManager.Instance.StreakOnGoing = true;
+        RouletteManager.Instance.SetCurrentList(true);
+        RouletteManager.Instance.ForceRoll();
+    }
+
+    public void ResetStreak()
+    {
+        StreakData = new List<RouletteManager.Result>();
+        streakContent = new List<string>();
+    }
+    public void AddNewEntry(RouletteManager.Result result)
+    {
+        StreakData.Add(result);
+
+        string currentResult = "";
+
+        currentResult += "c:" + result.Character.ID + "*";
+
+        currentResult += "p:";
+
+        foreach (var item in result.Perks)
+        {
+            if (item != RouletteManager.Instance.Duds.PerkDud)
+            {
+                currentResult += item.name + "-";
+            }
+        }
+
+        currentResult += "*a:";
+
+        foreach (var item in result.Addons)
+        {
+            if (item != RouletteManager.Instance.Duds.AddonDud)
+            {
+                currentResult += item.name + "-";
+            }
+        }
+
+        currentResult += "*i:";
+
+        if (result.Item != null) currentResult += result.Item.name;
+
+        currentResult += "*t:" + result.Roll.ToString();
+
+        streakContent.Add(currentResult);
+    }
+    RouletteManager.Result ReadEntry(string s)
+    {
+        RouletteManager.Result result = new RouletteManager.Result();
+
+        string[] starPart = s.Split('*');
+
+        string Name = starPart[0].Substring(2);
+        string[] Perks = starPart[1].Substring(2).Split('-');
+        string[] Addons = starPart[2].Substring(2).Split('-');
+        string Item = starPart[3].Substring(2);
+        string Type = starPart[4].Substring(2);
+
+        if (Type[0] == 'B')
+        {
+            result.Roll = RouletteManager.MainRollType.Both;
+        }
+        else if (Type[0] == 'K')
+        {
+            result.Roll = RouletteManager.MainRollType.Killer;
+        }
+        else if (Type[0] == 'S')
+        {
+            result.Roll = RouletteManager.MainRollType.Survivor;
+        }
+
+        if (Name[0] == 'K')
+        {
+            foreach (var item in DataBase.Killers)
+            {
+                if (item.Ref.name == Name)
+                {
+                    result.Character = item.Ref as Characters;
+                    break;
+                }
+            }
+
+            foreach (var perk in Perks)
+            {
+                foreach (var item in DataBase.KillerPerks)
+                {
+                    if(item.Ref.name == perk)
+                    {
+                        result.Perks.Add(item.Ref as Perks);
+                        break;
+                    }
+                }
+            }
+
+            foreach (var addon in Addons)
+            {
+                foreach (var item in DataBase.KillerAddons)
+                {
+                    if (item.Ref.name == addon)
+                    {
+                        result.Addons.Add(item.Ref as Addons);
+                        break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            foreach (var item in DataBase.Survivors)
+            {
+                if (item.Ref.name == Name)
+                {
+                    result.Character = item.Ref as Characters;
+                    break;
+                }
+            }
+
+            foreach (var perk in Perks)
+            {
+                foreach (var item in DataBase.SurvivorPerks)
+                {
+                    if (item.Ref.name == perk)
+                    {
+                        result.Perks.Add(item.Ref as Perks);
+                        break;
+                    }
+                }
+            }
+
+            foreach (var item in DataBase.Items)
+            {
+                if (item.Ref.name == Item)
+                {
+                    result.Item = item.Ref as Items;
+                    break;
+                }
+            }
+
+            if (result.Item != null)
+            {
+                foreach (var addon in Addons)
+                {
+                    foreach (var item in DataBase.ItemsAddon)
+                    {
+                        if (item.Ref.name == addon)
+                        {
+                            result.Addons.Add(item.Ref as Addons);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return result;
     }
 
 

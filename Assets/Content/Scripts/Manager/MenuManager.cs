@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    /*
+    
     public static MenuManager Instance { get; private set; }
 
     class RectEnabled
@@ -414,5 +414,5 @@ public class MenuManager : MonoBehaviour
             StreakMode.gameObject.SetActive(false);
         }
     }
-    */
+    
 }

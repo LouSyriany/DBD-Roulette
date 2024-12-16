@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ScriptableHelper
 {
-    const string TextDataPath = "Assets/Content/Data/DBDData.txt";
+    const string TextDataPath = "Assets/Content/Data/DBDData.tsv";
 
     const string DataPath = "Assets/Content/Data";
     const string TexturePath = "Assets/Content/Textures";

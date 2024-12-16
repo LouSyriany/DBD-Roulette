@@ -174,6 +174,29 @@ public class ItemUnlocked : MonoBehaviour
                 break;
             }
         }
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            foreach (var item in ItemsSlot)
+            {
+                if(item.ItemSlot != itemSlot)
+                {
+                    item.State = !item.State;
+
+                    pendingChangeItem.Add(item);
+
+                    DatasManagerV2.Instance.UpdateState(item.ItemSlot.Item, item.State);
+                }
+            }
+        }
+
+        if (Input.GetKey(KeyCode.LeftAlt))
+        {
+            foreach (var item in Addons)
+            {
+                ChangeAddonsState(item.AddonSlot);
+            }
+        }
     }
 
     public void CheckState()
