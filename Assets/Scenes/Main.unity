@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.95
+  m_fontSize: 17.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10010,6 +10010,8 @@ MonoBehaviour:
       State: 1
     - Ref: {fileID: 11400000, guid: f2f7a949bb848df40ab68f95f1f0d1f3, type: 2}
       State: 1
+    - Ref: {fileID: 11400000, guid: 18161f72126195f49853eb66365386fc, type: 2}
+      State: 1
     SurvivorPerks:
     - Ref: {fileID: 11400000, guid: 48453366327d56d49b5b5787c6bb63e4, type: 2}
       State: 1
@@ -10303,6 +10305,12 @@ MonoBehaviour:
       State: 1
     - Ref: {fileID: 11400000, guid: bd6be757663adee4ca84f51cdc08df62, type: 2}
       State: 1
+    - Ref: {fileID: 11400000, guid: fb7fd5e84476f4042a41ab816dd0b77b, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 714a7e33bed742f459229a0cc4e975b8, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: a286d90805a73c04cb997e324a43ecd0, type: 2}
+      State: 1
     Killers:
     - Ref: {fileID: 11400000, guid: e47ac97e02470e64baed9b4bdc1a3c90, type: 2}
       State: 1
@@ -10377,6 +10385,8 @@ MonoBehaviour:
     - Ref: {fileID: 11400000, guid: 9a8cda8062c9c7545b8a8003a8eb889d, type: 2}
       State: 1
     - Ref: {fileID: 11400000, guid: 5141ff544cd232a4b96aab9cc8d95944, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 003ab8edf28632541bdafc537c04fb87, type: 2}
       State: 1
     KillerPerks:
     - Ref: {fileID: 11400000, guid: a0e2a283072bc944d9c2d6265a7cde10, type: 2}
@@ -10626,6 +10636,12 @@ MonoBehaviour:
     - Ref: {fileID: 11400000, guid: f2670a38f29c73042a550910ec06317d, type: 2}
       State: 1
     - Ref: {fileID: 11400000, guid: a13801b486f5a484484012dcac94b811, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 38f2e289f8b48974eada38d057b254ea, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 26b4dab98ba885e48ad6e179695a7896, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 1a7537f8d36273f4aa7694f9496212ed, type: 2}
       State: 1
     KillerAddons:
     - Ref: {fileID: 11400000, guid: 63cb1523ee8545a419dec9a7040d3c92, type: 2}
@@ -12108,6 +12124,46 @@ MonoBehaviour:
       State: 1
     - Ref: {fileID: 11400000, guid: 403fc70d36339764c8d1fbfef9fef098, type: 2}
       State: 1
+    - Ref: {fileID: 11400000, guid: 1eb5914a98961c142bc710d1348a2290, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: b7d38214f4f6d9046be24536ed7ea3bb, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 886c2d4278608a546a518b1fe6ca413c, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 07d88298965e1e24e9c9bac100d97238, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: ed199c5946bb15e4c9ea8e99115fc75a, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 755a1ff644f510941a1d25b964d837ce, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 25512dfa20f8ed845bc6077c9a9cd275, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: cc95669802a00f3449f78adf22ac67ad, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 53750574fbcf0b245a65767fa8a137fc, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 0909f5c52381c3e4f94667f8c7cd9426, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 3c6c5e3774bea4a4eaed7f872792bc38, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: c0dff0cb2ea0d0643be569fd07178ff0, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 70de271600b948a4ab0e715816c07b91, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 316e14737ce7aa042b0b9fd9d9b74d98, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: ca1c2443df711b347b73900b8be3e4d0, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: b5f6a953fa34a1548a65cbb1c304154a, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 802183a28f4bfb246b48eec92e6af75e, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 1a4ec4f9f1c56e34f9a5e4781cb05c24, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: d5c270eada932bb469eaebd841998bfa, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: fa914e54599c79c4f8a18657acd57875, type: 2}
+      State: 1
     Items:
     - Ref: {fileID: 11400000, guid: f62ed5d04ca15854dac6fbd2fab8f0c1, type: 2}
       State: 1
@@ -12474,7 +12530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &507011671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12487,10 +12543,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 806352753}
   - {fileID: 204438828}
   - {fileID: 142552208}
   - {fileID: 420663280}
-  - {fileID: 806352753}
   m_Father: {fileID: 1770625687}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.425, y: 0.85}
@@ -18536,6 +18592,9 @@ MonoBehaviour:
   StreakScroll: {fileID: 944490986}
   RemainerCharactersScroll: {fileID: 620222963}
   RemainerEquipableScroll: {fileID: 931964847}
+  SurvivorStreakButton: {fileID: 204438827}
+  BothStreakButton: {fileID: 142552207}
+  KillerStreakButton: {fileID: 420663281}
 --- !u!1 &765047932
 GameObject:
   m_ObjectHideFlags: 0
@@ -29836,7 +29895,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.9
+  m_fontSize: 17.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -42515,7 +42574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1841062984
 RectTransform:
   m_ObjectHideFlags: 0

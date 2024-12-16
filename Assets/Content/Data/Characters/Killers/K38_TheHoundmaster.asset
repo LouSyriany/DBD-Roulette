@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: K38_TheHoundmaster
+  m_EditorClassIdentifier: 
+  Type: 0
+  Icon: {fileID: 21300000, guid: a8afca6e24852f64a8bafebd26f103ea, type: 3}
+  Name: The Houndmaster
+  ID: K38_TheHoundmaster
+  UniquePerks:
+  - {fileID: 11400000, guid: 38f2e289f8b48974eada38d057b254ea, type: 2}
+  - {fileID: 11400000, guid: 26b4dab98ba885e48ad6e179695a7896, type: 2}
+  - {fileID: 11400000, guid: 1a7537f8d36273f4aa7694f9496212ed, type: 2}
+  KillerAddons:
+  - {fileID: 11400000, guid: 1eb5914a98961c142bc710d1348a2290, type: 2}
+  - {fileID: 11400000, guid: b7d38214f4f6d9046be24536ed7ea3bb, type: 2}
+  - {fileID: 11400000, guid: 886c2d4278608a546a518b1fe6ca413c, type: 2}
+  - {fileID: 11400000, guid: 07d88298965e1e24e9c9bac100d97238, type: 2}
+  - {fileID: 11400000, guid: ed199c5946bb15e4c9ea8e99115fc75a, type: 2}
+  - {fileID: 11400000, guid: 755a1ff644f510941a1d25b964d837ce, type: 2}
+  - {fileID: 11400000, guid: 25512dfa20f8ed845bc6077c9a9cd275, type: 2}
+  - {fileID: 11400000, guid: cc95669802a00f3449f78adf22ac67ad, type: 2}
+  - {fileID: 11400000, guid: 53750574fbcf0b245a65767fa8a137fc, type: 2}
+  - {fileID: 11400000, guid: 0909f5c52381c3e4f94667f8c7cd9426, type: 2}
+  - {fileID: 11400000, guid: 3c6c5e3774bea4a4eaed7f872792bc38, type: 2}
+  - {fileID: 11400000, guid: c0dff0cb2ea0d0643be569fd07178ff0, type: 2}
+  - {fileID: 11400000, guid: 70de271600b948a4ab0e715816c07b91, type: 2}
+  - {fileID: 11400000, guid: 316e14737ce7aa042b0b9fd9d9b74d98, type: 2}
+  - {fileID: 11400000, guid: ca1c2443df711b347b73900b8be3e4d0, type: 2}
+  - {fileID: 11400000, guid: b5f6a953fa34a1548a65cbb1c304154a, type: 2}
+  - {fileID: 11400000, guid: 802183a28f4bfb246b48eec92e6af75e, type: 2}
+  - {fileID: 11400000, guid: 1a4ec4f9f1c56e34f9a5e4781cb05c24, type: 2}
+  - {fileID: 11400000, guid: d5c270eada932bb469eaebd841998bfa, type: 2}
+  - {fileID: 11400000, guid: fa914e54599c79c4f8a18657acd57875, type: 2}
