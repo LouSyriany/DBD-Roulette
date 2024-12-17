@@ -50,11 +50,13 @@ public class SettingsManager : MonoBehaviour
         UpdateVisuals();
 
         DatasManagerV2.Instance.OnUserDataLoaded += UpdateVisuals;
+        DatasManagerV2.Instance.OnDataReset += UpdateVisuals;
     }
 
     void OnDisable()
     {
         DatasManagerV2.Instance.OnUserDataLoaded -= UpdateVisuals;
+        DatasManagerV2.Instance.OnDataReset -= UpdateVisuals;
     }
 
     void UpdateVisuals()

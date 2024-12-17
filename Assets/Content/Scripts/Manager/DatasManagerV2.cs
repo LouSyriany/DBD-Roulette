@@ -179,6 +179,8 @@ public class DatasManagerV2 : MonoBehaviour
     public Action OnStreakDataSaved;
     public Action OnStreakDataLoaded;
 
+    public Action OnDataReset;
+
     public Action<SettingsScriptable> OnSettingUpdated;
 
     [SerializeField] BoolData SaveStatsBool;
@@ -1309,26 +1311,28 @@ public class DatasManagerV2 : MonoBehaviour
         foreach (var item in Settings.Bool)
         {
             item.Reset();
-            OnSettingUpdated(item.Ref);
+            OnSettingUpdated?.Invoke(item.Ref);
         }
 
         foreach (var item in Settings.Float)
         {
             item.Reset();
-            OnSettingUpdated(item.Ref);
+            OnSettingUpdated?.Invoke(item.Ref);
         }
 
         foreach (var item in Settings.Int)
         {
             item.Reset();
-            OnSettingUpdated(item.Ref);
+            OnSettingUpdated?.Invoke(item.Ref);
         }
 
         foreach (var item in Settings.String)
         {
             item.Reset();
-            OnSettingUpdated(item.Ref);
+            OnSettingUpdated?.Invoke(item.Ref);
         }
+
+        OnDataReset?.Invoke();
     }
 
     void SaveData(string data, string path)

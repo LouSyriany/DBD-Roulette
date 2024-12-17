@@ -9,7 +9,6 @@ public class SlidderFill : MonoBehaviour
     [SerializeField] int MinValue = 0;
     [SerializeField] int MaxValue = 100;
 
-
     public int currentValue = 50;
 
     [SerializeField] string Suffixe = "";

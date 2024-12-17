@@ -522,7 +522,7 @@ public class StatsManager : MonoBehaviour
             RouletteManager.Instance.RollBoth();
         }
     }
-    [ContextMenu("Reset Stats")]
+
     public void ResetStats()
     {
         Stats.rollMade = 0;
