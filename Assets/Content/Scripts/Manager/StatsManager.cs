@@ -6,18 +6,28 @@ using UnityEngine;
 
 public class StatsManager : MonoBehaviour
 {
+    public static StatsManager Instance;
+
     [Serializable]
     public class BaseCounter
     {
         [HideInInspector] public string Name;
         public BaseScriptable Ref;
         public int Count = 0;
+        public int Victory = 0;
+        public int Lose = 0;
     }
 
     [Serializable]
     public class ItemCounter
     {
         public List<BaseCounter> ItemsCounted = new List<BaseCounter>();
+
+        public int SurvivorVictory = 0;
+        public int KillerVictory = 0;
+
+        public int SurvivorLose = 0;
+        public int KillerLose = 0;
 
         public int KillerCounted
         {
@@ -60,7 +70,13 @@ public class StatsManager : MonoBehaviour
 
         public void ReorganizeDescending()
         {
-            //ItemsCounted.Sort();
+            ItemsCounted = ItemsCounted.OrderByDescending(x => x.Count).ToList();
+        }
+
+        public void ReorganizeAcscending()
+        {
+            ItemsCounted = ItemsCounted.OrderByDescending(x => x.Count).ToList();
+            ItemsCounted.Reverse();
         }
 
         public void AddEntry(BaseScriptable Ref)
@@ -80,7 +96,31 @@ public class StatsManager : MonoBehaviour
             if (!found)
             {
                 BaseCounter newEntry = new BaseCounter();
-                newEntry.Name = Ref.name;
+
+                if (Ref is Characters)
+                {
+                    Characters chara = Ref as Characters;
+                    newEntry.Name = chara.Name;
+                }
+
+                if (Ref is Perks)
+                {
+                    Perks perk = Ref as Perks;
+                    newEntry.Name = perk.Name;
+                }
+
+                if (Ref is Addons)
+                {
+                    Addons addon = Ref as Addons;
+                    newEntry.Name = addon.Name;
+                }
+
+                if (Ref is Items)
+                {
+                    Items item = Ref as Items;
+                    newEntry.Name = item.Name;
+                }
+
                 newEntry.Ref = Ref;
                 newEntry.Count += 1;
 
@@ -88,82 +128,251 @@ public class StatsManager : MonoBehaviour
             }
         }
 
+        public void UpdateVictories(RouletteManager.Result result, bool isVictory)
+        {
+            if (result.Character == null) return;
+
+            RouletteManager.MainRollType roll = RouletteManager.MainRollType.Killer;
+            if (result.Character.Type == Characters.CharacterType.Survivors) roll = RouletteManager.MainRollType.Survivor;
+
+            if (roll == RouletteManager.MainRollType.Killer)
+            {
+                if (isVictory)
+                {
+                    KillerVictory++;
+                }
+                else
+                {
+                    KillerLose++;
+                }
+            }
+            else
+            {
+                if (isVictory)
+                {
+                    SurvivorVictory++;
+                }
+                else
+                {
+                    SurvivorLose++;
+                }
+            }
+
+            UpdateVictory(result.Character, isVictory);
+
+            foreach (var item in result.Perks)
+            {
+                if (item != null && item != RouletteManager.Instance.Duds.PerkDud)
+                {
+                    UpdateVictory(item, isVictory);
+                }
+            }
+
+            if (roll == RouletteManager.MainRollType.Killer)
+            {
+                foreach (var item in result.Addons)
+                {
+                    if (item != null && item != RouletteManager.Instance.Duds.AddonDud)
+                    {
+                        UpdateVictory(item, isVictory);
+                    }
+                }
+            }
+            else if(roll == RouletteManager.MainRollType.Survivor)
+            {
+                if (result.Item != null || RouletteManager.Instance.Duds.ItemDud)
+                {
+                    UpdateVictory(result.Item, isVictory);
+
+                    foreach (var item in result.Addons)
+                    {
+                        if (item != null && item != RouletteManager.Instance.Duds.AddonDud)
+                        {
+                            UpdateVictory(item, isVictory);
+                        }
+                    }
+                }
+            }
+        }
+
+        void UpdateVictory(BaseScriptable Ref, bool isVictory)
+        {
+            foreach (var item in ItemsCounted)
+            {
+                if (item.Ref == Ref)
+                {
+                    if (isVictory)
+                    {
+                        item.Victory++;
+                        break;
+                    }
+                    else
+                    {
+                        item.Lose++;
+                        break;
+                    }
+                }
+            }
+        }
+
+        public void ResetVictories()
+        {
+            SurvivorVictory = 0;
+            KillerVictory = 0;
+
+            SurvivorLose = 0;
+            KillerLose = 0;
+
+            foreach (var item in ItemsCounted)
+            {
+                item.Victory = 0;
+                item.Lose = 0;
+            }
+        }
+
         public void Reset()
         {
+            ResetVictories();
+
             ItemsCounted = new List<BaseCounter>();
+        }
+
+        public int GetCount(BaseScriptable Ref)
+        {
+            foreach (var item in ItemsCounted)
+            {
+                if (item.Ref == Ref)
+                {
+                    return item.Count;
+                }
+            }
+
+            return -1;
+        }
+
+        public int GetVictories(BaseScriptable Ref)
+        {
+            foreach (var item in ItemsCounted)
+            {
+                if (item.Ref == Ref)
+                {
+                    return item.Victory;
+                }
+            }
+
+            return -1;
+        }
+
+        public int GetLost(BaseScriptable Ref)
+        {
+            foreach (var item in ItemsCounted)
+            {
+                if (item.Ref == Ref)
+                {
+                    return item.Lose;
+                }
+            }
+
+            return -1;
         }
     }
 
-    [SerializeField, ReadOnly] int rollMade;
+    [Serializable]
+    public class StatsTracked 
+    {
+        [ReadOnly] public int rollMade;
 
-    [Space(10)]
+        [Space(10)]
 
-    [SerializeField, ReadOnly] int survivors;
-    [SerializeField, ReadOnly] int killers;
+        [ReadOnly] public int survivors;
+        [ReadOnly] public int killers;
 
-    [Space(10)]
+        [Space(10)]
 
-    [SerializeField, ReadOnly] int dudPerks;
-    [SerializeField, ReadOnly] int dudAddons;
-    [SerializeField, ReadOnly] int dudItems;
+        [ReadOnly] public int dudPerks;
+        [ReadOnly] public int dudAddons;
+        [ReadOnly] public int dudItems;
 
-    [Space(10)]
+        [Space(10)]
 
-    [SerializeField, ReadOnly] int commonCount;
-    [SerializeField, ReadOnly] int uncommonCount;
-    [SerializeField, ReadOnly] int rareCount;
-    [SerializeField, ReadOnly] int veryRareCount;
-    [SerializeField, ReadOnly] int ultraRareCount;
+        [ReadOnly] public int commonCount;
+        [ReadOnly] public int uncommonCount;
+        [ReadOnly] public int rareCount;
+        [ReadOnly] public int veryRareCount;
+        [ReadOnly] public int ultraRareCount;
 
-    [Space(10)]
+        [Space(10)]
 
-    [SerializeField, ReadOnly] float survivorPercent;
-    [SerializeField, ReadOnly] float killerPercent;
+        [ReadOnly] public float survivorPercent;
+        [ReadOnly] public float killerPercent;
 
-    [Space(10)]
+        [Space(10)]
 
-    [SerializeField, ReadOnly] float commonPercent;
-    [SerializeField, ReadOnly] float uncommonPercent;
-    [SerializeField, ReadOnly] float rarePercent;
-    [SerializeField, ReadOnly] float veryRarePercent;
-    [SerializeField, ReadOnly] float ultraRarePercent;
+        [ReadOnly] public float commonPercent;
+        [ReadOnly] public float uncommonPercent;
+        [ReadOnly] public float rarePercent;
+        [ReadOnly] public float veryRarePercent;
+        [ReadOnly] public float ultraRarePercent;
 
-    [Space(10)]
+        [Space(10)]
 
-    [SerializeField, ReadOnly] float dudPerksPercent;
-    [SerializeField, ReadOnly] float dudAddonsPercent;
-    [SerializeField, ReadOnly] float dudItemsPercent;
+        [ReadOnly] public float dudPerksPercent;
+        [ReadOnly] public float dudAddonsPercent;
+        [ReadOnly] public float dudItemsPercent;
+    }
 
+    
+    public StatsTracked Stats;
     public ItemCounter Items;
+
+    public Action OnEntryAdded;
+    public Action OnDataUpdated;
+
+    [SerializeField] BoolData SaveStatsBoolData;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
 
     void OnEnable()
     {
         RouletteManager.Instance.OnRollMade += AddData;
     }
-
     void OnDisable()
     {
         RouletteManager.Instance.OnRollMade -= AddData;
     }
 
+
     void AddData(RouletteManager.Result result)
     {
-        rollMade += 1;
+        if (!DatasManagerV2.Instance.GetSetting(SaveStatsBoolData)) return;
+
+        Stats.rollMade += 1;
 
         if (result.Character.Type == Characters.CharacterType.Killers)
         {
-            killers += 1;
+            Stats.killers += 1;
         }
         else
         {
-            survivors += 1;
+            Stats.survivors += 1;
         }
 
         foreach (var item in result.Perks)
         {
             if (item == RouletteManager.Instance.Duds.PerkDud)
             {
-                dudPerks += 1;
+                Stats.dudPerks += 1;
             }
         }
 
@@ -171,30 +380,30 @@ public class StatsManager : MonoBehaviour
         {
             if (item == RouletteManager.Instance.Duds.AddonDud)
             {
-                dudAddons += 1;
+                Stats.dudAddons += 1;
             }
             else
             {
                 switch (item.RarityType)
                 {
                     case Rarity.RarityTypes.Common:
-                        commonCount += 1;
+                        Stats.commonCount += 1;
                         break;
 
                     case Rarity.RarityTypes.Uncommon:
-                        uncommonCount += 1;
+                        Stats.uncommonCount += 1;
                         break;
 
                     case Rarity.RarityTypes.Rare:
-                        rareCount += 1;
+                        Stats.rareCount += 1;
                         break;
 
                     case Rarity.RarityTypes.VeryRare:
-                        veryRareCount += 1;
+                        Stats.veryRareCount += 1;
                         break;
 
                     case Rarity.RarityTypes.UltraRare:
-                        ultraRareCount += 1;
+                        Stats.ultraRareCount += 1;
                         break;
                 }
             }
@@ -204,30 +413,30 @@ public class StatsManager : MonoBehaviour
         {
             if (result.Item == RouletteManager.Instance.Duds.ItemDud)
             {
-                dudItems += 1;
+                Stats.dudItems += 1;
             }
             else
             {
                 switch (result.Item.Rarity)
                 {
                     case Rarity.RarityTypes.Common:
-                        commonCount += 1;
+                        Stats.commonCount += 1;
                         break;
 
                     case Rarity.RarityTypes.Uncommon:
-                        uncommonCount += 1;
+                        Stats.uncommonCount += 1;
                         break;
 
                     case Rarity.RarityTypes.Rare:
-                        rareCount += 1;
+                        Stats.rareCount += 1;
                         break;
 
                     case Rarity.RarityTypes.VeryRare:
-                        veryRareCount += 1;
+                        Stats.veryRareCount += 1;
                         break;
 
                     case Rarity.RarityTypes.UltraRare:
-                        ultraRareCount += 1;
+                        Stats.ultraRareCount += 1;
                         break;
                 }
             }
@@ -237,7 +446,6 @@ public class StatsManager : MonoBehaviour
 
         UpdateData();
     }
-    
     void AddEntries(RouletteManager.Result result)
     {
         Items.AddEntry(result.Character);
@@ -262,28 +470,32 @@ public class StatsManager : MonoBehaviour
         {
             Items.AddEntry(result.Item);
         }
+
+        OnEntryAdded?.Invoke();
     }
 
     void UpdateData()
     {
-        survivorPercent = (float)survivors / (float)rollMade * 100f;
-        killerPercent = (float)killers / (float)rollMade * 100f;
+        Stats.survivorPercent = (float)Stats.survivors / (float)Stats.rollMade * 100f;
+        Stats.killerPercent = (float)Stats.killers / (float)Stats.rollMade * 100f;
 
-        dudPerksPercent = (float)dudPerks / (float)rollMade * 100f;
-        dudAddonsPercent = (float)dudAddons / (float)rollMade * 100f;
-        dudItemsPercent = (float)dudItems / (float)rollMade * 100f;
+        Stats.dudPerksPercent = (float)Stats.dudPerks / (float)Stats.rollMade * 100f;
+        Stats.dudAddonsPercent = (float)Stats.dudAddons / (float)Stats.rollMade * 100f;
+        Stats.dudItemsPercent = (float)Stats.dudItems / (float)Stats.rollMade * 100f;
 
-        commonPercent = (float)commonCount / (float)rollMade * 100f;
-        uncommonPercent = (float)uncommonCount / (float)rollMade * 100f;
-        rarePercent = (float)rareCount / (float)rollMade * 100f;
-        veryRarePercent = (float)veryRareCount / (float)rollMade * 100f;
-        ultraRarePercent = (float)ultraRareCount / (float)rollMade * 100f;
+        Stats.commonPercent = (float)Stats.commonCount / (float)Stats.rollMade * 100f;
+        Stats.uncommonPercent = (float)Stats.uncommonCount / (float)Stats.rollMade * 100f;
+        Stats.rarePercent = (float)Stats.rareCount / (float)Stats.rollMade * 100f;
+        Stats.veryRarePercent = (float)Stats.veryRareCount / (float)Stats.rollMade * 100f;
+        Stats.ultraRarePercent = (float)Stats.ultraRareCount / (float)Stats.rollMade * 100f;
+
+        OnDataUpdated?.Invoke();
     }
 
-    [ContextMenu("Rearrange List")]
-    void RearrangeList()
+    public void UpdateVictories(RouletteManager.Result result, bool isVictory)
     {
-        Items.ReorganizeDescending();
+        Items.UpdateVictories(result, isVictory);
+        OnDataUpdated?.Invoke();
     }
 
     [ContextMenu("Roll 1000 Survivors")]
@@ -294,7 +506,6 @@ public class StatsManager : MonoBehaviour
             RouletteManager.Instance.RollSurvivor();
         }
     }
-
     [ContextMenu("Roll 1000 Killers")]
     void Roll1000Killer()
     {
@@ -303,7 +514,6 @@ public class StatsManager : MonoBehaviour
             RouletteManager.Instance.RollKiller();
         }
     }
-
     [ContextMenu("Roll 1000 Both")]
     void Roll1000Both()
     {
@@ -312,36 +522,37 @@ public class StatsManager : MonoBehaviour
             RouletteManager.Instance.RollBoth();
         }
     }
-
     [ContextMenu("Reset Stats")]
-    void ResetStats()
+    public void ResetStats()
     {
-        rollMade = 0;
+        Stats.rollMade = 0;
 
-        survivors = 0;
-        killers = 0;
+        Stats.survivors = 0;
+        Stats.killers = 0;
 
-        dudPerks = 0;
-        dudAddons = 0;
-        dudItems = 0;
+        Stats.dudPerks = 0;
+        Stats.dudAddons = 0;
+        Stats.dudItems = 0;
 
-        survivorPercent = 0f;
-        killerPercent = 0f;
+        Stats.survivorPercent = 0f;
+        Stats.killerPercent = 0f;
 
-        dudPerksPercent = 0f;
-        dudAddonsPercent = 0f;
-        dudItemsPercent = 0f;
+        Stats.dudPerksPercent = 0f;
+        Stats.dudAddonsPercent = 0f;
+        Stats.dudItemsPercent = 0f;
 
-        commonCount = 0;
-        uncommonCount = 0;
-        rareCount = 0;
-        veryRareCount = 0;
-        ultraRareCount = 0;
+        Stats.commonCount = 0;
+        Stats.uncommonCount = 0;
+        Stats.rareCount = 0;
+        Stats.veryRareCount = 0;
+        Stats.ultraRareCount = 0;
 
-        commonPercent = 0f;
-        uncommonPercent = 0f;
-        rarePercent = 0f;
-        veryRarePercent = 0f;
-        ultraRarePercent = 0f;
+        Stats.commonPercent = 0f;
+        Stats.uncommonPercent = 0f;
+        Stats.rarePercent = 0f;
+        Stats.veryRarePercent = 0f;
+        Stats.ultraRarePercent = 0f;
+
+        Items.Reset();
     }
 }

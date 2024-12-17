@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class BoolComparerEvent : MonoBehaviour
 {
-    [SerializeField, ReadOnly] bool BoolToCompare = false;
+    [SerializeField] bool BoolToCompare = false;
 
     [SerializeField] UnityEvent<bool> OnBoolReceiveTrue;
     [SerializeField] UnityEvent<bool> OnBoolReceiveFalse;

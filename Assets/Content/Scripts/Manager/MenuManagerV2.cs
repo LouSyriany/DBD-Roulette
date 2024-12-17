@@ -114,7 +114,7 @@ public class MenuManagerV2 : MonoBehaviour
 
     void RollMade(RouletteManager.Result result)
     {
-        if (result != prevResult)
+        if (RouletteManager.Instance.StreakOnGoing && result != prevResult)
         {
             AddStreakEntry();
             prevResult = result;

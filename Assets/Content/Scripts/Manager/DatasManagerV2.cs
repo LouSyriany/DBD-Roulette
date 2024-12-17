@@ -72,6 +72,36 @@ public class DatasManagerV2 : MonoBehaviour
         public int IntValue;
         public string StringValue;
         public float FloatValue;
+
+        public void Reset()
+        {
+            if (Ref != null)
+            {
+                if (Ref is BoolData)
+                {
+                    BoolData tmp = Ref as BoolData;
+                    BoolValue = tmp.DefaultValue;
+                }
+
+                if (Ref is FloatData)
+                {
+                    FloatData tmp = Ref as FloatData;
+                    FloatValue = tmp.DefaultValue;
+                }
+
+                if (Ref is IntData)
+                {
+                    IntData tmp = Ref as IntData;
+                    IntValue = tmp.DefaultValue;
+                }
+
+                if (Ref is StringData)
+                {
+                    StringData tmp = Ref as StringData;
+                    StringValue = tmp.DefaultValue;
+                }
+            }
+        }
     }
 
     [Serializable]
@@ -86,6 +116,40 @@ public class DatasManagerV2 : MonoBehaviour
 
         public List<DataState> Items            = new List<DataState>();
         public List<DataState> ItemsAddon       = new List<DataState>();
+
+        public void Reset()
+        {
+            foreach (var item in Survivors)
+            {
+                item.State = true;
+            }
+            foreach (var item in SurvivorPerks)
+            {
+                item.State = true;
+            }
+
+            foreach (var item in Killers)
+            {
+                item.State = true;
+            }
+            foreach (var item in KillerPerks)
+            {
+                item.State = true;
+            }
+            foreach (var item in KillerAddons)
+            {
+                item.State = true;
+            }
+
+            foreach (var item in Items)
+            {
+                item.State = true;
+            }
+            foreach (var item in ItemsAddon)
+            {
+                item.State = true;
+            }
+        }
     }
 
     [Serializable]
@@ -107,13 +171,21 @@ public class DatasManagerV2 : MonoBehaviour
 
     string streakfileName = "/DBDRouletteStreakData.save";
 
+    string statsfileName = "/DBDRouletteStats.tsv";
+
     public Action OnUserDataSaved;
     public Action OnUserDataLoaded;
 
     public Action OnStreakDataSaved;
     public Action OnStreakDataLoaded;
 
+    public Action<SettingsScriptable> OnSettingUpdated;
+
+    [SerializeField] BoolData SaveStatsBool;
+
     List<string> streakContent = new List<string>();
+
+    bool init;
 
 #if UNITY_EDITOR
 
@@ -236,6 +308,11 @@ public class DatasManagerV2 : MonoBehaviour
 
         SaveData(save, Application.persistentDataPath + saveFileName);
         OnUserDataSaved?.Invoke();
+
+        if (GetSetting(SaveStatsBool))
+        {
+            SaveStats();
+        }
     }
     public void LoadUserData()
     {
@@ -275,6 +352,13 @@ public class DatasManagerV2 : MonoBehaviour
         ReconvertSettingsData(saveLines[11], Settings.Float, 3);
 
         OnUserDataLoaded?.Invoke();
+
+        if (init && GetSetting(SaveStatsBool))
+        {
+            LoadStats();
+        }
+
+        init = true;
     }
     bool CheckVersion(string test)
     {
@@ -672,6 +756,197 @@ public class DatasManagerV2 : MonoBehaviour
         }
     }
 
+    [ContextMenu("SaveStats")]
+    public void SaveStats()
+    {
+        StatsManager.StatsTracked stat = StatsManager.Instance.Stats;
+
+        string save = "Version : " + Application.version + '\n';
+
+        save += 
+            "rollMade\t" +
+
+            "survivor\t" +
+            "killers\t" +
+            "survivorPercent\t" +
+            "killerPercent\t" +
+
+            "dudPerks\t" +
+            "dudAddons\t" +
+            "dudItems\t" +
+            "dudPerksPercent\t" +
+            "dudAddonsPercent\t" +
+            "dudItemsPercent\t" +
+
+            "commonCount\t" +
+            "uncommonCount\t" +
+            "rareCount\t" +
+            "veryRareCount\t" +
+            "ultraRareCount\t" +
+            "commonPercent\t" +
+            "uncommonPercent\t" +
+            "rarePercent\t" +
+            "veryRarePercent\t" +
+            "ultraRarePercent\t" + 
+
+            '\n';
+
+        save += 
+            stat.rollMade.ToString() + '\t' +
+
+            stat.survivors.ToString() + '\t' +
+            stat.killers.ToString() + '\t' +
+            stat.survivorPercent.ToString() + '\t' +
+            stat.killerPercent.ToString() + '\t' +
+
+            stat.dudPerks.ToString() + '\t' +
+            stat.dudAddons.ToString() + '\t' +
+            stat.dudItems.ToString() + '\t' +
+            stat.dudPerksPercent.ToString() + '\t' +
+            stat.dudAddonsPercent.ToString() + '\t' +
+            stat.dudItemsPercent.ToString() + '\t' +
+
+            stat.commonCount.ToString() + '\t' +
+            stat.uncommonCount.ToString() + '\t' +
+            stat.rareCount.ToString() + '\t' +
+            stat.veryRareCount.ToString() + '\t' +
+            stat.ultraRareCount.ToString() + '\t' +
+            stat.commonPercent.ToString() + '\t' +
+            stat.uncommonPercent.ToString() + '\t' +
+            stat.rarePercent.ToString() + '\t' +
+            stat.veryRarePercent.ToString() + '\t' +
+            stat.ultraRarePercent.ToString() + '\n';
+
+        save += '\n';
+
+        save += "Survivor Victories\tKiller Victories\tSurvivor Loses\tKiller Loses\n";
+
+        save +=
+            StatsManager.Instance.Items.SurvivorVictory.ToString() + '\t' +
+            StatsManager.Instance.Items.KillerVictory.ToString() + '\t' +
+            StatsManager.Instance.Items.SurvivorLose.ToString() + '\t' +
+            StatsManager.Instance.Items.KillerLose.ToString() + '\t' + '\n';
+
+        save += '\n';
+
+        save += "Name\tID\tCounted\tVictory\tLose\n";
+
+        foreach (var item in StatsManager.Instance.Items.ItemsCounted)
+        {
+            string line = "";
+
+            line +=
+                item.Name + '\t' +
+                item.Ref.name + '\t' +
+                item.Count.ToString() + '\t' +
+                item.Victory.ToString() + '\t' +
+                item.Lose.ToString() + '\t';
+
+            line += '\n';
+            save += line;
+        }
+
+        SaveData(save, Application.persistentDataPath + statsfileName);
+    }
+    [ContextMenu("LoadStats")]
+    public void LoadStats()
+    {
+        string save = LoadData(Application.persistentDataPath + statsfileName);
+
+        if (save == "")
+        {
+            Debug.LogError("Can't read Stats data");
+            return; 
+        }
+
+        string[] saveLines = save.Split('\n');
+
+        string version = saveLines[0];
+        version = version.Replace("Version : ", "");
+
+        if (!CheckVersion(version))
+        {
+            Debug.LogError("Can't read Stats data");
+            return;
+        }
+
+        StatsManager.StatsTracked stat = new StatsManager.StatsTracked();
+
+        string[] stats = saveLines[2].Split('\t');
+
+        if (stats.Length == 21)
+        {
+            stat.rollMade = int.TryParse(stats[0], out stat.rollMade) ? stat.rollMade : 0;
+
+            stat.survivors = int.TryParse(stats[0], out stat.survivors) ? stat.survivors : 0;
+            stat.killers = int.TryParse(stats[1], out stat.killers) ? stat.killers : 0;
+            stat.survivorPercent = float.TryParse(stats[2], out stat.survivorPercent) ? stat.survivorPercent : 0f;
+            stat.killerPercent = float.TryParse(stats[3], out stat.killerPercent) ? stat.killerPercent : 0f;
+
+            stat.dudPerks = int.TryParse(stats[4], out stat.dudPerks) ? stat.dudPerks : 0;
+            stat.dudAddons = int.TryParse(stats[5], out stat.dudAddons) ? stat.dudAddons : 0;
+            stat.dudItems = int.TryParse(stats[6], out stat.dudItems) ? stat.dudItems : 0;
+            stat.dudPerksPercent = float.TryParse(stats[7], out stat.dudPerksPercent) ? stat.dudPerksPercent : 0f;
+            stat.dudAddonsPercent = float.TryParse(stats[8], out stat.dudAddonsPercent) ? stat.dudAddonsPercent : 0f;
+            stat.dudItemsPercent = float.TryParse(stats[9], out stat.dudItemsPercent) ? stat.dudItemsPercent : 0f;
+
+            stat.commonCount = int.TryParse(stats[10], out stat.commonCount) ? stat.commonCount : 0;
+            stat.uncommonCount = int.TryParse(stats[11], out stat.uncommonCount) ? stat.uncommonCount : 0;
+            stat.rareCount = int.TryParse(stats[12], out stat.rareCount) ? stat.rareCount : 0;
+            stat.veryRareCount = int.TryParse(stats[13], out stat.veryRareCount) ? stat.veryRareCount : 0;
+            stat.ultraRareCount = int.TryParse(stats[14], out stat.ultraRareCount) ? stat.ultraRareCount : 0;
+            stat.commonPercent = float.TryParse(stats[15], out stat.commonPercent) ? stat.commonPercent : 0;
+            stat.uncommonPercent = float.TryParse(stats[16], out stat.uncommonPercent) ? stat.uncommonPercent : 0;
+            stat.rarePercent = float.TryParse(stats[17], out stat.rarePercent) ? stat.rarePercent : 0;
+            stat.veryRarePercent = float.TryParse(stats[18], out stat.veryRarePercent) ? stat.veryRarePercent : 0;
+            stat.ultraRarePercent = float.TryParse(stats[19], out stat.ultraRarePercent) ? stat.ultraRarePercent : 0;
+        }
+
+        StatsManager.ItemCounter Item = new StatsManager.ItemCounter();
+
+        string[] data = saveLines[5].Split('\t');
+
+        if (data.Length == 5)
+        {
+            Item.SurvivorVictory = int.TryParse(stats[0], out Item.SurvivorVictory) ? Item.SurvivorVictory : 0;
+            Item.KillerVictory = int.TryParse(stats[1], out Item.KillerVictory) ? Item.KillerVictory : 0;
+            Item.SurvivorLose = int.TryParse(stats[2], out Item.SurvivorLose) ? Item.SurvivorLose : 0;
+            Item.KillerLose = int.TryParse(stats[3], out Item.KillerLose) ? Item.KillerLose : 0;
+        }
+        
+
+        for (int i = 8; i < saveLines.Length; i++)
+        {
+            if (saveLines[i] == "") continue;
+
+            string[] tab = saveLines[i].Split('\t');
+
+            BaseScriptable scriptable = GetScriptableFromName(tab[1]);
+
+            if (scriptable != null)
+            {
+                StatsManager.BaseCounter newElement = new StatsManager.BaseCounter();
+
+                newElement.Name = tab[0];
+
+                newElement.Ref = scriptable;
+
+                newElement.Count = int.TryParse(tab[2], out newElement.Count) ? newElement.Count : 0;
+                newElement.Victory = int.TryParse(tab[3], out newElement.Victory) ? newElement.Victory : 0;
+                newElement.Lose = int.TryParse(tab[4], out newElement.Lose) ? newElement.Lose : 0;
+
+                Item.ItemsCounted.Add(newElement);
+            }
+            else
+            {
+                Debug.LogError("Couldn't read line : " + i);
+            }
+        }
+
+        StatsManager.Instance.Stats = stat;
+        StatsManager.Instance.Items = Item;
+        StatsManager.Instance.OnDataUpdated();
+    }
 
     public void UpdateSetting(IntData scriptable, int value)
     {
@@ -680,6 +955,8 @@ public class DatasManagerV2 : MonoBehaviour
             if (item.Ref == scriptable)
             {
                 item.IntValue = value;
+                OnSettingUpdated?.Invoke(item.Ref);
+                break;
             }
         }
     }
@@ -690,6 +967,8 @@ public class DatasManagerV2 : MonoBehaviour
             if (item.Ref == scriptable)
             {
                 item.StringValue = value;
+                OnSettingUpdated?.Invoke(item.Ref);
+                break;
             }
         }
     }
@@ -700,6 +979,8 @@ public class DatasManagerV2 : MonoBehaviour
             if (item.Ref == scriptable)
             {
                 item.BoolValue = value;
+                OnSettingUpdated?.Invoke(item.Ref);
+                break;
             }
         }
     }
@@ -710,6 +991,8 @@ public class DatasManagerV2 : MonoBehaviour
             if (item.Ref == scriptable)
             {
                 item.FloatValue = value;
+                OnSettingUpdated?.Invoke(item.Ref);
+                break;
             }
         }
     }
@@ -939,6 +1222,114 @@ public class DatasManagerV2 : MonoBehaviour
         return false;
     }
 
+
+    public BaseScriptable GetScriptableFromName(string name)
+    {
+        if (name.Contains("SurvivorPerk"))
+        {
+            foreach (var item in DataBase.SurvivorPerks)
+            {
+                if (item.Ref.name == name)
+                {
+                    return item.Ref;
+                }
+            }
+        }
+
+
+        if (name.Contains("KillerPerk_"))
+        {
+            foreach (var item in DataBase.KillerPerks)
+            {
+                if (item.Ref.name == name)
+                {
+                    return item.Ref;
+                }
+            }
+        }
+
+        if (name.Contains("KillerAddon_"))
+        {
+            foreach (var item in DataBase.KillerAddons)
+            {
+                if (item.Ref.name == name)
+                {
+                    return item.Ref;
+                }
+            }
+        }
+
+        if (name.Contains("Item_"))
+        {
+            foreach (var item in DataBase.Items)
+            {
+                if (item.Ref.name == name)
+                {
+                    return item.Ref;
+                }
+            }
+        }
+
+        if (name.Contains("ItemAddon_"))
+        {
+            foreach (var item in DataBase.ItemsAddon)
+            {
+                if (item.Ref.name == name)
+                {
+                    return item.Ref;
+                }
+            }
+        }
+
+        foreach (var item in DataBase.Killers)
+        {
+            if (item.Ref.name == name)
+            {
+                return item.Ref;
+            }
+        }
+
+        foreach (var item in DataBase.Survivors)
+        {
+            if (item.Ref.name == name)
+            {
+                return item.Ref;
+            }
+        }
+
+        return null;
+    }
+
+    public void ResetData()
+    {
+        StatsManager.Instance.ResetStats();
+
+        DataBase.Reset();
+
+        foreach (var item in Settings.Bool)
+        {
+            item.Reset();
+            OnSettingUpdated(item.Ref);
+        }
+
+        foreach (var item in Settings.Float)
+        {
+            item.Reset();
+            OnSettingUpdated(item.Ref);
+        }
+
+        foreach (var item in Settings.Int)
+        {
+            item.Reset();
+            OnSettingUpdated(item.Ref);
+        }
+
+        foreach (var item in Settings.String)
+        {
+            item.Reset();
+            OnSettingUpdated(item.Ref);
+        }
+    }
 
     void SaveData(string data, string path)
     {
