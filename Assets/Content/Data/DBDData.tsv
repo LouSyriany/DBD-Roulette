@@ -799,6 +799,27 @@
 	KillerAddon_K38TheHoundmaster_Addon_18	Killer Addon	Very Rare	Ship Figurehead	
 	KillerAddon_K38TheHoundmaster_Addon_19	Killer Addon	Ultra Rare	Iridescent Wheel Handle	
 	KillerAddon_K38TheHoundmaster_Addon_20	Killer Addon	Ultra Rare	Torn Novel	
+	# K39 The Ghoul				
+	KillerAddon_K39TheGhoul_Addon_01	Killer Addon	Common	Anteiku Apron	
+	KillerAddon_K39TheGhoul_Addon_02	Killer Addon	Common	Fresh Coffee	
+	KillerAddon_K39TheGhoul_Addon_03	Killer Addon	Common	Kaneki's Wallet	
+	KillerAddon_K39TheGhoul_Addon_04	Killer Addon	Common	The Black Goat's Egg	
+	KillerAddon_K39TheGhoul_Addon_05	Killer Addon	Uncommon	Blood-Stained Handkerchief	
+	KillerAddon_K39TheGhoul_Addon_06	Killer Addon	Uncommon	Broken Chain	
+	KillerAddon_K39TheGhoul_Addon_07	Killer Addon	Uncommon	Hide's Headphones	
+	KillerAddon_K39TheGhoul_Addon_08	Killer Addon	Uncommon	Kaneki's Satchel	
+	KillerAddon_K39TheGhoul_Addon_09	Killer Addon	Uncommon	Taiyaki	
+	KillerAddon_K39TheGhoul_Addon_10	Killer Addon	Rare	Amon's Necktie	
+	KillerAddon_K39TheGhoul_Addon_11	Killer Addon	Rare	Aogiri Tree Robe	
+	KillerAddon_K39TheGhoul_Addon_12	Killer Addon	Rare	Mado's Glove	
+	KillerAddon_K39TheGhoul_Addon_13	Killer Addon	Rare	Red Spider Lily	
+	KillerAddon_K39TheGhoul_Addon_14	Killer Addon	Rare	Rize's Glasses	
+	KillerAddon_K39TheGhoul_Addon_15	Killer Addon	Very Rare	CCG ID Card	
+	KillerAddon_K39TheGhoul_Addon_16	Killer Addon	Very Rare	Hinami's Umbrella	
+	KillerAddon_K39TheGhoul_Addon_17	Killer Addon	Very Rare	Red-Headed Centipede	
+	KillerAddon_K39TheGhoul_Addon_18	Killer Addon	Very Rare	Torture Apparatus	
+	KillerAddon_K39TheGhoul_Addon_19	Killer Addon	Ultra Rare	Iridescent Eye Patch	
+	KillerAddon_K39TheGhoul_Addon_20	Killer Addon	Ultra Rare	Yamori's Mask	
 	# Items				
 	# Flashlights				
 	ItemAddon_Flashlights_01	Item Addon	Common	Battery	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
@@ -1028,6 +1049,10 @@
 	KillerPerk_K38TheHoundmaster_01	Killer Perk	Very Rare	All-Shaking Thunder	
 	KillerPerk_K38TheHoundmaster_02	Killer Perk	Very Rare	No Quarter	
 	KillerPerk_K38TheHoundmaster_03	Killer Perk	Very Rare	Scourge Hook: Jagged Compass	
+	# K39 The Ghoul				
+	KillerPerk_K39TheGhoul_01	Killer Perk	Very Rare	Forever Entwined	
+	KillerPerk_K39TheGhoul_02	Killer Perk	Very Rare	Hex: Nothing but Misery	
+	KillerPerk_K39TheGhoul_03	Killer Perk	Very Rare	None Are Free	
 	# Survivors				
 	# Common				
 	SurvivorPerk_Common_01	Survivor Perk	Very Rare	Dark Sense	
