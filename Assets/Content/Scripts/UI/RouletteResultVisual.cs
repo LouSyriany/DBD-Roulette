@@ -35,10 +35,17 @@ public class RouletteResultVisual : MonoBehaviour
     {
         if (RouletteManager.Instance)
         {
-            if (hasSubscribe)
+            if (IsOneShot)
+            {
+                if (hasSubscribe)
+                {
+                    RouletteManager.Instance.OnRollMade -= ShowResult;
+                    hasSubscribe = false;
+                }
+            }
+            else
             {
                 RouletteManager.Instance.OnRollMade -= ShowResult;
-                hasSubscribe = false;
             }
         }
     }
