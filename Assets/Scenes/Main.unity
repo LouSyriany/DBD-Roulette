@@ -783,7 +783,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.3
+  m_fontSize: 16.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8147,7 +8147,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9.15
+  m_fontSize: 9.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8371,7 +8371,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9.15
+  m_fontSize: 9.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11342,6 +11342,8 @@ MonoBehaviour:
       State: 1
     - Ref: {fileID: 11400000, guid: 18161f72126195f49853eb66365386fc, type: 2}
       State: 1
+    - Ref: {fileID: 11400000, guid: 7558e817c82822b41a2aea069ca71ab0, type: 2}
+      State: 1
     SurvivorPerks:
     - Ref: {fileID: 11400000, guid: 48453366327d56d49b5b5787c6bb63e4, type: 2}
       State: 1
@@ -11640,6 +11642,12 @@ MonoBehaviour:
     - Ref: {fileID: 11400000, guid: 714a7e33bed742f459229a0cc4e975b8, type: 2}
       State: 1
     - Ref: {fileID: 11400000, guid: a286d90805a73c04cb997e324a43ecd0, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: d0d3953c9b68cbc45b80ac7dd2e9454e, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: 56fc6be9f4c08954f907c407cd6e6212, type: 2}
+      State: 1
+    - Ref: {fileID: 11400000, guid: d4ca43134104559429da101b3753ffaa, type: 2}
       State: 1
     Killers:
     - Ref: {fileID: 11400000, guid: e47ac97e02470e64baed9b4bdc1a3c90, type: 2}
@@ -22790,7 +22798,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7.1
+  m_fontSize: 7.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -28510,7 +28518,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.3
+  m_fontSize: 16.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -29898,7 +29906,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 2.75
+          m_FloatArgument: 3
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -40393,7 +40401,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.3
+  m_fontSize: 16.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -48192,7 +48200,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.3
+  m_fontSize: 16.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -53384,7 +53392,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7.2
+  m_fontSize: 7.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
