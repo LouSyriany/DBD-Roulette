@@ -2,7 +2,9 @@
 
 # DBD-Roulette
 
-A simple tool made with Unity for picking randomly Character, items and addons in Dead By Daylight.
+A simple tool made with Unity for picking randomly Character, items and addons in Dead By Daylight[^1].
+
+[^1]: Images are obtained from the [Dead by Daylight wiki](https://deadbydaylight.wiki.gg/wiki/Dead_by_Daylight_Wiki).
 
 ![](Documentation~/DBDRoulette-Main.PNG)
 
