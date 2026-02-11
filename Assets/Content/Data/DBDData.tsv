@@ -94,18 +94,18 @@
 	KillerAddon_K05TheShape_Addon_06	Killer Addon	Uncommon	Glass Fragment	
 	KillerAddon_K05TheShape_Addon_07	Killer Addon	Uncommon	Hair Brush	
 	KillerAddon_K05TheShape_Addon_08	Killer Addon	Uncommon	Jewellery	
-	KillerAddon_K05TheShape_Addon_09	Killer Addon	Uncommon	Reflective Fragment	
+	KillerAddon_K05TheShape_Addon_09	Killer Addon	Uncommon	Fragrant Tuft of Hair	
 	KillerAddon_K05TheShape_Addon_10	Killer Addon	Rare	Hair Bow	
 	KillerAddon_K05TheShape_Addon_11	Killer Addon	Rare	J.Myers Memorial	
 	KillerAddon_K05TheShape_Addon_12	Killer Addon	Rare	Jewellery Box	
 	KillerAddon_K05TheShape_Addon_13	Killer Addon	Rare	Judith's Journal	
 	KillerAddon_K05TheShape_Addon_14	Killer Addon	Rare	Mirror Shard	
 	KillerAddon_K05TheShape_Addon_15	Killer Addon	Very Rare	Lock of Hair	
-	KillerAddon_K05TheShape_Addon_16	Killer Addon	Very Rare	Scratched Mirror	
+	KillerAddon_K05TheShape_Addon_16	Killer Addon	Very Rare	Reflective Fragment	
 	KillerAddon_K05TheShape_Addon_17	Killer Addon	Very Rare	Tombstone Piece	
 	KillerAddon_K05TheShape_Addon_18	Killer Addon	Very Rare	Vanity Mirror	
 	KillerAddon_K05TheShape_Addon_19	Killer Addon	Ultra Rare	Fragrant Tuft of Hair	
-	KillerAddon_K05TheShape_Addon_20	Killer Addon	Ultra Rare	Judith's Tombstone	
+	KillerAddon_K05TheShape_Addon_20	Killer Addon	Ultra Rare	Scratched Mirror	
 	# K06 The Hag				
 	KillerAddon_K06TheHag_Addon_01	Killer Addon	Common	Bog Water	
 	KillerAddon_K06TheHag_Addon_02	Killer Addon	Common	Dead Fly Mud	
@@ -801,86 +801,147 @@
 	KillerAddon_K38TheHoundmaster_Addon_20	Killer Addon	Ultra Rare	Torn Novel	
 	# K39 The Ghoul				
 	KillerAddon_K39TheGhoul_Addon_01	Killer Addon	Common	Anteiku Apron	
-	KillerAddon_K39TheGhoul_Addon_02	Killer Addon	Common	Fresh Coffee	
-	KillerAddon_K39TheGhoul_Addon_03	Killer Addon	Common	Kaneki's Wallet	
+	KillerAddon_K39TheGhoul_Addon_02	Killer Addon	Common	Kaneki's Wallet	
+	KillerAddon_K39TheGhoul_Addon_03	Killer Addon	Common	Taiyaki	
 	KillerAddon_K39TheGhoul_Addon_04	Killer Addon	Common	The Black Goat's Egg	
 	KillerAddon_K39TheGhoul_Addon_05	Killer Addon	Uncommon	Blood-Stained Handkerchief	
 	KillerAddon_K39TheGhoul_Addon_06	Killer Addon	Uncommon	Broken Chain	
 	KillerAddon_K39TheGhoul_Addon_07	Killer Addon	Uncommon	Hide's Headphones	
-	KillerAddon_K39TheGhoul_Addon_08	Killer Addon	Uncommon	Kaneki's Satchel	
-	KillerAddon_K39TheGhoul_Addon_09	Killer Addon	Uncommon	Taiyaki	
+	KillerAddon_K39TheGhoul_Addon_08	Killer Addon	Uncommon	Hinami's Umbrella	
+	KillerAddon_K39TheGhoul_Addon_09	Killer Addon	Uncommon	Kaneki's Satchel	
 	KillerAddon_K39TheGhoul_Addon_10	Killer Addon	Rare	Amon's Necktie	
 	KillerAddon_K39TheGhoul_Addon_11	Killer Addon	Rare	Aogiri Tree Robe	
 	KillerAddon_K39TheGhoul_Addon_12	Killer Addon	Rare	Mado's Glove	
 	KillerAddon_K39TheGhoul_Addon_13	Killer Addon	Rare	Red Spider Lily	
 	KillerAddon_K39TheGhoul_Addon_14	Killer Addon	Rare	Rize's Glasses	
 	KillerAddon_K39TheGhoul_Addon_15	Killer Addon	Very Rare	CCG ID Card	
-	KillerAddon_K39TheGhoul_Addon_16	Killer Addon	Very Rare	Hinami's Umbrella	
+	KillerAddon_K39TheGhoul_Addon_16	Killer Addon	Very Rare	Fresh Coffee	
 	KillerAddon_K39TheGhoul_Addon_17	Killer Addon	Very Rare	Red-Headed Centipede	
 	KillerAddon_K39TheGhoul_Addon_18	Killer Addon	Very Rare	Torture Apparatus	
 	KillerAddon_K39TheGhoul_Addon_19	Killer Addon	Ultra Rare	Iridescent Eye Patch	
 	KillerAddon_K39TheGhoul_Addon_20	Killer Addon	Ultra Rare	Yamori's Mask	
+	# K40 The Animatronic				
+	KillerAddon_K40TheAnimatronic_Addon_01	Killer Addon	Common	Greasy Paper Plate	
+	KillerAddon_K40TheAnimatronic_Addon_02	Killer Addon	Common	Help Wanted Ad	
+	KillerAddon_K40TheAnimatronic_Addon_03	Killer Addon	Common	Restaurant Menu	
+	KillerAddon_K40TheAnimatronic_Addon_04	Killer Addon	Common	Rotten Pizza	
+	KillerAddon_K40TheAnimatronic_Addon_05	Killer Addon	Uncommon	Office Phone	
+	KillerAddon_K40TheAnimatronic_Addon_06	Killer Addon	Uncommon	Party Hat	
+	KillerAddon_K40TheAnimatronic_Addon_07	Killer Addon	Uncommon	Ripped Curtain	
+	KillerAddon_K40TheAnimatronic_Addon_08	Killer Addon	Uncommon	Security Guard's Badge	
+	KillerAddon_K40TheAnimatronic_Addon_09	Killer Addon	Uncommon	Streamers	
+	KillerAddon_K40TheAnimatronic_Addon_10	Killer Addon	Rare	Bonnie's Guitar Strings	
+	KillerAddon_K40TheAnimatronic_Addon_11	Killer Addon	Rare	Chica's Bib	
+	KillerAddon_K40TheAnimatronic_Addon_12	Killer Addon	Rare	Foxy's Hook	
+	KillerAddon_K40TheAnimatronic_Addon_13	Killer Addon	Rare	Freddy's Hat	
+	KillerAddon_K40TheAnimatronic_Addon_14	Killer Addon	Rare	Purple Guy Drawing	
+	KillerAddon_K40TheAnimatronic_Addon_15	Killer Addon	Very Rare	Access Panel	
+	KillerAddon_K40TheAnimatronic_Addon_16	Killer Addon	Very Rare	Celebrate Poster	
+	KillerAddon_K40TheAnimatronic_Addon_17	Killer Addon	Very Rare	Endo CPU	
+	KillerAddon_K40TheAnimatronic_Addon_18	Killer Addon	Very Rare	Loot Bag	
+	KillerAddon_K40TheAnimatronic_Addon_19	Killer Addon	Ultra Rare	Faz-Coin	
+	KillerAddon_K40TheAnimatronic_Addon_20	Killer Addon	Ultra Rare	Iridescent Remnant	
+	# K41 The Krasue				
+	KillerAddon_K41TheKrasue_Addon_01	Killer Addon	Common	Broken Tiara	
+	KillerAddon_K41TheKrasue_Addon_02	Killer Addon	Common	First Libretto	
+	KillerAddon_K41TheKrasue_Addon_03	Killer Addon	Common	Luckless Mouse	
+	KillerAddon_K41TheKrasue_Addon_04	Killer Addon	Common	Sticky Lozenge	
+	KillerAddon_K41TheKrasue_Addon_05	Killer Addon	Uncommon	Chunk of Malai	
+	KillerAddon_K41TheKrasue_Addon_06	Killer Addon	Uncommon	Crumpled Sheet Music	
+	KillerAddon_K41TheKrasue_Addon_07	Killer Addon	Uncommon	Defective Metronome	
+	KillerAddon_K41TheKrasue_Addon_08	Killer Addon	Uncommon	Pig's Eye	
+	KillerAddon_K41TheKrasue_Addon_09	Killer Addon	Uncommon	Wriggling Parasite	
+	KillerAddon_K41TheKrasue_Addon_10	Killer Addon	Rare	Dulled Knife	
+	KillerAddon_K41TheKrasue_Addon_11	Killer Addon	Rare	Framed Newspaper	
+	KillerAddon_K41TheKrasue_Addon_12	Killer Addon	Rare	Janjira's Hand	
+	KillerAddon_K41TheKrasue_Addon_13	Killer Addon	Rare	Spattered Handkerchief	
+	KillerAddon_K41TheKrasue_Addon_14	Killer Addon	Rare	Theatre Binoculars	
+	KillerAddon_K41TheKrasue_Addon_15	Killer Addon	Very Rare	Lorenza's Remains	
+	KillerAddon_K41TheKrasue_Addon_16	Killer Addon	Very Rare	Mysterious Elixir	
+	KillerAddon_K41TheKrasue_Addon_17	Killer Addon	Very Rare	Queen's Sceptre	
+	KillerAddon_K41TheKrasue_Addon_18	Killer Addon	Very Rare	Rotten Swine	
+	KillerAddon_K41TheKrasue_Addon_19	Killer Addon	Ultra Rare	Chicken Head	
+	KillerAddon_K41TheKrasue_Addon_20	Killer Addon	Ultra Rare	Shredded Gown	
+	# K42 The First				
+	KillerAddon_K42TheFirst_Addon_01	Killer Addon	Common	Bead Maze	
+	KillerAddon_K42TheFirst_Addon_02	Killer Addon	Common	Orderly ID	
+	KillerAddon_K42TheFirst_Addon_03	Killer Addon	Common	Shattered Wrist Rocket	
+	KillerAddon_K42TheFirst_Addon_04	Killer Addon	Common	Stained Glass Mural	
+	KillerAddon_K42TheFirst_Addon_05	Killer Addon	Uncommon	Bloody Roller Skate	
+	KillerAddon_K42TheFirst_Addon_06	Killer Addon	Uncommon	Clock Hands	
+	KillerAddon_K42TheFirst_Addon_07	Killer Addon	Uncommon	Gutted Supercom	
+	KillerAddon_K42TheFirst_Addon_08	Killer Addon	Uncommon	Mid-Century Radio	
+	KillerAddon_K42TheFirst_Addon_09	Killer Addon	Uncommon	Smashed Cassette Deck	
+	KillerAddon_K42TheFirst_Addon_10	Killer Addon	Rare	Electrode Cap	
+	KillerAddon_K42TheFirst_Addon_11	Killer Addon	Rare	Forged Death Certificate	
+	KillerAddon_K42TheFirst_Addon_12	Killer Addon	Rare	Neck Tendril	
+	KillerAddon_K42TheFirst_Addon_13	Killer Addon	Rare	Rabbit Remains	
+	KillerAddon_K42TheFirst_Addon_14	Killer Addon	Rare	Victor's Razor Blade	
+	KillerAddon_K42TheFirst_Addon_15	Killer Addon	Very Rare	Black Widow Spider	
+	KillerAddon_K42TheFirst_Addon_16	Killer Addon	Very Rare	Broken Skateboard	
+	KillerAddon_K42TheFirst_Addon_17	Killer Addon	Very Rare	Electroshock Collar	
+	KillerAddon_K42TheFirst_Addon_18	Killer Addon	Very Rare	Pizza Goggles	
+	KillerAddon_K42TheFirst_Addon_19	Killer Addon	Ultra Rare	Chess Piece	
+	KillerAddon_K42TheFirst_Addon_20	Killer Addon	Ultra Rare	Iridescent Soteria Chip	
 	# Items				
 	# Flashlights				
-	ItemAddon_Flashlights_01	Item Addon	Common	Battery	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_02	Item Addon	Common	Leather Grip	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_03	Item Addon	Common	Power Bulb	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_04	Item Addon	Common	Wide Lens	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_05	Item Addon	Uncommon	Focus Lens	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_06	Item Addon	Uncommon	Heavy Duty Battery	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_07	Item Addon	Uncommon	Low Amp Filament	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_08	Item Addon	Uncommon	Rubber Grip	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_09	Item Addon	Uncommon	TIR Optic	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_10	Item Addon	Rare	Intense Halogen	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_11	Item Addon	Rare	Long Life Battery	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_12	Item Addon	Very Rare	High-End Sapphire Lens	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Flashlights_13	Item Addon	Ultra Rare	Odd Bulb	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
+	ItemAddon_Flashlights_01	Item Addon	Common	Battery	
+	ItemAddon_Flashlights_02	Item Addon	Common	Leather Grip	
+	ItemAddon_Flashlights_03	Item Addon	Common	Power Bulb	
+	ItemAddon_Flashlights_04	Item Addon	Common	Wide Lens	
+	ItemAddon_Flashlights_05	Item Addon	Uncommon	Focus Lens	
+	ItemAddon_Flashlights_06	Item Addon	Uncommon	Heavy Duty Battery	
+	ItemAddon_Flashlights_07	Item Addon	Uncommon	Low Amp Filament	
+	ItemAddon_Flashlights_08	Item Addon	Uncommon	Rubber Grip	
+	ItemAddon_Flashlights_09	Item Addon	Uncommon	TIR Optic	
+	ItemAddon_Flashlights_10	Item Addon	Rare	Intense Halogen	
+	ItemAddon_Flashlights_11	Item Addon	Rare	Long Life Battery	
+	ItemAddon_Flashlights_12	Item Addon	Very Rare	High-End Sapphire Lens	
+	ItemAddon_Flashlights_13	Item Addon	Ultra Rare	Odd Bulb	
 	# Keys				
-	ItemAddon_Keys_01	Item Addon	Common	Prayer Rope	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Keys_02	Item Addon	Uncommon	Eroded Token	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Keys_03	Item Addon	Uncommon	Prayer Beads	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Keys_04	Item Addon	Uncommon	Scratched Pearl	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Keys_05	Item Addon	Rare	Gold Token	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Keys_06	Item Addon	Very Rare	Blood Amber	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Keys_07	Item Addon	Very Rare	Milky Glass	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Keys_08	Item Addon	Very Rare	Unique Wedding Ring	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Keys_09	Item Addon	Very Rare	Weaved Ring	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
+	ItemAddon_Keys_01	Item Addon	Common	Friendship Charm	
+	ItemAddon_Keys_02	Item Addon	Uncommon	Shrill Whistle	
+	ItemAddon_Keys_03	Item Addon	Rare	Braided Bauble	
+	ItemAddon_Keys_04	Item Addon	Very Rare	Unique Wedding Ring	
+	ItemAddon_Keys_05	Item Addon	Ultra Rare	Blood Amber	
 	# Maps				
-	ItemAddon_Maps_01	Item Addon	Common	Map Addendum	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Maps_02	Item Addon	Uncommon	Glass Bead	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Maps_03	Item Addon	Uncommon	Red Twine	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Maps_04	Item Addon	Uncommon	Retardant Jelly	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Maps_05	Item Addon	Uncommon	Unusual Stamp	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Maps_06	Item Addon	Uncommon	Yellow Wire	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Maps_07	Item Addon	Rare	Black Silk Cord	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Maps_08	Item Addon	Rare	Odd Stamp	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Maps_09	Item Addon	Very Rare	Crystal Bead	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
+	ItemAddon_Maps_01	Item Addon	Common	Glowing Ink	
+	ItemAddon_Maps_02	Item Addon	Uncommon	Gnarled Compass	
+	ItemAddon_Maps_03	Item Addon	Rare	Battered Tape	
+	ItemAddon_Maps_04	Item Addon	Very Rare	Sharpened Flint	
+	ItemAddon_Maps_05	Item Addon	Ultra Rare	Crimson Stamp	
 	# MedKits				
-	ItemAddon_MedKits_01	Item Addon	Common	Bandages	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_02	Item Addon	Common	Butterfly Tape	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_03	Item Addon	Common	Rubber Gloves	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_04	Item Addon	Uncommon	Medical Scissors	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_05	Item Addon	Uncommon	Needle & Thread	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_06	Item Addon	Uncommon	Self Adherent Wrap	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_07	Item Addon	Uncommon	Sponge	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_08	Item Addon	Rare	Gauze Roll	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_09	Item Addon	Rare	Surgical Suture	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_10	Item Addon	Very Rare	Abdominal Dressing	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_11	Item Addon	Very Rare	Styptic Agent	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_12	Item Addon	Ultra Rare	Anti-Haemorrhagic Syringe	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_MedKits_13	Item Addon	Ultra Rare	Gel Dressings	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
+	ItemAddon_MedKits_01	Item Addon	Common	Bandages	
+	ItemAddon_MedKits_02	Item Addon	Common	Butterfly Tape	
+	ItemAddon_MedKits_03	Item Addon	Common	Rubber Gloves	
+	ItemAddon_MedKits_04	Item Addon	Uncommon	Medical Scissors	
+	ItemAddon_MedKits_05	Item Addon	Uncommon	Needle & Thread	
+	ItemAddon_MedKits_06	Item Addon	Uncommon	Self Adherent Wrap	
+	ItemAddon_MedKits_07	Item Addon	Uncommon	Sponge	
+	ItemAddon_MedKits_08	Item Addon	Rare	Gauze Roll	
+	ItemAddon_MedKits_09	Item Addon	Rare	Surgical Suture	
+	ItemAddon_MedKits_10	Item Addon	Very Rare	Abdominal Dressing	
+	ItemAddon_MedKits_11	Item Addon	Very Rare	Styptic Agent	
+	ItemAddon_MedKits_12	Item Addon	Ultra Rare	Anti-Exhaustion Syringe	
+	ItemAddon_MedKits_13	Item Addon	Ultra Rare	Gel Dressings	
 	# Toolboxes				
-	ItemAddon_Toolboxes_01	Item Addon	Common	Clean Rag	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_02	Item Addon	Common	Instructions	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_03	Item Addon	Common	Scraps	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_04	Item Addon	Uncommon	Cutting Wire	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_05	Item Addon	Uncommon	Protective Gloves	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_06	Item Addon	Uncommon	Socket Swivels	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_07	Item Addon	Uncommon	Spring Clamp	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_08	Item Addon	Uncommon	Wire Spool	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_09	Item Addon	Rare	Grip Wrench	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_10	Item Addon	Rare	Hacksaw	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
-	ItemAddon_Toolboxes_11	Item Addon	Ultra Rare	Brand New Part	A standard battery of unknown brand.      - Increases the Battery life by +2 seconds.
+	ItemAddon_Toolboxes_01	Item Addon	Common	Clean Rag	
+	ItemAddon_Toolboxes_02	Item Addon	Common	Instructions	
+	ItemAddon_Toolboxes_03	Item Addon	Common	Scraps	
+	ItemAddon_Toolboxes_04	Item Addon	Uncommon	Cutting Wire	
+	ItemAddon_Toolboxes_05	Item Addon	Uncommon	Protective Gloves	
+	ItemAddon_Toolboxes_06	Item Addon	Uncommon	Socket Swivels	
+	ItemAddon_Toolboxes_07	Item Addon	Uncommon	Spring Clamp	
+	ItemAddon_Toolboxes_08	Item Addon	Uncommon	Wire Spool	
+	ItemAddon_Toolboxes_09	Item Addon	Rare	Grip Wrench	
+	ItemAddon_Toolboxes_10	Item Addon	Rare	Hacksaw	
+	ItemAddon_Toolboxes_11	Item Addon	Ultra Rare	Brand New Part	
+	# Fog Vials				
+	ItemAddon_FogVials_01	Item Addon	Common	Volcanic Stone	
+	ItemAddon_FogVials_02	Item Addon	Uncommon	Reactive Compound	
+	ItemAddon_FogVials_03	Item Addon	Rare	Oily Sap	
+	ItemAddon_FogVials_04	Item Addon	Very Rare	Mushroom Formula	
+	ItemAddon_FogVials_05	Item Addon	Ultra Rare	Potent Extract	
 	# Perks				
 	# Killers				
 	# Common				
@@ -1053,6 +1114,26 @@
 	KillerPerk_K39TheGhoul_01	Killer Perk	Very Rare	Forever Entwined	
 	KillerPerk_K39TheGhoul_02	Killer Perk	Very Rare	Hex: Nothing but Misery	
 	KillerPerk_K39TheGhoul_03	Killer Perk	Very Rare	None Are Free	
+	# K40 The Animatronic				
+	KillerPerk_K40TheAnimatronic_01	Killer Perk	Very Rare	Haywire	
+	KillerPerk_K40TheAnimatronic_02	Killer Perk	Very Rare	Help Wanted	
+	KillerPerk_K40TheAnimatronic_03	Killer Perk	Very Rare	Phantom Fear	
+	# K41 The Krasue				
+	KillerPerk_K41TheKrasue_01	Killer Perk	Very Rare	Hex: Overture of Doom	
+	KillerPerk_K41TheKrasue_02	Killer Perk	Very Rare	Ravenous	
+	KillerPerk_K41TheKrasue_03	Killer Perk	Very Rare	Wandering Eye	
+	# K42 The First				
+	KillerPerk_K42TheFirst_01	Killer Perk	Very Rare	Hex: Hive Mind	
+	KillerPerk_K42TheFirst_02	Killer Perk	Very Rare	Secret Project	
+	KillerPerk_K42TheFirst_03	Killer Perk	Very Rare	Turn Back the Clock	
+					
+					
+					
+					
+					
+					
+					
+					
 	# Survivors				
 	# Common				
 	SurvivorPerk_Common_01	Survivor Perk	Very Rare	Dark Sense	
@@ -1253,3 +1334,23 @@
 	SurvivorPerk_S46OrelaRose_01	Survivor Perk	Very Rare	Do No Harm	
 	SurvivorPerk_S46OrelaRose_02	Survivor Perk	Very Rare	Duty of Care	
 	SurvivorPerk_S46OrelaRose_03	Survivor Perk	Very Rare	Rapid Response	
+	# S47 Rick Grimes				
+	SurvivorPerk_S47RickGrimes_01	Survivor Perk	Very Rare	Apocalyptic Ingenuity	
+	SurvivorPerk_S47RickGrimes_02	Survivor Perk	Very Rare	Come and Get Me !	
+	SurvivorPerk_S47RickGrimes_03	Survivor Perk	Very Rare	Teamwork: Toughen Up	
+	# S48 Michonne Grimes				
+	SurvivorPerk_S48MichonneGrimes_01	Survivor Perk	Very Rare	Conviction	
+	SurvivorPerk_S48MichonneGrimes_02	Survivor Perk	Very Rare	Last Stand	
+	SurvivorPerk_S48MichonneGrimes_03	Survivor Perk	Very Rare	Teamwork: Throw Down	
+	# S49 VeeBoonyasak				
+	SurvivorPerk_S49VeeBoonyasak_01	Survivor Perk	Very Rare	Ghost Notes	
+	SurvivorPerk_S49VeeBoonyasak_02	Survivor Perk	Very Rare	One-Two-Three-Four !	
+	SurvivorPerk_S49VeeBoonyasak_03	Survivor Perk	Very Rare	Road Life	
+	# S50 DustinHenderson				
+	SurvivorPerk_S50DustinHenderson_01	Survivor Perk	Very Rare	Bada Bada Boom	
+	SurvivorPerk_S50DustinHenderson_02	Survivor Perk	Very Rare	Change of Plan	
+	SurvivorPerk_S50DustinHenderson_03	Survivor Perk	Very Rare	Teamwork: Full Circuit	
+	# S51 Eleven				
+	SurvivorPerk_S51Eleven_01	Survivor Perk	Very Rare	Extrasensory Perception	
+	SurvivorPerk_S51Eleven_02	Survivor Perk	Very Rare	Teamwork: Soft-Spoken	
+	SurvivorPerk_S51Eleven_03	Survivor Perk	Very Rare	We See You	

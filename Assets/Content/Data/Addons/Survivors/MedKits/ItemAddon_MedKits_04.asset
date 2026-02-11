@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: da26c83b9b6541148b51a2e43f5e275a, type: 3}
   Name: Medical Scissors
-  Descriton: "A standard battery of unknown brand.      - Increases the Battery life
-    by +2 seconds.\r"
+  Descriton: 
   RarityType: 1

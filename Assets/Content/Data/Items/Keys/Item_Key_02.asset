@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item_Key_02
   m_EditorClassIdentifier: 
   Type: 1
-  Rarity: 3
+  Rarity: 1
   Icon: {fileID: 21300000, guid: 9d2d9b30ee9509348b0e875361094a16, type: 3}
   Name: Dull Key
   EditName: 1
@@ -24,7 +24,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e25558d6850603448b98a8109630385, type: 2}
   - {fileID: 11400000, guid: 886ecfc96a57c634d8b932e1c5a57502, type: 2}
   - {fileID: 11400000, guid: 7af6df38e5499b94881708ba19e6be1c, type: 2}
-  - {fileID: 11400000, guid: 476c91fb896ed82408b0b471dbd2c979, type: 2}
-  - {fileID: 11400000, guid: 7de8f3435a6b4d34bb53b5ec3e9bed13, type: 2}
-  - {fileID: 11400000, guid: 5c856d6a9cb5c7d4486a1f8cd9d59bb1, type: 2}
-  - {fileID: 11400000, guid: cc3d84337a592f649b44f9a565dbba42, type: 2}

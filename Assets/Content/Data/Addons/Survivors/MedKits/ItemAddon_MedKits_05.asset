@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 4688b281403610444a97bde6b54a7abd, type: 3}
   Name: Needle & Thread
-  Descriton: "A standard battery of unknown brand.      - Increases the Battery life
-    by +2 seconds.\r"
+  Descriton: 
   RarityType: 1

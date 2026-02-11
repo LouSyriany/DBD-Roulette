@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 1b0ad71d3713363498186584be30ae57, type: 3}
   Name: Heavy Duty Battery
-  Descriton: "A standard battery of unknown brand.      - Increases the Battery life
-    by +2 seconds.\r"
+  Descriton: 
   RarityType: 1

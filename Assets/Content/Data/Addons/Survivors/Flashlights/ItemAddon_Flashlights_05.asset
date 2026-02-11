@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: e88649679e7c5ab48acae8b45ab9ed21, type: 3}
   Name: Focus Lens
-  Descriton: "A standard battery of unknown brand.      - Increases the Battery life
-    by +2 seconds.\r"
+  Descriton: 
   RarityType: 1

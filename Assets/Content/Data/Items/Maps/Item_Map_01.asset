@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Item_Map_01
   m_EditorClassIdentifier: 
   Type: 2
-  Rarity: 2
-  Icon: {fileID: 21300000, guid: 424625911489e0845822ebfad13bb827, type: 3}
+  Rarity: 0
+  Icon: {fileID: 21300000, guid: a5489edf85864e041bfb20e871ac4919, type: 3}
   Name: Map
   EditName: 1
   EditedName: Map
@@ -24,7 +24,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2765a1cf134832c4e82afc2c48f29662, type: 2}
   - {fileID: 11400000, guid: b2b364116edfa244089928ee0117dcd9, type: 2}
   - {fileID: 11400000, guid: f97f15ce523d5544da6bd0f7e5aa78f6, type: 2}
-  - {fileID: 11400000, guid: bfe1f17ab76a97d48b646c9d00b8e62a, type: 2}
-  - {fileID: 11400000, guid: 2fbdf941df620284a8aee8b9b624f3e7, type: 2}
-  - {fileID: 11400000, guid: 2b03b6037d4338b43b9a4077a70dd3de, type: 2}
-  - {fileID: 11400000, guid: ccfd4bbf9d6f05e4cb2c68e98115fba0, type: 2}

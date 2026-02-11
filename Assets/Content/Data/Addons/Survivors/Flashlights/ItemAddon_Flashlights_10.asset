@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: afc41a282105a084bbf32bb976dcb773, type: 3}
   Name: Intense Halogen
-  Descriton: "A standard battery of unknown brand.      - Increases the Battery life
-    by +2 seconds.\r"
+  Descriton: 
   RarityType: 2

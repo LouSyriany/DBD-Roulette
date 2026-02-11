@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Item_Toolbox_02
   m_EditorClassIdentifier: 
   Type: 4
-  Rarity: 2
-  Icon: {fileID: 21300000, guid: 266c8f56a7b1d9f499c354b33366f2d6, type: 3}
-  Name: Commodious Toolbox
+  Rarity: 1
+  Icon: {fileID: 21300000, guid: 63782f282301ea643bef8a2334723cab, type: 3}
+  Name: Worn-Out Tools
   EditName: 1
-  EditedName: Commodious Toolbox
+  EditedName: Worn-Out Tools
   ItemAddons:
   - {fileID: 11400000, guid: b1bbcfc191f0dce4baeca9258d15f349, type: 2}
   - {fileID: 11400000, guid: 05682535ccf602048a7f7e1de48c6456, type: 2}

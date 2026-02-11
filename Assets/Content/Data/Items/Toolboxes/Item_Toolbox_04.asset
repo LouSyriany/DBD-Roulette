@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Item_Toolbox_04
   m_EditorClassIdentifier: 
   Type: 4
-  Rarity: 3
-  Icon: {fileID: 21300000, guid: a8c69d769786f0c4c96e4cc47b973266, type: 3}
-  Name: Alex's Toolbox
+  Rarity: 2
+  Icon: {fileID: 21300000, guid: 78fc938f02171f34598203d4715ef37e, type: 3}
+  Name: Mechanic's Toolbox
   EditName: 1
-  EditedName: Alex's Toolbox
+  EditedName: Mechanic's Toolbox
   ItemAddons:
   - {fileID: 11400000, guid: b1bbcfc191f0dce4baeca9258d15f349, type: 2}
   - {fileID: 11400000, guid: 05682535ccf602048a7f7e1de48c6456, type: 2}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefbb9edfdcb18548bcdd465ebbea21f, type: 3}
+  m_Name: Item_FogVial_03
+  m_EditorClassIdentifier: 
+  Type: 5
+  Rarity: 2
+  Icon: {fileID: 21300000, guid: 2508dfc4e45944b44a9a247a508fa695, type: 3}
+  Name: Vigo's Fog Vial
+  EditName: 1
+  EditedName: Vigo's Fog Vial
+  ItemAddons:
+  - {fileID: 11400000, guid: 4cf392d8e37f2df409512a21035ad756, type: 2}
+  - {fileID: 11400000, guid: 00772f5cc3919be4cb0c574db3976c4f, type: 2}
+  - {fileID: 11400000, guid: 30f8925e4d981304cb1530bf77d63afd, type: 2}
+  - {fileID: 11400000, guid: a846da85a79bf6e4a96da5660a10b556, type: 2}
+  - {fileID: 11400000, guid: b02aea5fb313b2d4b958b07ec4c1e853, type: 2}

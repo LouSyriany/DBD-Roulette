@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Items", menuName = "ScriptableObjects/DbdDatas/Items")]
 public class Items : BaseScriptable
 {
-    public enum ItemType { Flashlights, Keys, Maps, MedKits, Toolboxes }
+    public enum ItemType { Flashlights, Keys, Maps, MedKits, Toolboxes, FogVials }
 
     public ItemType Type;
 

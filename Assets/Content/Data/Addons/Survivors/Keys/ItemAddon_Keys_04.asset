@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
   m_Name: ItemAddon_Keys_04
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: fe33f1958c04e004b91c101e61ead158, type: 3}
-  Name: Scratched Pearl
-  Descriton: "A standard battery of unknown brand.      - Increases the Battery life
-    by +2 seconds.\r"
-  RarityType: 1
+  Icon: {fileID: 21300000, guid: 390a56e779854b34b9cc1b2ae91cf134, type: 3}
+  Name: Unique Wedding Ring
+  Descriton: 
+  RarityType: 3

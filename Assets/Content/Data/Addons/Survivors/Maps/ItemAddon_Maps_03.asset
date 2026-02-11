@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
   m_Name: ItemAddon_Maps_03
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: b48a78a476a6b344f8b60631cc000eb6, type: 3}
-  Name: Red Twine
-  Descriton: "A standard battery of unknown brand.      - Increases the Battery life
-    by +2 seconds.\r"
-  RarityType: 1
+  Icon: {fileID: 21300000, guid: b0dde4a157b0ac541974fdba8cbe60d2, type: 3}
+  Name: Battered Tape
+  Descriton: 
+  RarityType: 2

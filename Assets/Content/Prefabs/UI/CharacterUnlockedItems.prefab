@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &394668096666555878
 RectTransform:
   m_ObjectHideFlags: 0
@@ -201,14 +201,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 1a84e22fc5c17854f9f8db94846823ec, type: 2}
   Icon: {fileID: 6093121085237099115}
   BG: {fileID: 9176295303223999421}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 1a84e22fc5c17854f9f8db94846823ec, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &5846865273271399510
@@ -444,7 +447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -505,14 +508,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: f1f1eceda7a3d0f4385237125ca7ffe7, type: 2}
   Icon: {fileID: 9149068901607367826}
   BG: {fileID: 2659652952798958866}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: f1f1eceda7a3d0f4385237125ca7ffe7, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &2946985160268097319
@@ -622,14 +628,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 1a049676a2806ea42937b30f22708a9e, type: 2}
   Icon: {fileID: 1651606508865751552}
   BG: {fileID: 7409745844182274649}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 1a049676a2806ea42937b30f22708a9e, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &3750425014396215095
@@ -705,7 +714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8191989068414562954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -780,7 +789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4506929577516599380
 RectTransform:
   m_ObjectHideFlags: 0
@@ -889,14 +898,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: b09d34cf3d4cb6042a77b965b18ac15e, type: 2}
   Icon: {fileID: 6693092316474050936}
   BG: {fileID: 7846690963978617013}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: b09d34cf3d4cb6042a77b965b18ac15e, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &6824539836867437637
@@ -1047,7 +1059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8537043580470972086
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1156,14 +1168,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 059d6713d68f7fb4586af1f21777fc4c, type: 2}
   Icon: {fileID: 4539925011486824702}
   BG: {fileID: 1433578248829982703}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 059d6713d68f7fb4586af1f21777fc4c, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &6096921989337977296
@@ -1348,14 +1363,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 8326c503fac88914e93b1c67e469472e, type: 2}
   Icon: {fileID: 4151449351452751319}
   BG: {fileID: 8754484100738385825}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 8326c503fac88914e93b1c67e469472e, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &3120818731587877665
@@ -1465,14 +1483,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 3ab4b9993b059af42b554e654f8d5f2d, type: 2}
   Icon: {fileID: 1068443171191366692}
   BG: {fileID: 6204510394192610330}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 3ab4b9993b059af42b554e654f8d5f2d, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &4076578316396163176
@@ -1582,14 +1603,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: b78973d35d87d4c4889ae7218d74ccea, type: 2}
   Icon: {fileID: 7271630724413053992}
   BG: {fileID: 5552963435978607072}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: b78973d35d87d4c4889ae7218d74ccea, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &1996808982467754614
@@ -1774,14 +1798,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 34295aebf2a525a409a7d23040eb0eb5, type: 2}
   Icon: {fileID: 807060785747807379}
   BG: {fileID: 7511755689799600166}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 34295aebf2a525a409a7d23040eb0eb5, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &7831663578653928966
@@ -1966,14 +1993,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: ed30ff1eb48a5074e8d2e6bb841e2a34, type: 2}
   Icon: {fileID: 2666072493092390169}
   BG: {fileID: 3395661114634631876}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: ed30ff1eb48a5074e8d2e6bb841e2a34, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &7240986579643918337
@@ -2083,9 +2113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 0fa882c0c4a17ed449a3651aecb544b9, type: 2}
   Icon: {fileID: 5527364734327531616}
   BG: {fileID: 3251034847736718036}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 0fa882c0c4a17ed449a3651aecb544b9, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
   - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
@@ -2200,14 +2233,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 89a7a655da5c3634d913acf3d0c573f0, type: 2}
   Icon: {fileID: 3436346093231526753}
   BG: {fileID: 9054622500621617485}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 89a7a655da5c3634d913acf3d0c573f0, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &5976147700059786113
@@ -2506,14 +2542,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 9a8265c24369d344dace30f080e3dbe8, type: 2}
   Icon: {fileID: 4587686227298557989}
   BG: {fileID: 5181642938093489440}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 9a8265c24369d344dace30f080e3dbe8, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &5246508272373105954
@@ -2589,7 +2628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9125969567104429114
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2664,7 +2703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2824629977087029593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2787,7 +2826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2814,7 +2853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2078986365299926992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2889,7 +2928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6738120565492231533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2998,14 +3037,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 0e97bcd6ca11a5f4ca4b3d9749662b3a, type: 2}
   Icon: {fileID: 8804209615105345263}
   BG: {fileID: 3890687243750701863}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 0e97bcd6ca11a5f4ca4b3d9749662b3a, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &1624186591431362943
@@ -3231,7 +3273,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9.5
+  m_fontSize: 33.7
   m_fontSizeBase: 9.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3364,14 +3406,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: be8f5ac83354125498308845587139be, type: 2}
   Icon: {fileID: 8073257447076328005}
   BG: {fileID: 7141929752792231212}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: be8f5ac83354125498308845587139be, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &8322276990205310642
@@ -3447,7 +3492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3337772236037409188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3522,7 +3567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7192662347830706077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3672,7 +3717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6830877334767969097
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3747,7 +3792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1423265821037494893
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3870,7 +3915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3931,14 +3976,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: fb00a382d73b15e49b6c519c06c00934, type: 2}
   Icon: {fileID: 7209919584871519808}
   BG: {fileID: 7664020897119011217}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: fb00a382d73b15e49b6c519c06c00934, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &1947736933581035289
@@ -4062,7 +4110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4326,7 +4374,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4428,7 +4476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5301151497575007151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4503,7 +4551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4761169008144661024
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4612,14 +4660,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 108c6e6a999bfde458caf7fd75d4e08e, type: 2}
   Icon: {fileID: 3129033951247300373}
   BG: {fileID: 5235448181732914490}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 108c6e6a999bfde458caf7fd75d4e08e, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &4136465118021292502
@@ -4729,9 +4780,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 5ad36fa72a7b05f4f9de6026441e4128, type: 2}
   Icon: {fileID: 130156681048727159}
   BG: {fileID: 7218253986534160737}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 5ad36fa72a7b05f4f9de6026441e4128, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
   - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
@@ -4846,9 +4900,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: cfc21298bb4711f4b93df06c50395012, type: 2}
   Icon: {fileID: 2231730483087421342}
   BG: {fileID: 2953626454150792063}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: cfc21298bb4711f4b93df06c50395012, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
   - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
@@ -4969,7 +5026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3879526545224297314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5044,7 +5101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8075853094235230975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5153,14 +5210,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 0150aef4e3bf8f048b1d2f123306dab7, type: 2}
   Icon: {fileID: 8760766848326239392}
   BG: {fileID: 6792305408975758293}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 0150aef4e3bf8f048b1d2f123306dab7, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &2091230945383548584
@@ -5270,14 +5330,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 13ed5ddd1aeddad4c8478f6edf3857da, type: 2}
   Icon: {fileID: 2282350110356413029}
   BG: {fileID: 2859809800301659872}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 13ed5ddd1aeddad4c8478f6edf3857da, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &7479458944958921225
@@ -5353,7 +5416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5359721892958619638
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5462,14 +5525,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: ffdbd4f48695b48438bc8b25ccee9ee0, type: 2}
   Icon: {fileID: 2959548908518244280}
   BG: {fileID: 6017564432617621198}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: ffdbd4f48695b48438bc8b25ccee9ee0, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &4875619612751183879
@@ -5593,7 +5659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5620,7 +5686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5167214209342376828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5695,7 +5761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6584643244688051237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5770,7 +5836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8882142831527239981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5893,7 +5959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5954,14 +6020,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2beb53f04859e64baef2498389b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equipable: {fileID: 11400000, guid: 1e325ed8b798fb44cbcb72aac590b1f3, type: 2}
   Icon: {fileID: 7382822891584061257}
   BG: {fileID: 3020896523550662675}
+  KillerColor: {r: 0.475, g: 0.116, b: 0.152, a: 1}
+  SurvivorColor: {r: 0.384, g: 0.464, b: 0.518, a: 1}
+  OffColor: {r: 0.59, g: 0.06, b: 0.06, a: 0.42}
+  Equipable: {fileID: 11400000, guid: 1e325ed8b798fb44cbcb72aac590b1f3, type: 2}
   BgRarity:
   - {fileID: 21300000, guid: d4fc0f0c1d287fd4497b9a715667f443, type: 3}
-  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
-  - {fileID: 21300000, guid: 810f1efd6b7a48b4494efeea7b9de8bb, type: 3}
+  - {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  - {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   - {fileID: 21300000, guid: aaf7ff0f752891440b3f33c892c16f56, type: 3}
   - {fileID: 21300000, guid: ef13a3bf400ad1941acd2645f4f1ae78, type: 3}
 --- !u!114 &1665829949679547355
@@ -6125,7 +6194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6227,7 +6296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4260128375462534765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6388,7 +6457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6415,7 +6484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3030699732478774087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6530,74 +6599,97 @@ MonoBehaviour:
   CharacterSlot: {fileID: 4527307295470647001}
   Name: {fileID: 1810730501018397813}
   Perks:
-  - AddonSlot: {fileID: 3393470732118130078}
+  - Name: 
+    AddonSlot: {fileID: 3393470732118130078}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 7797149309473288312}
+  - Name: 
+    AddonSlot: {fileID: 7797149309473288312}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 3421893999865284097}
+  - Name: 
+    AddonSlot: {fileID: 3421893999865284097}
     State: 1
     Lerp: 1
   Addons:
-  - AddonSlot: {fileID: 6859332359908481607}
+  - Name: Addon-01
+    AddonSlot: {fileID: 6859332359908481607}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 6953668574637819899}
+  - Name: Addon-02
+    AddonSlot: {fileID: 6953668574637819899}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 61950477783106158}
+  - Name: Addon-03
+    AddonSlot: {fileID: 61950477783106158}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1644973087210153397}
+  - Name: Addon-04
+    AddonSlot: {fileID: 1644973087210153397}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 6708793142766892803}
+  - Name: Addon-05
+    AddonSlot: {fileID: 6708793142766892803}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 6695114697171498622}
+  - Name: Addon-06
+    AddonSlot: {fileID: 6695114697171498622}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 168358267130388751}
+  - Name: Addon-07
+    AddonSlot: {fileID: 168358267130388751}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 881001637946483560}
+  - Name: Addon-08
+    AddonSlot: {fileID: 881001637946483560}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 4099290108331817800}
+  - Name: Addon-09
+    AddonSlot: {fileID: 4099290108331817800}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 5741424435977970371}
+  - Name: Addon-10
+    AddonSlot: {fileID: 5741424435977970371}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 2548644966003693502}
+  - Name: Addon-11
+    AddonSlot: {fileID: 2548644966003693502}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1766129130420039415}
+  - Name: Addon-12
+    AddonSlot: {fileID: 1766129130420039415}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 1251383539385521157}
+  - Name: Addon-13
+    AddonSlot: {fileID: 1251383539385521157}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 2357395118463572549}
+  - Name: Addon-14
+    AddonSlot: {fileID: 2357395118463572549}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 800892164028808422}
+  - Name: Addon-15
+    AddonSlot: {fileID: 800892164028808422}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 2589701091704758755}
+  - Name: Addon-16
+    AddonSlot: {fileID: 2589701091704758755}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 252566996224666687}
+  - Name: Addon-17
+    AddonSlot: {fileID: 252566996224666687}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 2443935602280630973}
+  - Name: Addon-18
+    AddonSlot: {fileID: 2443935602280630973}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 5003389592805078183}
+  - Name: Addon-19
+    AddonSlot: {fileID: 5003389592805078183}
     State: 1
     Lerp: 1
-  - AddonSlot: {fileID: 4265341750902527702}
+  - Name: Addon-20
+    AddonSlot: {fileID: 4265341750902527702}
     State: 1
     Lerp: 1
   CharacterState: 1
@@ -6619,7 +6711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1045319870610010516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6742,7 +6834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a39b4eba330f87f44abfe52ab42d0dbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae6cbbbcd10d4e14fb2820eb6011a579, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

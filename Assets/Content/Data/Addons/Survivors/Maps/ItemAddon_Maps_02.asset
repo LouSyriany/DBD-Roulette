@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2eeb5ae1e8cff44b21298d4373c89a, type: 3}
   m_Name: ItemAddon_Maps_02
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: a2e0a2cf0cbdbfd4cbbcfc715c8bf9ae, type: 3}
-  Name: Glass Bead
-  Descriton: "A standard battery of unknown brand.      - Increases the Battery life
-    by +2 seconds.\r"
+  Icon: {fileID: 21300000, guid: 6ca7cb84191b2c24598b494eab3afa5a, type: 3}
+  Name: Gnarled Compass
+  Descriton: 
   RarityType: 1

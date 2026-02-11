@@ -62,7 +62,9 @@ public class ScriptableHelper
 
             //if (i > 23) break;
 
-            if (splittedLines[i][1] == '#' || splittedLines[i][0] == '§') continue;
+            if (splittedLines[i][1] == '#' 
+                || splittedLines[i][0] == '§'
+                ) continue;
 
             string[] tabSplit = splittedLines[i].Split("\t");
 
@@ -70,6 +72,8 @@ public class ScriptableHelper
 
             string id = tabSplit[1];
             string[] idSplit = id.Split("_");
+
+            if (idSplit[0] == "") continue;
 
             string iconPath = TexturePath;
             string assetPath = DataPath;

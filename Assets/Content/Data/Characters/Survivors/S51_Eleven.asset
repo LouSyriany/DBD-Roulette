@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adabb1bafccf65f40b915f58d6532bea, type: 3}
+  m_Name: S51_Eleven
+  m_EditorClassIdentifier: 
+  Type: 1
+  Icon: {fileID: 21300000, guid: e6f2e667a9c7f3a478a976667acd174e, type: 3}
+  Name: Eleven
+  ID: S51_Eleven
+  UniquePerks:
+  - {fileID: 11400000, guid: b09c197b97403de42b6af371027caa08, type: 2}
+  - {fileID: 11400000, guid: 8f3facab6bcc8ec48a75b18d56fa9746, type: 2}
+  - {fileID: 11400000, guid: fe4a4b8875a0d3e43b2b89d86041d5bc, type: 2}
+  KillerAddons: []
